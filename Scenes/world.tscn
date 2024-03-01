@@ -1,0 +1,72 @@
+[gd_scene load_steps=8 format=3 uid="uid://la8btl4g5ppc"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_ot0k4"]
+[ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_w78ye"]
+[ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="3_gqd4q"]
+[ext_resource type="PackedScene" uid="uid://cj7416lf7ns5q" path="res://Scenes/heart.tscn" id="4_67i3s"]
+[ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="5_561qb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dk5em"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cvs0"]
+size = Vector2(24, 72)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_ot0k4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 16, 0, 16, 104, 48, 104, 80, 120, 104, 120, 120, 104, 136, 104, 136, 144, 160, 144, 160, 112, 192, 112, 192, 120, 216, 120, 248, 104, 263, 104, 263, 128, 296, 128, 296, 0, 320, 0, 320, 184, 0, 184)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_w78ye")]
+position = Vector2(40, 88)
+floor_snap_length = 3.0
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_dk5em")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(244, 36)
+shape = SubResource("RectangleShape2D_2cvs0")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = 232.0
+offset_right = 256.0
+offset_bottom = 72.0
+
+[node name="Spikes" parent="." instance=ExtResource("3_gqd4q")]
+position = Vector2(136, 144)
+
+[node name="Spikes2" parent="." instance=ExtResource("3_gqd4q")]
+position = Vector2(144, 144)
+
+[node name="Spikes3" parent="." instance=ExtResource("3_gqd4q")]
+position = Vector2(263, 128)
+
+[node name="Spikes4" parent="." instance=ExtResource("3_gqd4q")]
+position = Vector2(279, 128)
+
+[node name="Heart" parent="." instance=ExtResource("4_67i3s")]
+position = Vector2(128, 96)
+
+[node name="Heart5" parent="." instance=ExtResource("4_67i3s")]
+position = Vector2(32, 40)
+
+[node name="Heart2" parent="." instance=ExtResource("4_67i3s")]
+position = Vector2(288, 64)
+
+[node name="Heart3" parent="." instance=ExtResource("4_67i3s")]
+position = Vector2(272, 32)
+
+[node name="Heart4" parent="." instance=ExtResource("4_67i3s")]
+position = Vector2(304, -8)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_561qb")]
+visible = false
