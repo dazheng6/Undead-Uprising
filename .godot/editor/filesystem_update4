@@ -1,0 +1,6 @@
+res://Scenes/world.tscn
+res://Scenes/hazard_area.tscn
+res://Scenes/heart.tscn
+res://Scenes/level_completed.tscn
+res://Scenes/spikes.tscn
+res://Scenes/player.tscn
