@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @export var movement_data : PlayerMovementData
 
+var bulletPath = preload("res://Scenes/bullet.tscn")
+
 var air_jump = false
 var just_wall_jumped = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -11,6 +13,17 @@ var was_wall_normal = Vector2.ZERO
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 @onready var wall_jump_timer = $WallJumpTimer
+
+func _process(delta):
+	if Input.is_action_just_pressed("shoot"):
+		print("Shot a bullet")
+		shoot()
+
+func shoot():
+	var bullet = bulletPath.instantiate()
+	
+	get_parent().add_child(bullet)
+	bullet.position = $Marker2D.position
 
 func _physics_process(delta):
 	apply_gravity(delta)

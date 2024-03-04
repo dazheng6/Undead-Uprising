@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_ot0k4"]
 [ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_w78ye"]
 [ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="5_561qb"]
-[ext_resource type="PackedScene" path="res://Scenes/level_tile_map.tscn" id="6_q6bny"]
+[ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="6_q6bny"]
 
 [node name="World" type="Node2D"]
 position = Vector2(17, 3)
