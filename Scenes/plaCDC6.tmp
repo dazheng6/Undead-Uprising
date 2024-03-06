@@ -127,6 +127,6 @@ position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_fq1oj")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(6, -9)
+position = Vector2(0, -9)
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]

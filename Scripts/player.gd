@@ -13,16 +13,31 @@ var was_wall_normal = Vector2.ZERO
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 @onready var wall_jump_timer = $WallJumpTimer
-	
+
 func _process(delta):
+	if Input.is_action_just_pressed("move_left"):
+		$Marker2D.set_rotation(-3.14159)
+		
+	if Input.is_action_just_pressed("move_right"):
+		$Marker2D.set_rotation(0)
+		
 	if Input.is_action_just_pressed("shoot"):
 		print("Shot a bullet")
 		shoot()
 
 func shoot():
-	var bullet = bulletPath.instantiate()
-	add_child(bullet)
-	bullet.transform = $Marker2D.transform
+	var bullet_instance = bulletPath.instantiate()
+	add_child(bullet_instance)
+
+	# Get the rotation of the marker in degrees
+	var rotation_degrees = $Marker2D.rotation_degrees
+
+	# Calculate the direction vector based on the rotation
+	var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
+
+	# Set the bullet's velocity
+	bullet_instance.set_velocity(direction)
+
 
 func _physics_process(delta):
 	apply_gravity(delta)

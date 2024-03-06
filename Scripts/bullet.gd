@@ -1,10 +1,10 @@
 extends Area2D
 
-var speed = 750
-func _physics_process(delta):
-	position += transform.x * speed * delta 
+var velocity = Vector2.ZERO
+var speed = 500
 
-func _on_Bullet_body_entered(body):
-	if body.is_in_group("Hearts"):
-		body.queue_free()
-	queue_free()
+func _physics_process(delta):
+	position += velocity * delta
+
+func set_velocity(new_velocity):
+	velocity = new_velocity.normalized() * speed

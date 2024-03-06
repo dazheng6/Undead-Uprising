@@ -1,7 +1,9 @@
-res://Scenes/hazard_area.tscn
 res://Scenes/heart.tscn
+res://Scripts/heart.gd
+res://Scenes/hazard_area.tscn
 res://Scenes/level_completed.tscn
 res://Scenes/spikes.tscn
+res://Scenes/level_one.tscn
 res://Scenes/player.tscn
 res://Scenes/bullet.tscn
 res://Scenes/world.tscn
@@ -9,6 +11,5 @@ res://Scenes/start_menu.tscn
 res://Scenes/level_two.tscn
 res://Scenes/level_transition.tscn
 res://Scenes/level_tile_map.tscn
-res://Scenes/level_one.tscn
 res://Scripts/player.gd
 res://Scripts/bullet.gd

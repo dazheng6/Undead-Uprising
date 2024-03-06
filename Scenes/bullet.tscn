@@ -6,13 +6,14 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_fi07s"]
 radius = 4.0
 
-[node name="Bullet" type="Area2D"]
-collision_layer = 16
-collision_mask = 16
+[node name="Bullet" type="Area2D" groups=["bullet"]]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_c26iq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fi07s")
+one_way_collision = true
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(-2.38419e-07, -5.96046e-08)
