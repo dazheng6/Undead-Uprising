@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
-[ext_resource type="Resource" path="res://FasterMovementData.tres" id="2_hyu5y"]
+[ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_hyu5y"]
 [ext_resource type="Texture2D" uid="uid://bdiojqu1mxc8j" path="res://player.png" id="2_mimyl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbvjf"]
@@ -127,6 +127,6 @@ position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_fq1oj")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(10, -9)
+position = Vector2(0, -9)
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
