@@ -7,15 +7,15 @@
 radius = 4.0
 
 [node name="Bullet" type="Area2D" groups=["bullet"]]
-collision_layer = 0
+collision_layer = 19
 collision_mask = 0
 script = ExtResource("1_c26iq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Bullet"]]
+position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_fi07s")
-one_way_collision = true
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-2.38419e-07, -5.96046e-08)
+position = Vector2(-5.68434e-14, -7)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_c0ces")
