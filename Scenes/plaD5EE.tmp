@@ -130,7 +130,5 @@ shape = SubResource("RectangleShape2D_fq1oj")
 position = Vector2(6, -9)
 
 [node name="ReloadTimer" type="Timer" parent="."]
-wait_time = 3.0
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
-[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
