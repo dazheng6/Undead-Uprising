@@ -16,9 +16,11 @@ var was_wall_normal = Vector2.ZERO
 
 func _process(delta):
 	if Input.is_action_just_pressed("move_left"):
+		$Marker2D.position = Vector2(-15, 0)
 		$Marker2D.set_rotation(-3.14159)
 		
 	if Input.is_action_just_pressed("move_right"):
+		$Marker2D.position = Vector2(15, 0)
 		$Marker2D.set_rotation(0)
 		
 	if Input.is_action_just_pressed("shoot"):
@@ -28,13 +30,12 @@ func _process(delta):
 func shoot():
 	var bullet_instance = bulletPath.instantiate()
 	add_child(bullet_instance)
+	bullet_instance.position = $Marker2D.position
 
 	# Get the rotation of the marker in degrees
 	var rotation_degrees = $Marker2D.rotation_degrees
-
 	# Calculate the direction vector based on the rotation
 	var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
-
 	# Set the bullet's velocity
 	bullet_instance.set_velocity(direction)
 

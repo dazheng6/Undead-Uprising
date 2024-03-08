@@ -16,6 +16,8 @@ position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_fi07s")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-5.68434e-14, -7)
+position = Vector2(1.90735e-06, -7)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_c0ces")
+
+[connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]
