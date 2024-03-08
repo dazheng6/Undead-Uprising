@@ -120,6 +120,7 @@ func apply_air_resistance(input_axis,delta):
 func apply_friction(input_axis, delta):
 	if input_axis == 0 and is_on_floor():
 		velocity.x = move_toward(velocity.x, 0, movement_data.friction * delta)
+		
 func update_animations(input_axis):
 	if input_axis != 0:
 		animated_sprite_2d.flip_h = (input_axis < 0)
@@ -132,7 +133,6 @@ func update_animations(input_axis):
 
 func _on_hazard_detector_area_entered(area):
 	global_position = starting_position
-
 
 func _on_reload_timer_timeout():
 	current_ammo = max_ammo
