@@ -123,7 +123,6 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
-visible = false
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_fq1oj")
 

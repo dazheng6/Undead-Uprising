@@ -8,11 +8,14 @@ var air_jump = false
 var just_wall_jumped = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO
-
+@onready var reloadTimer = $ReloadTimer
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 @onready var wall_jump_timer = $WallJumpTimer
+
+var current_ammo = 30
+var max_ammo = 30
 
 func _process(delta):
 	if Input.is_action_just_pressed("move_left"):
@@ -23,12 +26,15 @@ func _process(delta):
 		$Marker2D.position = Vector2(15, 0)
 		$Marker2D.set_rotation(0)
 		
-	if Input.is_action_just_pressed("shoot"):
+	if Input.is_action_just_pressed("shoot") and current_ammo > 0:
 		print("Shot a bullet")
 		shoot()
+	if Input.is_action_just_pressed("reload") and current_ammo < max_ammo:
+		reload()
 
 func shoot():
 	var bullet_instance = bulletPath.instantiate()
+	current_ammo -= 1
 	add_child(bullet_instance)
 	bullet_instance.position = $Marker2D.position
 
@@ -39,6 +45,9 @@ func shoot():
 	# Set the bullet's velocity
 	bullet_instance.set_velocity(direction)
 
+func reload():
+	reloadTimer.start()
+	print("reloading")
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -120,3 +129,9 @@ func update_animations(input_axis):
 
 func _on_hazard_detector_area_entered(area):
 	global_position = starting_position
+
+
+func _on_reload_timer_timeout():
+	current_ammo = max_ammo
+	print("reloaded")
+	reloadTimer.stop()
