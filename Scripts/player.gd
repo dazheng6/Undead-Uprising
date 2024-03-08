@@ -17,9 +17,12 @@ var was_wall_normal = Vector2.ZERO
 var current_ammo = 30
 var max_ammo = 30
 
+func _ready():
+	$Marker2D.position = Vector2(15,0)
+
 func _process(delta):
 	if Input.is_action_just_pressed("move_left"):
-		$Marker2D.position = Vector2(-15, 0)
+		$Marker2D.position = Vector2(-15,0)
 		$Marker2D.set_rotation(-3.14159)
 		
 	if Input.is_action_just_pressed("move_right"):
