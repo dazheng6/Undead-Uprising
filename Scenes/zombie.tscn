@@ -17,3 +17,5 @@ shape = SubResource("CapsuleShape2D_305da")
 position = Vector2(3.57628e-07, -2.38419e-07)
 scale = Vector2(0.09375, 0.15625)
 texture = ExtResource("1_8cdvb")
+
+[node name="Marker2D" type="Marker2D" parent="."]
