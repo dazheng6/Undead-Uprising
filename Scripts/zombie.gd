@@ -23,3 +23,7 @@ func _on_hazard_detector_area_entered(area):
 func _on_area_entered(area):
 	print("Zombie -25 HP")
 	zombieHealth -= 25
+	var zombie = get_tree().get_nodes_in_group("Zombie")
+	if zombie.size() == 0:
+		print("All Zombies Dead")
+		Events.level_completed.emit()

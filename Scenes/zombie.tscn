@@ -10,7 +10,7 @@ height = 20.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urga7"]
 size = Vector2(35, 20)
 
-[node name="Zombie" type="Area2D"]
+[node name="Zombie" type="Area2D" groups=["Zombie"]]
 script = ExtResource("1_sdr5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
