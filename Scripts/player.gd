@@ -24,7 +24,7 @@ func _ready():
 func _process(delta):
 	if lives == 0:
 		queue_free()
-		print("you died you suck")
+		print("You Died")
 	
 	if playerHealth == 0:
 		global_position = starting_position
