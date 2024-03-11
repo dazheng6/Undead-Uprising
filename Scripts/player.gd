@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var movement_data : PlayerMovementData
 @export var bullet : PackedScene
 var bulletPath = preload("res://Scenes/bullet.tscn")
+@onready var playerHealth = 100.0
 
 var air_jump = false
 var just_wall_jumped = false
@@ -21,6 +22,11 @@ func _ready():
 	$Marker2D.position = Vector2(15,0)
 
 func _process(delta):
+	if playerHealth == 0:
+		global_position = starting_position
+		print("Player Died")
+		playerHealth += 100
+		
 	if Input.is_action_just_pressed("move_left"):
 		$Marker2D.position = Vector2(-15,0)
 		$Marker2D.set_rotation(-3.14159)
@@ -132,7 +138,8 @@ func update_animations(input_axis):
 		animated_sprite_2d.play("jump")
 
 func _on_hazard_detector_area_entered(area):
-	global_position = starting_position
+	print("Player Hit")
+	playerHealth -= 20
 
 func _on_reload_timer_timeout():
 	current_ammo = max_ammo

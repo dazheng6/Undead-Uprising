@@ -11,11 +11,17 @@ height = 20.0
 script = ExtResource("1_sdr5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
 shape = SubResource("CapsuleShape2D_305da")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(3.57628e-07, -2.38419e-07)
+position = Vector2(2.84217e-14, -7)
 scale = Vector2(0.09375, 0.15625)
 texture = ExtResource("1_8cdvb")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

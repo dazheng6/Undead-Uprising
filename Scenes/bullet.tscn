@@ -7,7 +7,7 @@
 radius = 4.0
 
 [node name="Bullet" type="Area2D" groups=["bullet"]]
-collision_layer = 19
+collision_layer = 23
 collision_mask = 0
 script = ExtResource("1_c26iq")
 
@@ -20,4 +20,8 @@ position = Vector2(1.35525e-20, -10)
 scale = Vector2(0.05, 0.05)
 texture = ExtResource("1_c0ces")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
