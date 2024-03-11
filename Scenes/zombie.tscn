@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ta8py42v7q8q"]
+[gd_scene load_steps=5 format=3 uid="uid://ta8py42v7q8q"]
 
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="1_8cdvb"]
 [ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_sdr5b"]
@@ -6,6 +6,9 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_305da"]
 radius = 6.0
 height = 20.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urga7"]
+size = Vector2(12, 20)
 
 [node name="Zombie" type="Area2D"]
 script = ExtResource("1_sdr5b")
@@ -23,5 +26,11 @@ texture = ExtResource("1_8cdvb")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+
+[node name="HazardDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_urga7")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
