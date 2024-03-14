@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3vkmfxunohh8"]
+[gd_scene load_steps=16 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Texture2D" uid="uid://bdiojqu1mxc8j" path="res://player.png" id="2_mimyl"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
+[ext_resource type="PackedScene" uid="uid://b4i16lfwjubdq" path="res://hud.tscn" id="4_4b8ah"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbvjf"]
 atlas = ExtResource("2_mimyl")
@@ -127,11 +128,9 @@ visible = false
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_fq1oj")
 
+[node name="PlayerHUD" parent="." instance=ExtResource("4_4b8ah")]
+
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6, -9)
 
-[node name="ReloadTmer" type="Timer" parent="."]
-wait_time = 3.0
-
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
-[connection signal="timeout" from="ReloadTmer" to="." method="_on_reload_timer_timeout"]
