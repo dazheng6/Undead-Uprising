@@ -3,18 +3,14 @@ extends Area2D
 var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var zombieHitTime = $Timer
 @onready var zombieHealth = 100.0
-@onready var zombieLives = 1
 @onready var zombie = get_tree().get_nodes_in_group("Zombie")
 
 func _process(delta):
 	if zombieHealth == 0:
 		queue_free()
 		print("Zombie Died")
-		zombieLives -= 1
 
-	if zombieLives == 0:
-		print("All Zombies Dead")
-		Events.level_completed.emit()
+
 
 func shoot():
 	var bullet_instance = bulletPath.instantiate()

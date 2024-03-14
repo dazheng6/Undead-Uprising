@@ -4,6 +4,12 @@ extends Node2D
 
 @onready var level_completed = $CanvasLayer/LevelCompleted
 
+func _process(delta):
+	var zombie = get_tree().get_nodes_in_group("Zombie")
+	if zombie.size() == 0:
+		print("All Zombies Dead")
+		Events.level_completed.emit()
+
 func _ready():
 	Events.level_completed.connect(show_level_completed)
 	
