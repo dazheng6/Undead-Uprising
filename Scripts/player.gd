@@ -14,6 +14,7 @@ var was_wall_normal = Vector2.ZERO
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 @onready var wall_jump_timer = $WallJumpTimer
+@onready var reloadActive = false
 
 var current_ammo = 30
 var max_ammo = 30
@@ -43,7 +44,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("shoot") and current_ammo > 0:
 		print("Shot a bullet")
 		shoot()
-	if Input.is_action_just_pressed("reload") and current_ammo < max_ammo:
+	if Input.is_action_just_pressed("reload") and current_ammo < max_ammo and reloadActive != true:
 		reload()
 
 func shoot():
@@ -62,6 +63,7 @@ func shoot():
 func reload():
 	reloadTimer.start()
 	print("reloading")
+	reloadActive = true
 
 func _physics_process(delta):
 	apply_gravity(delta)
@@ -150,3 +152,4 @@ func _on_reload_timer_timeout():
 	current_ammo = max_ammo
 	print("reloaded")
 	reloadTimer.stop()
+	reloadActive = false
