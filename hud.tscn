@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b4i16lfwjubdq"]
+
+[node name="PlayerHUD" type="CanvasLayer"]
+
+[node name="AmmoLabel" type="RichTextLabel" parent="."]
+offset_left = 59.0
+offset_top = 164.0
+offset_right = 149.0
+offset_bottom = 204.0
+text = "ammo"

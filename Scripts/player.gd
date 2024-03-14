@@ -14,9 +14,10 @@ var was_wall_normal = Vector2.ZERO
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var starting_position = global_position
 @onready var wall_jump_timer = $WallJumpTimer
-
+@onready var ammo_text = $PlayerHUD/AmmoLabel
 var current_ammo = 30
 var max_ammo = 30
+
 
 func _ready():
 	$Marker2D.position = Vector2(15,0)
@@ -51,7 +52,7 @@ func shoot():
 	current_ammo -= 1
 	add_child(bullet_instance)
 	bullet_instance.position = $Marker2D.position
-
+	update_ammo_count()
 	# Get the rotation of the marker in degrees
 	var rotation_degrees = $Marker2D.rotation_degrees
 	# Calculate the direction vector based on the rotation
@@ -62,6 +63,10 @@ func shoot():
 func reload():
 	reloadTimer.start()
 	print("reloading")
+
+func update_ammo_count():
+	
+	ammo_text.text = str(current_ammo)
 
 func _physics_process(delta):
 	apply_gravity(delta)
