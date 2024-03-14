@@ -10,8 +10,6 @@ func _process(delta):
 		queue_free()
 		print("Zombie Died")
 
-
-
 func shoot():
 	var bullet_instance = bulletPath.instantiate()
 	add_child(bullet_instance)

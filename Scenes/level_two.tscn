@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_yxgpr"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_ukt14"]
-[ext_resource type="PackedScene" uid="uid://cj7416lf7ns5q" path="res://Scenes/heart.tscn" id="3_nb7nd"]
+[ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Scenes/zombie.tscn" id="3_8kfg0"]
 
 [node name="levelTwo" instance=ExtResource("1_yxgpr")]
 
@@ -24,90 +24,74 @@ position = Vector2(336, 193)
 [node name="Spikes5" parent="." index="7" instance=ExtResource("2_ukt14")]
 position = Vector2(344, 193)
 
-[node name="Heart" parent="." index="8" instance=ExtResource("3_nb7nd")]
-position = Vector2(116, 56)
-
-[node name="Heart2" parent="." index="9" instance=ExtResource("3_nb7nd")]
-position = Vector2(270, -61)
-
-[node name="Heart3" parent="." index="10" instance=ExtResource("3_nb7nd")]
-position = Vector2(321, 32)
-
-[node name="Heart4" parent="." index="11" instance=ExtResource("3_nb7nd")]
-position = Vector2(353, 125)
-
-[node name="Heart5" parent="." index="12" instance=ExtResource("3_nb7nd")]
-position = Vector2(208, 127)
-
-[node name="Heart6" parent="." index="13" instance=ExtResource("3_nb7nd")]
-position = Vector2(553, 172)
-
-[node name="Heart7" parent="." index="14" instance=ExtResource("3_nb7nd")]
-position = Vector2(628, 100)
-
-[node name="Heart8" parent="." index="15" instance=ExtResource("3_nb7nd")]
-position = Vector2(598, 45)
-
-[node name="Heart9" parent="." index="16" instance=ExtResource("3_nb7nd")]
-position = Vector2(785, 20)
-
-[node name="Heart10" parent="." index="17" instance=ExtResource("3_nb7nd")]
-position = Vector2(436, -30)
-
-[node name="Heart11" parent="." index="18" instance=ExtResource("3_nb7nd")]
-position = Vector2(519, 2)
-
-[node name="Spikes6" parent="." index="19" instance=ExtResource("2_ukt14")]
+[node name="Spikes6" parent="." index="8" instance=ExtResource("2_ukt14")]
 position = Vector2(250, 160)
 
-[node name="Spikes7" parent="." index="20" instance=ExtResource("2_ukt14")]
+[node name="Spikes7" parent="." index="9" instance=ExtResource("2_ukt14")]
 position = Vector2(265, 160)
 
-[node name="Spikes8" parent="." index="21" instance=ExtResource("2_ukt14")]
+[node name="Spikes8" parent="." index="10" instance=ExtResource("2_ukt14")]
 position = Vector2(416, 16)
 
-[node name="Spikes9" parent="." index="22" instance=ExtResource("2_ukt14")]
+[node name="Spikes9" parent="." index="11" instance=ExtResource("2_ukt14")]
 position = Vector2(432, 16)
 
-[node name="Spikes10" parent="." index="23" instance=ExtResource("2_ukt14")]
+[node name="Spikes10" parent="." index="12" instance=ExtResource("2_ukt14")]
 position = Vector2(607, 144)
 
-[node name="Spikes11" parent="." index="24" instance=ExtResource("2_ukt14")]
+[node name="Spikes11" parent="." index="13" instance=ExtResource("2_ukt14")]
 position = Vector2(625, 144)
 
-[node name="Heart12" parent="." index="25" instance=ExtResource("3_nb7nd")]
-position = Vector2(529, -118)
-scale = Vector2(2, 2)
-
-[node name="Spikes12" parent="." index="26" instance=ExtResource("2_ukt14")]
+[node name="Spikes12" parent="." index="14" instance=ExtResource("2_ukt14")]
 position = Vector2(800, 32)
 
-[node name="Spikes13" parent="." index="27" instance=ExtResource("2_ukt14")]
+[node name="Spikes13" parent="." index="15" instance=ExtResource("2_ukt14")]
 position = Vector2(754, 32)
 
-[node name="Spikes15" parent="." index="28" instance=ExtResource("2_ukt14")]
+[node name="Spikes15" parent="." index="16" instance=ExtResource("2_ukt14")]
 position = Vector2(704, 80)
 
-[node name="Spikes16" parent="." index="29" instance=ExtResource("2_ukt14")]
+[node name="Spikes16" parent="." index="17" instance=ExtResource("2_ukt14")]
 position = Vector2(720, 80)
 
-[node name="Spikes17" parent="." index="30" instance=ExtResource("2_ukt14")]
+[node name="Spikes17" parent="." index="18" instance=ExtResource("2_ukt14")]
 position = Vector2(736, 80)
 
-[node name="Spikes18" parent="." index="31" instance=ExtResource("2_ukt14")]
+[node name="Spikes18" parent="." index="19" instance=ExtResource("2_ukt14")]
 position = Vector2(752, 80)
 
-[node name="Spikes19" parent="." index="32" instance=ExtResource("2_ukt14")]
+[node name="Spikes19" parent="." index="20" instance=ExtResource("2_ukt14")]
 position = Vector2(768, 80)
 
-[node name="Spikes20" parent="." index="33" instance=ExtResource("2_ukt14")]
+[node name="Spikes20" parent="." index="21" instance=ExtResource("2_ukt14")]
 position = Vector2(784, 80)
 
-[node name="Spikes21" parent="." index="34" instance=ExtResource("2_ukt14")]
+[node name="Spikes21" parent="." index="22" instance=ExtResource("2_ukt14")]
 position = Vector2(800, 80)
 
-[node name="Spikes22" parent="." index="35" instance=ExtResource("2_ukt14")]
+[node name="Spikes22" parent="." index="23" instance=ExtResource("2_ukt14")]
 position = Vector2(816, 80)
 
-[node name="Spikes14" parent="." index="36" instance=ExtResource("2_ukt14")]
+[node name="Spikes14" parent="." index="24" instance=ExtResource("2_ukt14")]
 position = Vector2(352, 193)
+
+[node name="Zombie" parent="." index="25" instance=ExtResource("3_8kfg0")]
+position = Vector2(114, 88)
+
+[node name="Zombie2" parent="." index="26" instance=ExtResource("3_8kfg0")]
+position = Vector2(261, -39)
+
+[node name="Zombie3" parent="." index="27" instance=ExtResource("3_8kfg0")]
+position = Vector2(276, 43)
+
+[node name="Zombie4" parent="." index="28" instance=ExtResource("3_8kfg0")]
+position = Vector2(320, 154)
+
+[node name="Zombie5" parent="." index="29" instance=ExtResource("3_8kfg0")]
+position = Vector2(501, 137)
+
+[node name="Zombie6" parent="." index="30" instance=ExtResource("3_8kfg0")]
+position = Vector2(471, 11)
+
+[node name="Zombie7" parent="." index="31" instance=ExtResource("3_8kfg0")]
+position = Vector2(543, -104)
