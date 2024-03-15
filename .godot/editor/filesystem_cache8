@@ -1,4 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< Updated upstream
 ::res://::1709934261
 black_9slice.png::CompressedTexture2D::2562135206499260773::1709934180::1709934180::1::::<><>::
 black_9slice.tres::StyleBoxTexture::851194554714113694::1709934180::0::1::::<><>::uid://bcrd80l7csbwf::::res://black_9slice.png
@@ -42,3 +43,29 @@ tileset.png::CompressedTexture2D::386365597062103596::1709934180::1709934180::1:
 white_9slice.png::CompressedTexture2D::828611930017939288::1709934180::1709934180::1::::<><>::
 ::res://Themes/::1709934180
 default_theme.tres::Theme::1943048997772311130::1709934180::0::1::::<><>::uid://melbx0o0mi5s::::res://black_9slice.tres<>uid://c525iyns23q0w::::res://white_9slice.tres
+=======
+::res://::1710536538
+DefaultMovementData.tres::Resource/Resource::226902847541373664::1709329092::0::1::::<><>::res://Scripts/PlayerMovementData.gd
+FasterMovementData.tres::Resource/Resource::1098123721225991734::1709329092::0::1::::<><>::res://Scripts/PlayerMovementData.gd
+gitignore.txt::TextFile::-1::1709329092::0::1::::<><>::
+icon.svg::CompressedTexture2D::2821694008161201727::1709329233::1709329092::1::::<><>::
+player.png::CompressedTexture2D::2614369219151506091::1709329092::1709329243::1::::<><>::
+README.md::TextFile::-1::1709329092::0::1::::<><>::
+SlowerMovementData.tres::Resource/Resource::4571306517077851811::1709329092::0::1::::<><>::res://Scripts/PlayerMovementData.gd
+::res://Scenes/::1709329092
+hazard_area.tscn::PackedScene::4577149518083045269::1709329092::0::1::::<><>::
+heart.tscn::PackedScene::5472409917177336860::1709329092::0::1::::<><>::uid://dl5cc0kt05ern::::res://sprites/heart.png<>res://Scripts/heart.gd
+level_completed.tscn::PackedScene::6521816947896800533::1709329092::0::1::::<><>::
+player.tscn::PackedScene::4395689136921678251::1709329092::0::1::::<><>::res://Scripts/player.gd<>uid://pv664px4lo6y::::res://FasterMovementData.tres<>uid://bdiojqu1mxc8j::::res://player.png
+spikes.tscn::PackedScene::4923785789325375283::1709329092::0::1::::<><>::uid://f3fqksks83f0::::res://sprites/spikes.png<>uid://b6hg8pktlufrp::::res://Scenes/hazard_area.tscn
+world.tscn::PackedScene::774083742836898028::1709329092::0::1::::<><>::res://Scripts/world.gd<>uid://b3vkmfxunohh8::::res://Scenes/player.tscn<>uid://ccfebdwmudstn::::res://Scenes/spikes.tscn<>uid://cj7416lf7ns5q::::res://Scenes/heart.tscn<>uid://cy6hmwmgqka5j::::res://Scenes/level_completed.tscn
+::res://Scripts/::1709329092
+Events.gd::GDScript::-1::1709329092::0::1::::<>Node<>::
+heart.gd::GDScript::-1::1709329092::0::1::::<>Area2D<>::
+player.gd::GDScript::-1::1709329092::0::1::::<>CharacterBody2D<>::
+PlayerMovementData.gd::GDScript::-1::1709329092::0::1::::PlayerMovementData<>Resource<>::
+world.gd::GDScript::-1::1709329092::0::1::::<>Node2D<>::
+::res://sprites/::1710536496
+heart.png::CompressedTexture2D::7993396998722458943::1709329092::1709329243::1::::<><>::
+spikes.png::CompressedTexture2D::409079506489865115::1709329092::1709329243::1::::<><>::
+>>>>>>> Stashed changes
