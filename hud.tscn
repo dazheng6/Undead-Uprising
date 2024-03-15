@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx875k0hb43t4"]
+
+[ext_resource type="Texture2D" uid="uid://dl5cc0kt05ern" path="res://sprites/heart.png" id="1_8nlx4"]
+[ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_eby7n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twmc8"]
+bg_color = Color(0.701961, 0.0627451, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_pmg34"]
+resource_name = "text_fade"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 21.8566),
+"update": 0,
+"values": [12, 34]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpjc5"]
+_data = {
+"text_fade": SubResource("Animation_pmg34")
+}
+
+[node name="PlayerHUD" type="CanvasLayer"]
+
+[node name="AmmoLabel" type="RichTextLabel" parent="."]
+offset_left = 58.0
+offset_top = 160.0
+offset_right = 185.0
+offset_bottom = 179.0
+scale = Vector2(0.7, 0.7)
+text = "ammo"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 28.0
+offset_top = 9.0
+offset_right = 100.0
+offset_bottom = 13.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_twmc8")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -89.0
+offset_right = 160.0
+offset_bottom = 89.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 0)
+theme_override_font_sizes/font_size = 34
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(15, 15)
+scale = Vector2(3, 3)
+texture = ExtResource("1_8nlx4")
+
+[node name="LivesCount" type="RichTextLabel" parent="."]
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 37.0
+offset_bottom = 31.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "00"
+fit_content = true
+tab_size = 2
+
+[node name="DeathTransistion" parent="." instance=ExtResource("2_eby7n")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cpjc5")
+}

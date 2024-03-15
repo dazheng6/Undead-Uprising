@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ta8py42v7q8q"]
+[gd_scene load_steps=6 format=3 uid="uid://ta8py42v7q8q"]
 
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="1_8cdvb"]
 [ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_sdr5b"]
@@ -9,6 +9,9 @@ height = 20.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urga7"]
 size = Vector2(21, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qmo52"]
+bg_color = Color(0.615686, 0.054902, 0, 1)
 
 [node name="Zombie" type="Area2D" groups=["Zombie"]]
 script = ExtResource("1_sdr5b")
@@ -34,6 +37,17 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
 position = Vector2(-0.5, -7)
 shape = SubResource("RectangleShape2D_urga7")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = -10.0
+offset_top = -20.0
+offset_right = 10.0
+offset_bottom = -16.0
+scale = Vector2(1, 0.25)
+theme_override_styles/fill = SubResource("StyleBoxFlat_qmo52")
+value = 100.0
+show_percentage = false
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
