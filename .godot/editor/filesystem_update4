@@ -1,10 +1,3 @@
-res://Scenes/hazard_area.tscn
-res://Scenes/heart.tscn
-res://Scenes/level_completed.tscn
 res://Scenes/player.tscn
-res://Scenes/bullet.tscn
-res://Scenes/level_two.tscn
-res://Scenes/level_tile_map.tscn
-res://hud.tscn
 res://Scenes/zombie.tscn
-res://Scenes/level_transition.tscn
+res://Scripts/playergun.gd

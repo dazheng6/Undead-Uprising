@@ -1,13 +1,19 @@
 extends Area2D
 
 var bulletPath = preload("res://Scenes/bullet.tscn")
+var goldPath = preload("res://Scenes/gold.tscn")
 @onready var zombieHitTime = $Timer
 @onready var zombieHealth = 100.0
 @onready var zombie = get_tree().get_nodes_in_group("Zombie")
 @onready var healthbar = $ProgressBar
+@onready var icon = $Icon
+@onready var hazard = $HazardDetector
 func _process(delta):
 	if zombieHealth == 0:
-		queue_free()
+		icon.visible = false
+		var gold_instance = goldPath.instantiate()
+		add_child(gold_instance)
+		hazard.queue_free()
 		print("Zombie Died")
 	update_healthbar()
 

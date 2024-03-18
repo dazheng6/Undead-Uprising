@@ -43,6 +43,15 @@ _data = {
 
 [node name="PlayerHUD" type="CanvasLayer"]
 
+[node name="GoldLabel" type="RichTextLabel" parent="."]
+offset_left = 270.0
+offset_top = 161.0
+offset_right = 397.0
+offset_bottom = 180.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/default_color = Color(0.760784, 0.764706, 0, 1)
+text = "gold"
+
 [node name="AmmoLabel" type="RichTextLabel" parent="."]
 offset_left = 58.0
 offset_top = 160.0

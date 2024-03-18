@@ -24,8 +24,10 @@ var was_wall_normal = Vector2.ZERO
 @onready var lives_text = $PlayerHUD/LivesCount
 @onready var death_transistion = $PlayerHUD/DeathTransistion/AnimationPlayer
 @onready var game_over_screen = $PlayerHUD/AnimationPlayer
+@onready var gold_text = $PlayerHUD/GoldLabel
 
 @export var current_ammo = 30
+@export var gold = 0
 var max_ammo = 30
 var is_dead = false
 var is_reloading = false
@@ -105,6 +107,8 @@ func update_lives_count():
 	else:
 		lives_text.text = str(lives)
 
+func update_gold_text():
+	gold_text.text = str(gold)
 
 func _physics_process(delta):
 	if !is_dead :

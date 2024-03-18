@@ -97,8 +97,6 @@ movement_data = ExtResource("2_w6hny")
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_dg80j")
 animation = &"run"
-frame = 4
-frame_progress = 0.587137
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
