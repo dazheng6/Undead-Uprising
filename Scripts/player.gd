@@ -70,6 +70,7 @@ func move():
 		shoot()
 	if Input.is_action_just_pressed("reload") and current_ammo < max_ammo and !is_reloading:
 		reload()
+
 func shoot():
 	var bullet_instance = bulletPath.instantiate()
 	current_ammo -= 1
