@@ -1,19 +1,30 @@
 extends Area2D
 
 var bulletPath = preload("res://Scenes/bullet.tscn")
-var goldPath = preload("res://Scenes/gold.tscn")
+@onready var goldPath = preload("res://Scenes/gold.tscn")
 @onready var zombieHitTime = $Timer
 @onready var zombieHealth = 100.0
 @onready var zombie = get_tree().get_nodes_in_group("Zombie")
 @onready var healthbar = $ProgressBar
 @onready var icon = $Icon
 @onready var hazard = $HazardDetector
+@onready var zombiePosition = $Marker2D.position
+
+func _ready():
+	zombiePosition = Vector2(0, 0)
+
+func coin_spawn():
+	var coin_instance = goldPath.instantiate()
+	coin_instance.position = zombiePosition
+	get_parent().add_child(coin_instance)
+	coin_instance.position = zombiePosition
+	print("Coin Spawn")
+
 func _process(delta):
 	if zombieHealth == 0:
 		icon.visible = false
-		var gold_instance = goldPath.instantiate()
-		add_child(gold_instance)
-		hazard.queue_free()
+		coin_spawn()
+		queue_free()
 		print("Zombie Died")
 	update_healthbar()
 

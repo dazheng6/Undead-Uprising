@@ -35,7 +35,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
-position = Vector2(-0.5, -7)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_urga7")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]

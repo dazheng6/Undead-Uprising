@@ -23,3 +23,4 @@ texture = ExtResource("1_c0ces")
 [node name="Timer" type="Timer" parent="."]
 
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_collision_shape_2d_tree_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

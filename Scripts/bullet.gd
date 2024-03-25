@@ -6,7 +6,7 @@ var speed = 500
 
 func _ready():
 	bulletQueueFree.start()
-
+	
 func _physics_process(delta):
 	position += velocity * delta
 
@@ -15,4 +15,4 @@ func set_velocity(new_velocity):
 
 func _on_timer_timeout():
 	queue_free()
-
+	print("Bullet Despawn")

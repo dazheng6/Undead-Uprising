@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
 [ext_resource type="Texture2D" uid="uid://bhastabn6b6oc" path="res://sprites/Undead Uprising Dom Walking-export1.png" id="3_d8yee"]
-[ext_resource type="PackedScene" uid="uid://b4i16lfwjubdq" path="res://hud.tscn" id="4_4b8ah"]
+[ext_resource type="PackedScene" uid="uid://cx875k0hb43t4" path="res://hud.tscn" id="4_4b8ah"]
 [ext_resource type="PackedScene" uid="uid://33rwsfi0u3hn" path="res://Scenes/pistol.tscn" id="5_thsvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
