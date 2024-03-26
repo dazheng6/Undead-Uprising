@@ -8,16 +8,12 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var healthbar = $ProgressBar
 @onready var icon = $Icon
 @onready var hazard = $HazardDetector
-@onready var zombiePosition = $Marker2D.position
-
-func _ready():
-	zombiePosition = Vector2(0, 0)
+@onready var zombiePosition = get_node("Marker2D").global_position
 
 func coin_spawn():
 	var coin_instance = goldPath.instantiate()
 	coin_instance.position = zombiePosition
 	get_parent().add_child(coin_instance)
-	coin_instance.position = zombiePosition
 	print("Coin Spawn")
 
 func _process(delta):
