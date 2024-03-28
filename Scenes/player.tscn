@@ -100,6 +100,10 @@ safe_margin = 0.1
 script = ExtResource("1_le4us")
 movement_data = ExtResource("2_w6hny")
 
+[node name="Pistol" parent="." instance=ExtResource("5_thsvq")]
+position = Vector2(5, -7)
+scale = Vector2(0.2, 0.2)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_dg80j")
@@ -142,9 +146,6 @@ position = Vector2(6, -9)
 
 [node name="RespawnTimer" type="Timer" parent="."]
 wait_time = 3.0
-
-[node name="Pistol" parent="." instance=ExtResource("5_thsvq")]
-position = Vector2(8, -25)
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
