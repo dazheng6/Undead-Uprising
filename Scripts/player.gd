@@ -35,12 +35,24 @@ var is_reloading = false
 @export var bullet : PackedScene
 var bulletPath = preload("res://Scenes/bullet.tscn")
 
+#Weapon Variables
+var pistol = preload("res://Scenes/pistol.tscn")
+var shotgun = preload("res://Scenes/shotgun.tscn")
+
 func _ready():
 	$Marker2D.position = Vector2(15,0)
 	update_ammo_text()
 	update_lives_count()
 
 func _process(delta):
+	if Input.is_action_pressed("weapon1"):
+		var weapon1 = pistol.instantiate()
+		add_child(weapon1)
+		
+	if Input.is_action_pressed("weapon2"):
+		var weapon2 = shotgun.instantiate()
+		add_child(weapon2)
+	
 	if lives == 0:
 		game_over_screen.play("text_fade")
 		sprite.visible = false
@@ -49,7 +61,6 @@ func _process(delta):
 		move()
 	else:
 		return
-	
 	
 	if playerHealth <= 0:
 		is_dead = true
