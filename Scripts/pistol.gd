@@ -4,4 +4,9 @@ extends Sprite2D
 
 func _process(delta):
 	if Input.is_action_pressed("move_left"):
-		pistol.set_rotation(3.14195)
+		pistol.scale.x = -.2
+		pistol.position.x = -5
+		
+	if Input.is_action_pressed("move_right"):
+		pistol.scale.x = .2
+		pistol.position.x = 5

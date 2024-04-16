@@ -1,22 +1,23 @@
 extends CharacterBody2D
 
+#Player Variables
 @export var movement_data : PlayerMovementData
-@export var bullet : PackedScene
-var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var playerHealth = 100.0
 @export var lives = 3
+@onready var starting_position = global_position
+var is_dead = false
 var air_jump = false
 var just_wall_jumped = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO
 @onready var sprite = $AnimatedSprite2D
+
 #timers
 @onready var reloadTimer = $ReloadTimer
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var wall_jump_timer = $WallJumpTimer
 @onready var respawn_timer = $RespawnTimer
-@onready var starting_position = global_position
 
 #ui variables
 @onready var ammo_text = $PlayerHUD/AmmoLabel
@@ -25,12 +26,14 @@ var was_wall_normal = Vector2.ZERO
 @onready var death_transistion = $PlayerHUD/DeathTransistion/AnimationPlayer
 @onready var game_over_screen = $PlayerHUD/AnimationPlayer
 @onready var gold_text = $PlayerHUD/GoldLabel
-
-@export var current_ammo = 30
 @export var gold = 0
+
+#Gun Variables
+@export var current_ammo = 30
 var max_ammo = 30
-var is_dead = false
 var is_reloading = false
+@export var bullet : PackedScene
+var bulletPath = preload("res://Scenes/bullet.tscn")
 
 func _ready():
 	$Marker2D.position = Vector2(15,0)
@@ -58,11 +61,11 @@ func _process(delta):
 
 func move():
 	if Input.is_action_just_pressed("move_left"):
-		$Marker2D.position = Vector2(-15,0)
+		$Marker2D.position = Vector2(-15,2)
 		$Marker2D.set_rotation(-3.14159)
 		
 	if Input.is_action_just_pressed("move_right"):
-		$Marker2D.position = Vector2(15, 0)
+		$Marker2D.position = Vector2(15, 2)
 		$Marker2D.set_rotation(0)
 		
 	if Input.is_action_just_pressed("shoot") and current_ammo > 0 and !is_reloading:

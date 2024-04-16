@@ -1,13 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://33rwsfi0u3hn"]
+[gd_scene load_steps=3 format=3 uid="uid://yo38xfqrqdc4"]
 
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="1_4shg8"]
 [ext_resource type="Script" path="res://Scripts/pistol.gd" id="1_nqyue"]
 
 [node name="Pistol" type="Sprite2D"]
 script = ExtResource("1_nqyue")
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(41, -1)
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(20, -1)
