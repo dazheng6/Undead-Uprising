@@ -11,6 +11,7 @@ var just_wall_jumped = false
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO
 @onready var sprite = $AnimatedSprite2D
+@onready var marker_position = Vector2(15,0)
 
 #timers
 @onready var reloadTimer = $ReloadTimer
@@ -72,11 +73,11 @@ func _process(delta):
 
 func move():
 	if Input.is_action_just_pressed("move_left"):
-		$Marker2D.position = Vector2(-15,2)
+		marker_position = Vector2(-15,0)
 		$Marker2D.set_rotation(-3.14159)
 		
 	if Input.is_action_just_pressed("move_right"):
-		$Marker2D.position = Vector2(15, 2)
+		marker_position = Vector2(15, 1)
 		$Marker2D.set_rotation(0)
 		
 	if Input.is_action_just_pressed("shoot") and current_ammo > 0 and !is_reloading:
@@ -89,7 +90,7 @@ func shoot():
 	var bullet_instance = bulletPath.instantiate()
 	current_ammo -= 1
 	add_child(bullet_instance)
-	bullet_instance.position = $Marker2D.position
+	bullet_instance.position = marker_position
 	update_ammo_text()
 	# Get the rotation of the marker in degrees
 	var rotation_degrees = $Marker2D.rotation_degrees

@@ -1,17 +1,17 @@
 extends Sprite2D
 
-@onready var pistol = $"."
+@onready var shotgun = $"."
 
 func _process(delta):
 	if Input.is_action_pressed("move_left"):
-		pistol.scale.x = -.2
-		pistol.position.x = -5
+		shotgun.scale.x * -1
+		shotgun.position.x = -5
 		
 	if Input.is_action_pressed("move_right"):
-		pistol.scale.x = .2
-		pistol.position.x = 5
+		shotgun.scale.x *= 1
+		shotgun.position.x = 5
 		
-	if Input.is_action_pressed("weapon2"):
+	if Input.is_action_pressed("weapon1"):
 		queue_free()
 		
 	if Input.is_action_pressed("weapon3"):

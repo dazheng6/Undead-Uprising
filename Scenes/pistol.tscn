@@ -4,15 +4,16 @@
 [ext_resource type="Script" path="res://Scripts/pistol.gd" id="1_nqyue"]
 
 [node name="Pistol" type="Sprite2D"]
+scale = Vector2(0.26, 0.26)
 script = ExtResource("1_nqyue")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(20, -1)
+position = Vector2(38.4615, -34.6154)
 scale = Vector2(0.3175, 0.0675)
 texture = ExtResource("1_4shg8")
 
 [node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(4, 7)
+position = Vector2(23.0769, -23.0769)
 rotation = 1.5708
 scale = Vector2(0.112903, 0.0569656)
 texture = ExtResource("1_4shg8")
