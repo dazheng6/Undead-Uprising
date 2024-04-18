@@ -5,7 +5,7 @@ extends Sprite2D
 func _process(delta):
 	if Input.is_action_pressed("move_left"):
 		shotgun.scale.x * -1
-		shotgun.position.x = -5
+		shotgun.position.x = -30
 		
 	if Input.is_action_pressed("move_right"):
 		shotgun.scale.x *= 1

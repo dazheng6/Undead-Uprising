@@ -12,6 +12,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var was_wall_normal = Vector2.ZERO
 @onready var sprite = $AnimatedSprite2D
 @onready var marker_position = Vector2(15,0)
+@onready var marker_position_x = 15
+@onready var marker_position_y = 0
 
 #timers
 @onready var reloadTimer = $ReloadTimer
@@ -41,16 +43,27 @@ var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
 
 func _ready():
-	$Marker2D.position = Vector2(15,0)
 	update_ammo_text()
 	update_lives_count()
 
 func _process(delta):
+	if Input.is_action_just_pressed("move_left"):
+		marker_position = Vector2(-marker_position_x, marker_position_y)
+		$Marker2D.set_rotation(-3.14159)
+		
+	if Input.is_action_just_pressed("move_right"):
+		marker_position = Vector2(marker_position_x, marker_position_y)
+		$Marker2D.set_rotation(0)
+	
 	if Input.is_action_pressed("weapon1"):
+		marker_position_x = 15
+		marker_position_y = 0
 		var weapon1 = pistol.instantiate()
 		add_child(weapon1)
 		
 	if Input.is_action_pressed("weapon2"):
+		marker_position_x = 30
+		marker_position_y = 3
 		var weapon2 = shotgun.instantiate()
 		add_child(weapon2)
 	
@@ -72,14 +85,6 @@ func _process(delta):
 		respawn_timer.start()
 
 func move():
-	if Input.is_action_just_pressed("move_left"):
-		marker_position = Vector2(-15,0)
-		$Marker2D.set_rotation(-3.14159)
-		
-	if Input.is_action_just_pressed("move_right"):
-		marker_position = Vector2(15, 1)
-		$Marker2D.set_rotation(0)
-		
 	if Input.is_action_just_pressed("shoot") and current_ammo > 0 and !is_reloading:
 		print("Shot a bullet")
 		shoot()
