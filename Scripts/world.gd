@@ -2,7 +2,7 @@ extends Node2D
 
 @export var next_level: PackedScene
 @onready var level_completed = $CanvasLayer/LevelCompleted
-
+@onready var intermission_music = $CanvasLayer/LevelCompleted/intermission
 func _process(delta):
 	var zombie = get_tree().get_nodes_in_group("Zombie")
 	if zombie.size() == 0:
@@ -21,4 +21,5 @@ func show_level_completed():
 	get_tree().paused = false
 	get_tree().change_scene_to_packed(next_level)
 	LevelTransition.fade_from_black()
-	#get_tree().paused = true
+
+

@@ -19,3 +19,7 @@ floor_snap_length = 3.0
 visible = false
 
 [node name="levelTileMap" parent="." instance=ExtResource("6_q6bny")]
+
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+
+[editable path="CanvasLayer/LevelCompleted"]

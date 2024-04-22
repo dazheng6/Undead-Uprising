@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://cy6hmwmgqka5j"]
+[gd_scene load_steps=4 format=3 uid="uid://cy6hmwmgqka5j"]
+
+[ext_resource type="Script" path="res://Scenes/level_completed.gd" id="1_h71ra"]
+[ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_mox5i"]
+[ext_resource type="AudioStream" uid="uid://4pce5h4nj8gs" path="res://music/levelcomplete.wav" id="3_fnufj"]
 
 [node name="LevelCompleted" type="ColorRect"]
 anchors_preset = 15
@@ -7,16 +11,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.34902)
+script = ExtResource("1_h71ra")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="CenterContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
+offset_left = 131.0
+offset_top = 85.0
+offset_right = 189.0
+offset_bottom = 91.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(27, 3)
 text = "Level Completed
 "
+
+[node name="LevelTransition" parent="." instance=ExtResource("2_mox5i")]
+
+[node name="intermission" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fnufj")

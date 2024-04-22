@@ -37,7 +37,8 @@ var max_ammo = 30
 var is_reloading = false
 @export var bullet : PackedScene
 var bulletPath = preload("res://Scenes/bullet.tscn")
-
+@onready var audio = $GunSound/GunAudio
+@onready var reload_sound = $GunSound/ReloadSound
 #Weapon Variables
 var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
@@ -92,6 +93,7 @@ func move():
 		reload()
 
 func shoot():
+	audio.play()
 	var bullet_instance = bulletPath.instantiate()
 	current_ammo -= 1
 	add_child(bullet_instance)
@@ -105,6 +107,7 @@ func shoot():
 	bullet_instance.set_velocity(direction)
 
 func reload():
+	reload_sound.play()
 	reloadTimer.start()
 	is_reloading = true
 	print("reloading")
