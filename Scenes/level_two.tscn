@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://4l1giypmwwj8"]
+[gd_scene load_steps=5 format=3 uid="uid://4l1giypmwwj8"]
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_yxgpr"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_ukt14"]
 [ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Scenes/zombie.tscn" id="3_rd8pa"]
+[ext_resource type="AudioStream" uid="uid://d24vg2yadjanw" path="res://music/d2m31.wav" id="4_g42gu"]
 
 [node name="levelTwo" instance=ExtResource("1_yxgpr")]
 
@@ -101,5 +102,8 @@ position = Vector2(526, 4)
 
 [node name="Zombie9" parent="." index="33" instance=ExtResource("3_rd8pa")]
 position = Vector2(568, -111)
+
+[node name="LevelMusic" parent="." index="34"]
+stream = ExtResource("4_g42gu")
 
 [editable path="CanvasLayer/LevelCompleted"]

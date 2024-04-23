@@ -39,6 +39,7 @@ var is_reloading = false
 var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var audio = $GunSound/GunAudio
 @onready var reload_sound = $GunSound/ReloadSound
+@onready var pickupSound = $PickupSound/AudioStreamPlayer2D
 #Weapon Variables
 var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
@@ -131,7 +132,8 @@ func update_lives_count():
 	else:
 		lives_text.text = str(lives)
 
-func update_gold_text():
+func add_gold():
+	gold += 10
 	gold_text.text = str(gold)
 
 func _physics_process(delta):
@@ -244,3 +246,11 @@ func fade_from_black():
 func fade_to_black():
 	death_transistion.play("fade_to_black")
 	await death_transistion.animation_finished
+
+
+func _on_item_detector_area_entered(area):
+	if area.name == "Gold":
+		add_gold()
+		pickupSound.play()
+		print("coin get")
+		area.queue_free()
