@@ -1,19 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://yo38xfqrqdc4"]
 
-[ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="1_4shg8"]
 [ext_resource type="Script" path="res://Scripts/pistol.gd" id="1_nqyue"]
+[ext_resource type="Texture2D" uid="uid://b18f5fh0tckgl" path="res://sprites/gun.png" id="3_jq5fs"]
 
 [node name="Pistol" type="Sprite2D"]
 scale = Vector2(0.26, 0.26)
 script = ExtResource("1_nqyue")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(34.6154, -34.6154)
-scale = Vector2(0.3175, 0.0675)
-texture = ExtResource("1_4shg8")
-
-[node name="Icon2" type="Sprite2D" parent="."]
-position = Vector2(19.2308, -23.0769)
-rotation = 1.5708
-scale = Vector2(0.112903, 0.0569656)
-texture = ExtResource("1_4shg8")
+[node name="Gun" type="Sprite2D" parent="."]
+position = Vector2(38.4615, -42.3077)
+scale = Vector2(-2.4, 2.4)
+texture = ExtResource("3_jq5fs")
