@@ -1,9 +1,8 @@
 res://Scenes/world.tscn
-res://Scripts/player.gd
 res://Scenes/level_two.tscn
 res://Scenes/start_menu.tscn
 res://Scenes/level_one.tscn
 res://Scenes/player.tscn
 res://Scenes/level_transition.tscn
 res://Scenes/level_completed.tscn
-res://Scripts/world.gd
+res://Scenes/pistol.tscn

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b3vkmfxunohh8"]
+[gd_scene load_steps=21 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://ccdu5pevdjdmx" path="res://pistol.mp3" id="5_r6rul"]
 [ext_resource type="AudioStream" uid="uid://c71ledapmrta6" path="res://gunreload.mp3" id="6_vk4i4"]
 [ext_resource type="AudioStream" uid="uid://gsvl7ajpy2vf" path="res://Scenes/coin.mp3" id="7_masr0"]
+[ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="8_qbvg6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
 atlas = ExtResource("3_d8yee")
@@ -166,6 +167,19 @@ shape = SubResource("RectangleShape2D_dhqgq")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PickupSound"]
 stream = ExtResource("7_masr0")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(0.085, 0.085)
+transform = Transform2D(0.085, 0, 0, 0.085, 0, 0)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(3760, 2.08165e-12)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-11.7645, -211.765)
+texture = ExtResource("8_qbvg6")
+centered = false
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
