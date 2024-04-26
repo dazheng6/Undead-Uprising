@@ -13,7 +13,7 @@ script/source = "extends Area2D
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oakn"]
 size = Vector2(13, 14)
 
-[node name="Gold" type="Area2D"]
+[node name="Gold" type="Area2D" groups=["Gold"]]
 script = SubResource("GDScript_owy6p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

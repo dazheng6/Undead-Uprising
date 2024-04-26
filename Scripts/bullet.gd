@@ -16,3 +16,7 @@ func set_velocity(new_velocity):
 func _on_timer_timeout():
 	queue_free()
 	print("Bullet Despawn")
+
+func _on_area_entered(area):
+	if area.is_in_group("Zombie"):
+		queue_free()

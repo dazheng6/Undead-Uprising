@@ -249,7 +249,7 @@ func fade_to_black():
 
 
 func _on_item_detector_area_entered(area):
-	if area.name == "Gold":
+	if area.is_in_group("Gold"):
 		add_gold()
 		pickupSound.play()
 		print("coin get")

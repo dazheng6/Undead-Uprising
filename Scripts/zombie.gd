@@ -40,7 +40,8 @@ func _on_hazard_detector_area_entered(area):
 	shoot()
 
 func _on_area_entered(area):
-	healthbar.visible = true
-	update_healthbar()
-	print("Zombie -25 HP")
-	zombieHealth -= 25
+	if area.is_in_group("Bullet"):
+		healthbar.visible = true
+		update_healthbar()
+		print("Zombie -25 HP")
+		zombieHealth -= 25
