@@ -3,10 +3,17 @@ extends Node2D
 @export var next_level: PackedScene
 @onready var level_completed = $CanvasLayer/LevelCompleted
 @onready var intermission_music = $CanvasLayer/LevelCompleted/intermission
+@onready var allZombiesDead = true
 func _process(delta):
 	var zombie = get_tree().get_nodes_in_group("Zombie")
+	var gold = get_tree().get_nodes_in_group("Gold")
+	
 	if zombie.size() == 0:
+		allZombiesDead = false
 		print("All Zombies Dead")
+	
+	if gold.size() == 0 and !allZombiesDead:
+		print("All Gold Collected")
 		Events.level_completed.emit()
 
 func _ready():
