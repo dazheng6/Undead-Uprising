@@ -49,23 +49,13 @@ func _ready():
 	update_lives_count()
 
 func _process(delta):
-	if Input.is_action_just_pressed("move_left"):
-		marker_position = Vector2(-marker_position_x, marker_position_y)
-		$Marker2D.set_rotation(-3.14159)
-		
-	if Input.is_action_just_pressed("move_right"):
-		marker_position = Vector2(marker_position_x, marker_position_y)
-		$Marker2D.set_rotation(0)
+	$Node2D.look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("weapon1"):
-		marker_position_x = 15
-		marker_position_y = 0
 		var weapon1 = pistol.instantiate()
 		add_child(weapon1)
 		
 	if Input.is_action_pressed("weapon2"):
-		marker_position_x = 30
-		marker_position_y = 3
 		var weapon2 = shotgun.instantiate()
 		add_child(weapon2)
 	
@@ -97,15 +87,16 @@ func shoot():
 	audio.play()
 	var bullet_instance = bulletPath.instantiate()
 	current_ammo -= 1
-	add_child(bullet_instance)
-	bullet_instance.position = marker_position
+	get_parent().add_child(bullet_instance)
+	bullet_instance.position = $Node2D/Marker2D.global_position
 	update_ammo_text()
 	# Get the rotation of the marker in degrees
-	var rotation_degrees = $Marker2D.rotation_degrees
+	var rotation_degrees = $Node2D/Marker2D.rotation_degrees
 	# Calculate the direction vector based on the rotation
 	var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
 	# Set the bullet's velocity
-	bullet_instance.set_velocity(direction)
+	bullet_instance.velocity = (get_global_mouse_position() - bullet_instance.position).normalized() * 500
+	bullet_instance.position += Vector2(-15, 10)
 
 func reload():
 	reload_sound.play()

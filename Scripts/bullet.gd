@@ -1,7 +1,7 @@
 extends Area2D
 
 var velocity = Vector2.ZERO
-var speed = 500
+var speed = 2000
 @onready var bulletQueueFree = $Timer
 
 func _ready():
@@ -19,4 +19,7 @@ func _on_timer_timeout():
 
 func _on_area_entered(area):
 	if area.is_in_group("Zombie"):
+		queue_free()
+	
+	if area.is_in_group("Wall"):
 		queue_free()
