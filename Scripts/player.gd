@@ -40,9 +40,9 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var audio = $GunSound/GunAudio
 @onready var reload_sound = $GunSound/ReloadSound
 @onready var pickupSound = $PickupSound/AudioStreamPlayer2D
-#Weapon Variables
 var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
+var equiped_weapon = true
 
 func _ready():
 	update_ammo_text()
@@ -52,10 +52,12 @@ func _process(delta):
 	$Node2D.look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("weapon1"):
+		equiped_weapon = false
 		var weapon1 = pistol.instantiate()
 		add_child(weapon1)
 		
 	if Input.is_action_pressed("weapon2"):
+		equiped_weapon = false
 		var weapon2 = shotgun.instantiate()
 		add_child(weapon2)
 	
@@ -77,7 +79,7 @@ func _process(delta):
 		respawn_timer.start()
 
 func move():
-	if Input.is_action_just_pressed("shoot") and current_ammo > 0 and !is_reloading:
+	if Input.is_action_just_pressed("shoot") and current_ammo > 0 and !is_reloading and !equiped_weapon:
 		print("Shot a bullet")
 		shoot()
 	if Input.is_action_just_pressed("reload") and current_ammo < max_ammo and !is_reloading:
