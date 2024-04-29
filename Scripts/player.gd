@@ -96,7 +96,7 @@ func shoot():
 	var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
 	# Set the bullet's velocity
 	bullet_instance.velocity = (get_global_mouse_position() - bullet_instance.position).normalized() * 500
-	bullet_instance.position += Vector2(-15, 10)
+	bullet_instance.position = $Node2D/Marker2D.global_position + Vector2(-17, 8)
 
 func reload():
 	reload_sound.play()
