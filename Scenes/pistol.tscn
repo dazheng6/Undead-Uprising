@@ -8,6 +8,6 @@ scale = Vector2(0.26, 0.26)
 script = ExtResource("1_nqyue")
 
 [node name="Gun" type="Sprite2D" parent="."]
-position = Vector2(38.4615, -42.3077)
+position = Vector2(23.0769, -23.0769)
 scale = Vector2(-2.4, 2.4)
 texture = ExtResource("3_jq5fs")

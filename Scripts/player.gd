@@ -43,23 +43,39 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
 var equiped_weapon = true
+@onready var pistol_gun = $Node2D/Pistol
+@onready var shotgun_gun = $Shotgun
 
 func _ready():
+	pistol_gun.hide()
+	shotgun_gun.hide()
 	update_ammo_text()
 	update_lives_count()
 
 func _process(delta):
 	$Node2D.look_at(get_global_mouse_position())
 	
+	if get_local_mouse_position().x < 0:
+		pistol_gun.position.x = 6
+		pistol_gun.position.y = -4
+		pistol_gun.scale.x = .26
+		pistol_gun.scale.y = -.26
+	else:
+		pistol_gun.position.x = 6
+		pistol_gun.position.y = 4
+		pistol_gun.scale.x = .26
+		pistol_gun.scale.y = .26
+
+	
 	if Input.is_action_pressed("weapon1"):
 		equiped_weapon = false
-		var weapon1 = pistol.instantiate()
-		add_child(weapon1)
+		pistol_gun.show()
+		shotgun_gun.hide()
 		
 	if Input.is_action_pressed("weapon2"):
 		equiped_weapon = false
-		var weapon2 = shotgun.instantiate()
-		add_child(weapon2)
+		shotgun_gun.show()
+		pistol_gun.hide()
 	
 	if lives == 0:
 		game_over_screen.play("text_fade")
