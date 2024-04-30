@@ -8,6 +8,7 @@ func _ready():
 
 func _on_start_game_button_pressed():
 	$HBoxContainer.hide()
+	$CanvasGroup.hide()
 	audio.play()
 	await LevelTransition.fade_to_black()
 	get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
