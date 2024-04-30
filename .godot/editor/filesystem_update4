@@ -17,3 +17,4 @@ res://Scripts/bullet.gd
 res://Scenes/bullet_destroy_particle.tscn
 res://Scenes/bullet_destroy_particle.gd
 res://Particles/particle.tres
+res://Scripts/start_menu.gd

@@ -90,6 +90,7 @@ func _process(delta):
 		is_dead = true
 		animated_sprite_2d.play("idle")
 		lives -= 1
+		$Node2D.hide()
 		if lives != 0:
 			fade_to_black()
 		respawn_timer.start()
@@ -241,6 +242,7 @@ func _on_reload_timer_timeout():
 	is_reloading = false
 
 func _on_respawn_timer_timeout():
+	$Node2D.show()
 	if lives > 0:
 		respawn()
 	elif lives == 0:
