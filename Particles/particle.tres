@@ -1,4 +1,11 @@
-[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dw0isbou8fbon"]
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://dw0isbou8fbon"]
+
+[sub_resource type="Curve" id="Curve_ugf2i"]
+_data = [Vector2(0.0297619, 1), 0.0, 0.0, 0, 0, Vector2(0.886905, 0.824176), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.769231), 0.0, 0.0, 0, 0, Vector2(1, 0.758242), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_m0caw"]
+curve = SubResource("Curve_ugf2i")
 
 [resource]
 particle_flag_disable_z = true
@@ -8,8 +15,10 @@ inherit_velocity_ratio = 1.0
 velocity_pivot = Vector3(1, 1, 1)
 direction = Vector3(1, 1, 1)
 spread = 180.0
-initial_velocity_min = 40.83
-initial_velocity_max = 40.83
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
 angular_velocity_min = -720.0
 angular_velocity_max = 720.0
 gravity = Vector3(0, 98, 0)
+scale_curve = SubResource("CurveTexture_m0caw")
+color = Color(0.678431, 0.678431, 0.678431, 1)
