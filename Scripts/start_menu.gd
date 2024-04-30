@@ -2,6 +2,10 @@ extends CenterContainer
 
 @onready var start_game_button = %StartGameButton
 @onready var audio = $HBoxContainer/SelectSound
+@onready var buttonsContainer = $HBoxContainer
+@onready var controlButtonPressed = false
+@onready var controlsContainer = $CenterContainer
+
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	start_game_button.grab_focus()
@@ -20,3 +24,10 @@ func _on_quit_button_pressed():
 	
 	get_tree().quit()
 
+func _on_button_pressed():
+	controlsContainer.show()
+	buttonsContainer.hide()
+
+func _on_controls_button_pressed():
+	controlsContainer.hide()
+	buttonsContainer.show()
