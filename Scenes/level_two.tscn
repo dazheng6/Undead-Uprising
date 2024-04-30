@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_yxgpr"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_ukt14"]
-[ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Scenes/zombie.tscn" id="3_rd8pa"]
+[ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Enemies/zombie.tscn" id="3_rd8pa"]
 [ext_resource type="AudioStream" uid="uid://d24vg2yadjanw" path="res://music/d2m31.wav" id="4_g42gu"]
 
 [node name="levelTwo" instance=ExtResource("1_yxgpr")]
