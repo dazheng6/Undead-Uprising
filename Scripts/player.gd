@@ -27,6 +27,7 @@ var was_wall_normal = Vector2.ZERO
 @onready var healthbar = $PlayerHUD/HealthBar
 @onready var lives_text = $PlayerHUD/LivesCount
 @onready var death_transistion = $PlayerHUD/DeathTransistion/AnimationPlayer
+@onready var game_over_sound = $PlayerHUD/"You Died Sound"
 @onready var game_over_screen = $PlayerHUD/AnimationPlayer
 @onready var gold_text = $PlayerHUD/GoldLabel
 @export var gold = 0
@@ -79,6 +80,7 @@ func _process(delta):
 	
 	if lives == 0:
 		game_over_screen.play("text_fade")
+		game_over_sound.play
 		sprite.visible = false
 	
 	if is_dead == false:

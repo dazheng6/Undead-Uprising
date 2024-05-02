@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doheie45mf58w"
+path="res://.godot/imported/you died.mp3-a2ec2e8ae5ebd6ce4f979417ebb30d90.mp3str"
+
+[deps]
+
+source_file="res://sounds/you died.mp3"
+dest_files=["res://.godot/imported/you died.mp3-a2ec2e8ae5ebd6ce4f979417ebb30d90.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
