@@ -45,6 +45,9 @@ var shotgun = preload("res://Scenes/shotgun.tscn")
 var equiped_weapon = true
 @onready var pistol_gun = $Node2D/Pistol
 @onready var shotgun_gun = $Shotgun
+#Flashlight Variables
+@onready var light = $CircleLight
+
 
 func _ready():
 	pistol_gun.hide()
