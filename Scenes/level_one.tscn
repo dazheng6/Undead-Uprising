@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dcsu54avxadfs"]
+[gd_scene load_steps=10 format=3 uid="uid://dcsu54avxadfs"]
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_n17bh"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_7q1vi"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2j8hd7s5jtnh" path="res://Scenes/dirttilemap.tscn" id="4_hdn75"]
 [ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Enemies/zombie.tscn" id="5_iu0yq"]
 [ext_resource type="AudioStream" uid="uid://0ny6bl0oky7l" path="res://music/WatchYourStep.wav" id="6_epkrn"]
+[ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="8_ox3rm"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w5yd7"]
 polygon = PackedVector2Array(58, 77, 153, 80, 152, 86, 58, 85)
@@ -39,7 +40,11 @@ occluder = SubResource("OccluderPolygon2D_w5yd7")
 [node name="CanvasModulate" type="CanvasModulate" parent="levelTileMap" index="3"]
 color = Color(0.239216, 0.239216, 0.239216, 1)
 
-[node name="Spikes" parent="." index="4" instance=ExtResource("2_7q1vi")]
+[node name="Torch" parent="." index="4" instance=ExtResource("8_ox3rm")]
+position = Vector2(238, 112)
+scale = Vector2(0.7, 0.7)
+
+[node name="Spikes" parent="." index="5" instance=ExtResource("2_7q1vi")]
 position = Vector2(97, 192)
 
 [node name="Spikes2" parent="Spikes" index="4" instance=ExtResource("2_7q1vi")]
@@ -79,7 +84,7 @@ position = Vector2(536, -336)
 position = Vector2(638, -161)
 rotation = 1.5708
 
-[node name="Zombies" type="Node2D" parent="." index="5"]
+[node name="Zombies" type="Node2D" parent="." index="6"]
 
 [node name="Zombie" parent="Zombies" index="0" instance=ExtResource("5_iu0yq")]
 position = Vector2(197, 104)
@@ -123,14 +128,14 @@ position = Vector2(860, -83)
 [node name="Zombie15" parent="Zombies" index="13" instance=ExtResource("5_iu0yq")]
 position = Vector2(948, -5)
 
-[node name="LevelMusic" parent="." index="6"]
+[node name="LevelMusic" parent="." index="7"]
 stream = ExtResource("6_epkrn")
 autoplay = true
 
-[node name="Spikes2" parent="." index="7" instance=ExtResource("2_7q1vi")]
+[node name="Spikes2" parent="." index="8" instance=ExtResource("2_7q1vi")]
 position = Vector2(884, 0)
 
-[node name="Spikes3" parent="." index="8" instance=ExtResource("2_7q1vi")]
+[node name="Spikes3" parent="." index="9" instance=ExtResource("2_7q1vi")]
 position = Vector2(961, -138)
 rotation = -1.5708
 
