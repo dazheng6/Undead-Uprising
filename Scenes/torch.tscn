@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="3_8cotj"]
 
 [node name="Torch" type="Node2D"]
+scale = Vector2(0.8, 0.8)
 
 [node name="Torch" type="Sprite2D" parent="."]
 position = Vector2(2, -12)
