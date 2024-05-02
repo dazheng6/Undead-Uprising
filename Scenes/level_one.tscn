@@ -53,6 +53,67 @@ scale = Vector2(1.42857, 1.42857)
 position = Vector2(70, -272.857)
 rotation = -0.483456
 
+[node name="Torch4" parent="Torch" index="4" instance=ExtResource("8_ox3rm")]
+position = Vector2(-85.7143, -314.286)
+rotation = -0.724312
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch5" parent="Torch" index="5" instance=ExtResource("8_ox3rm")]
+position = Vector2(132.857, -318.571)
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch6" parent="Torch" index="6" instance=ExtResource("8_ox3rm")]
+position = Vector2(271.429, -318.571)
+rotation = 0.459022
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch7" parent="Torch" index="7" instance=ExtResource("8_ox3rm")]
+position = Vector2(175.714, -181.429)
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch8" parent="Torch" index="8" instance=ExtResource("8_ox3rm")]
+position = Vector2(390, -320)
+rotation = -0.0802852
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch9" parent="Torch" index="9" instance=ExtResource("8_ox3rm")]
+position = Vector2(408.571, -191.429)
+rotation = -0.0802852
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch10" parent="Torch" index="10" instance=ExtResource("8_ox3rm")]
+position = Vector2(764.286, -42.8571)
+rotation = 0.16057
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch11" parent="Torch" index="11" instance=ExtResource("8_ox3rm")]
+position = Vector2(812.857, -181.429)
+rotation = 0.16057
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch12" parent="Torch" index="12" instance=ExtResource("8_ox3rm")]
+position = Vector2(644.286, -288.571)
+rotation = -0.403171
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch13" parent="Torch" index="13" instance=ExtResource("8_ox3rm")]
+position = Vector2(614.286, -381.429)
+rotation = 0.16057
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch14" parent="Torch" index="14" instance=ExtResource("8_ox3rm")]
+position = Vector2(802.857, -300)
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch15" parent="Torch" index="15" instance=ExtResource("8_ox3rm")]
+position = Vector2(-277.143, -30)
+rotation = 0.16057
+scale = Vector2(1.14286, 1.14286)
+
+[node name="Torch16" parent="Torch" index="16" instance=ExtResource("8_ox3rm")]
+position = Vector2(-147.143, 92.8571)
+scale = Vector2(1.14286, 1.14286)
+
 [node name="Spikes" parent="." index="5" instance=ExtResource("2_7q1vi")]
 position = Vector2(97, 192)
 
@@ -92,6 +153,13 @@ position = Vector2(536, -336)
 [node name="Spikes14" parent="Spikes" index="14" instance=ExtResource("2_7q1vi")]
 position = Vector2(638, -161)
 rotation = 1.5708
+
+[node name="Spikes10" parent="Spikes" index="15" instance=ExtResource("2_7q1vi")]
+position = Vector2(787, -192)
+
+[node name="Spikes13" parent="Spikes" index="16" instance=ExtResource("2_7q1vi")]
+position = Vector2(864, -330)
+rotation = -1.5708
 
 [node name="Zombies" type="Node2D" parent="." index="6"]
 
@@ -140,60 +208,5 @@ position = Vector2(948, -5)
 [node name="LevelMusic" parent="." index="7"]
 stream = ExtResource("6_epkrn")
 autoplay = true
-
-[node name="Spikes2" parent="." index="8" instance=ExtResource("2_7q1vi")]
-position = Vector2(884, 0)
-
-[node name="Spikes3" parent="." index="9" instance=ExtResource("2_7q1vi")]
-position = Vector2(961, -138)
-rotation = -1.5708
-
-[node name="Torch2" parent="." index="10" instance=ExtResource("8_ox3rm")]
-position = Vector2(178, -108)
-rotation = -0.724312
-
-[node name="Torch3" parent="." index="11" instance=ExtResource("8_ox3rm")]
-position = Vector2(331, -111)
-
-[node name="Torch4" parent="." index="12" instance=ExtResource("8_ox3rm")]
-position = Vector2(428, -111)
-rotation = 0.459022
-
-[node name="Torch5" parent="." index="13" instance=ExtResource("8_ox3rm")]
-position = Vector2(361, -15)
-
-[node name="Torch6" parent="." index="14" instance=ExtResource("8_ox3rm")]
-position = Vector2(511, -112)
-rotation = -0.0802851
-
-[node name="Torch7" parent="." index="15" instance=ExtResource("8_ox3rm")]
-position = Vector2(524, -22)
-rotation = -0.0802851
-
-[node name="Torch8" parent="." index="16" instance=ExtResource("8_ox3rm")]
-position = Vector2(773, 82)
-rotation = 0.16057
-
-[node name="Torch9" parent="." index="17" instance=ExtResource("8_ox3rm")]
-position = Vector2(807, -15)
-rotation = 0.16057
-
-[node name="Torch10" parent="." index="18" instance=ExtResource("8_ox3rm")]
-position = Vector2(689, -90)
-rotation = -0.403171
-
-[node name="Torch11" parent="." index="19" instance=ExtResource("8_ox3rm")]
-position = Vector2(668, -155)
-rotation = 0.16057
-
-[node name="Torch12" parent="." index="20" instance=ExtResource("8_ox3rm")]
-position = Vector2(800, -98)
-
-[node name="Torch13" parent="." index="21" instance=ExtResource("8_ox3rm")]
-position = Vector2(44, 91)
-rotation = 0.16057
-
-[node name="Torch14" parent="." index="22" instance=ExtResource("8_ox3rm")]
-position = Vector2(135, 177)
 
 [editable path="CanvasLayer/LevelCompleted"]
