@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b3vkmfxunohh8"]
+[gd_scene load_steps=24 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://c71ledapmrta6" path="res://gunreload.mp3" id="6_vk4i4"]
 [ext_resource type="AudioStream" uid="uid://gsvl7ajpy2vf" path="res://Scenes/coin.mp3" id="7_masr0"]
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="8_qbvg6"]
+[ext_resource type="Texture2D" uid="uid://dytcuhh44pm5t" path="res://sprites/Light.png" id="11_ohc3x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
 atlas = ExtResource("3_d8yee")
@@ -92,7 +93,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ognu"]
-size = Vector2(12, 16)
+size = Vector2(12, 17)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq1oj"]
 size = Vector2(8, 14)
@@ -128,7 +129,7 @@ animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -8)
+position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_0ognu")
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
@@ -196,6 +197,13 @@ motion_mirroring = Vector2(3760, 2.08165e-12)
 position = Vector2(-11.7645, -211.765)
 texture = ExtResource("8_qbvg6")
 centered = false
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, -8)
+scale = Vector2(0.6, 0.6)
+color = Color(1, 0.54902, 0.32549, 0.4)
+shadow_enabled = true
+texture = ExtResource("11_ohc3x")
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
