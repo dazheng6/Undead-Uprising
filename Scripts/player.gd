@@ -152,6 +152,8 @@ func add_gold():
 	gold_text.text = str(gold)
 
 func _physics_process(delta):
+	velocity = velocity.move_toward(Vector2.ZERO, 200 * delta)
+	
 	if !is_dead :
 		
 		apply_gravity(delta)
@@ -236,6 +238,12 @@ func _on_hazard_detector_area_entered(area):
 	print("Player Hit")
 	playerHealth -= 50
 	update_healthbar()
+	if Input.is_action_pressed("move_right"):
+		velocity += Vector2.LEFT * 350
+		velocity += Vector2.UP * 100
+	if Input.is_action_pressed("move_left"):
+		velocity += Vector2.UP * 100
+		velocity += Vector2.RIGHT * 350
 
 func update_healthbar():
 	var tween = get_tree().create_tween()
