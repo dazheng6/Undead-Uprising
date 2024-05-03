@@ -112,7 +112,7 @@ position = Vector2(102, 72)
 occluder = SubResource("OccluderPolygon2D_w5yd7")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="levelTileMap" index="3"]
-color = Color(0.239216, 0.239216, 0.239216, 1)
+color = Color(0.0901961, 0.0901961, 0.0901961, 1)
 
 [node name="Spikes" parent="." index="5" instance=ExtResource("2_7q1vi")]
 position = Vector2(97, 192)
