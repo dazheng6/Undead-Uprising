@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #Player Variables
 @export var movement_data : PlayerMovementData
-@onready var playerHealth = 100.0
+@onready var playerHealth = 200.0
 @export var lives = 3
 @onready var starting_position = global_position
 var is_dead = false
@@ -132,7 +132,7 @@ func reload():
 func respawn():
 	is_dead = false
 	global_position = starting_position
-	playerHealth += 100
+	playerHealth += 200
 	update_healthbar()
 	update_lives_count()
 	fade_from_black()

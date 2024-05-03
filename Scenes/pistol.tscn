@@ -1,13 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://yo38xfqrqdc4"]
+[gd_scene load_steps=7 format=3 uid="uid://yo38xfqrqdc4"]
 
 [ext_resource type="Script" path="res://Scripts/pistol.gd" id="1_nqyue"]
+[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="2_c2q0y"]
+[ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="2_mflfv"]
+[ext_resource type="Texture2D" uid="uid://b3frnna77css6" path="res://muzzel_flash-removebg-preview.png" id="3_5dwhm"]
 [ext_resource type="Texture2D" uid="uid://b18f5fh0tckgl" path="res://sprites/gun.png" id="3_jq5fs"]
+[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="4_i0diq"]
 
 [node name="Pistol" type="Sprite2D"]
 scale = Vector2(0.26, 0.26)
 script = ExtResource("1_nqyue")
 
+[node name="Icon" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(46.1539, -46.1539)
+scale = Vector2(4.49639, 3.80529)
+texture = ExtResource("2_mflfv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.15
+
+[node name="BlackBackground" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(26.9231, -34.6154)
+texture = ExtResource("2_c2q0y")
+
+[node name="MuzzelFlash-removebg-preview" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(42.3077, -15.3846)
+scale = Vector2(0.078, 0.06)
+texture = ExtResource("3_5dwhm")
+
+[node name="PointLight2D" type="PointLight2D" parent="MuzzelFlash-removebg-preview"]
+position = Vector2(-49.3097, -1.52832e-05)
+scale = Vector2(10, 13)
+energy = 0.7
+texture = ExtResource("4_i0diq")
+
 [node name="Gun" type="Sprite2D" parent="."]
 position = Vector2(23.0769, -23.0769)
 scale = Vector2(-2.4, 2.4)
 texture = ExtResource("3_jq5fs")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
