@@ -110,6 +110,7 @@ func move():
 func shoot():
 	audio.play()
 	var bullet_instance = bulletPath.instantiate()
+	Global.ammo_count -= 1
 	current_ammo -= 1
 	get_parent().add_child(bullet_instance)
 	bullet_instance.position = $Node2D/Marker2D.global_position
