@@ -6,7 +6,10 @@ extends Sprite2D
 @onready var ammo_is_zero = false
 
 func _process(delta):
-	if ammo == 0:
+	if Input.is_action_pressed("shoot"):
+		ammo = 30
+		
+	if ammo <= 0:
 		print(ammo)
 		ammo_is_zero = true
 		

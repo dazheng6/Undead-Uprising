@@ -208,7 +208,11 @@ position = Vector2(-11.7645, -211.765)
 texture = ExtResource("8_qbvg6")
 centered = false
 
+[node name="Gun Timer" type="Timer" parent="."]
+wait_time = 0.3
+
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="area_entered" from="ItemDetector" to="." method="_on_item_detector_area_entered"]
+[connection signal="timeout" from="Gun Timer" to="." method="_on_gun_timer_timeout"]

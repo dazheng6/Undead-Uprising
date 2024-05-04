@@ -48,6 +48,7 @@ var equiped_weapon = true
 @onready var shotgun_gun = $Shotgun
 #Flashlight Variables
 @onready var light = $CircleLight
+@onready var gun_recoiling = false
 
 
 func _ready():
@@ -108,20 +109,23 @@ func move():
 		reload()
 
 func shoot():
-	audio.play()
-	var bullet_instance = bulletPath.instantiate()
-	Global.ammo_count -= 1
-	current_ammo -= 1
-	get_parent().add_child(bullet_instance)
-	bullet_instance.position = $Node2D/Marker2D.global_position
-	update_ammo_text()
-	# Get the rotation of the marker in degrees
-	var rotation_degrees = $Node2D/Marker2D.rotation_degrees
-	# Calculate the direction vector based on the rotation
-	var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
-	# Set the bullet's velocity
-	bullet_instance.velocity = (get_global_mouse_position() - bullet_instance.position).normalized() * 500
-	bullet_instance.position = $Node2D/Marker2D.global_position + Vector2(-17, 8)
+	if !gun_recoiling:
+		audio.play()
+		var bullet_instance = bulletPath.instantiate()
+		Global.ammo_count -= 1
+		current_ammo -= 1
+		get_parent().add_child(bullet_instance)
+		bullet_instance.position = $Node2D/Marker2D.global_position
+		update_ammo_text()
+		# Get the rotation of the marker in degrees
+		var rotation_degrees = $Node2D/Marker2D.rotation_degrees
+		# Calculate the direction vector based on the rotation
+		var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
+		# Set the bullet's velocity
+		bullet_instance.velocity = (get_global_mouse_position() - bullet_instance.position).normalized() * 500
+		bullet_instance.position = $Node2D/Marker2D.global_position + Vector2(-17, 8)
+		gun_recoiling = true
+		$"Gun Timer".start()
 
 func reload():
 	reload_sound.play()
@@ -279,3 +283,7 @@ func _on_item_detector_area_entered(area):
 		pickupSound.play()
 		print("coin get")
 		area.queue_free()
+
+
+func _on_gun_timer_timeout():
+	gun_recoiling = false
