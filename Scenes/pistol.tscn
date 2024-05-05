@@ -42,4 +42,11 @@ position = Vector2(23.0769, -23.0769)
 scale = Vector2(-2.4, 2.4)
 texture = ExtResource("3_jq5fs")
 
+[node name="ReloadTimer" type="Timer" parent="."]
+
+[node name="GunBufferTime" type="Timer" parent="."]
+wait_time = 0.3
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
+[connection signal="timeout" from="GunBufferTime" to="." method="_on_gun_buffer_time_timeout"]
