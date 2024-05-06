@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://2xhy6qfxixfe"]
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://2xhy6qfxixfe"]
 
 [ext_resource type="StyleBox" uid="uid://melbx0o0mi5s" path="res://black_9slice.tres" id="1_1hgm3"]
 [ext_resource type="StyleBox" uid="uid://c525iyns23q0w" path="res://white_9slice.tres" id="1_v55ra"]
+[ext_resource type="FontFile" uid="uid://chj8lwb4qu6cu" path="res://RIKY2vamp.ttf" id="3_sa3a4"]
 
 [resource]
+default_font = ExtResource("3_sa3a4")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_focus_color = Color(0, 0, 0, 1)
 Button/colors/font_hover_color = Color(0, 0, 0, 1)

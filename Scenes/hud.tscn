@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cx875k0hb43t4"]
 
-[ext_resource type="Texture2D" uid="uid://dl5cc0kt05ern" path="res://sprites/heart.png" id="1_8nlx4"]
-[ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_eby7n"]
-[ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_blmpq"]
-[ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_dnrki"]
+[ext_resource type="Texture2D" uid="uid://dl5cc0kt05ern" path="res://sprites/heart.png" id="1_a2ypv"]
+[ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_gjquo"]
+[ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_ig8hb"]
+[ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_16f4r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twmc8"]
 bg_color = Color(0.701961, 0.0627451, 0, 1)
@@ -35,7 +35,7 @@ tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_blmpq")
+"stream": ExtResource("3_ig8hb")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -73,19 +73,19 @@ _data = {
 [node name="PlayerHUD" type="CanvasLayer"]
 
 [node name="GoldLabel" type="RichTextLabel" parent="."]
-offset_left = 270.0
-offset_top = 161.0
-offset_right = 397.0
-offset_bottom = 180.0
+offset_left = 7.0
+offset_top = 167.0
+offset_right = 41.0
+offset_bottom = 186.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/default_color = Color(0.760784, 0.764706, 0, 1)
 text = "gold"
 
 [node name="AmmoLabel" type="RichTextLabel" parent="."]
-offset_left = 58.0
-offset_top = 160.0
-offset_right = 185.0
-offset_bottom = 179.0
+offset_left = 6.0
+offset_top = 151.0
+offset_right = 107.0
+offset_bottom = 174.0
 scale = Vector2(0.7, 0.7)
 text = "ammo"
 
@@ -101,20 +101,20 @@ show_percentage = false
 [node name="Heart" type="Sprite2D" parent="."]
 position = Vector2(15, 15)
 scale = Vector2(3, 3)
-texture = ExtResource("1_8nlx4")
+texture = ExtResource("1_a2ypv")
 
 [node name="LivesCount" type="RichTextLabel" parent="."]
-offset_left = 9.0
-offset_top = 11.0
-offset_right = 37.0
-offset_bottom = 31.0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 39.0
+offset_bottom = 30.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "00"
 fit_content = true
 tab_size = 2
 
-[node name="DeathTransistion" parent="." instance=ExtResource("2_eby7n")]
+[node name="DeathTransistion" parent="." instance=ExtResource("2_gjquo")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -127,9 +127,10 @@ libraries = {
 modulate = Color(1, 1, 1, 0)
 position = Vector2(156, 86)
 scale = Vector2(2.20896, 0.151242)
-texture = ExtResource("4_dnrki")
+texture = ExtResource("4_16f4r")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0

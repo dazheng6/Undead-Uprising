@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://bhastabn6b6oc" path="res://sprites/Undead Uprising Dom Walking-export1.png" id="3_d8yee"]
 [ext_resource type="PackedScene" uid="uid://yo38xfqrqdc4" path="res://Scenes/pistol.tscn" id="3_q70lq"]
 [ext_resource type="PackedScene" uid="uid://c2n1u4m0krjb7" path="res://Scenes/shotgun.tscn" id="4_2b5d3"]
-[ext_resource type="PackedScene" uid="uid://cx875k0hb43t4" path="res://hud.tscn" id="4_4b8ah"]
 [ext_resource type="AudioStream" uid="uid://ccdu5pevdjdmx" path="res://pistol.mp3" id="5_r6rul"]
 [ext_resource type="AudioStream" uid="uid://c71ledapmrta6" path="res://gunreload.mp3" id="6_vk4i4"]
+[ext_resource type="PackedScene" uid="uid://cx875k0hb43t4" path="res://Scenes/hud.tscn" id="7_d5j18"]
 [ext_resource type="AudioStream" uid="uid://gsvl7ajpy2vf" path="res://Scenes/coin.mp3" id="7_masr0"]
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="8_qbvg6"]
 [ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="11_fpkuk"]
@@ -164,7 +164,7 @@ visible = false
 position = Vector2(0, -9)
 shape = SubResource("RectangleShape2D_fq1oj")
 
-[node name="PlayerHUD" parent="." instance=ExtResource("4_4b8ah")]
+[node name="PlayerHUD" parent="." instance=ExtResource("7_d5j18")]
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(23, -15)

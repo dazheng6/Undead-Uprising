@@ -12,10 +12,8 @@ func _process(delta):
 	
 	if zombie.size() == 0:
 		allZombiesDead = false
-		print("All Zombies Dead")
 	
 	if gold.size() == 0 and !allZombiesDead:
-		print("All Gold Collected")
 		levelCompleted = true
 
 func _ready():
