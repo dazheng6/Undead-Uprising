@@ -15,3 +15,7 @@ res://Scenes/torch.tscn
 res://Scripts/global.gd
 res://Scripts/pistol.gd
 res://Scripts/player.gd
+res://Scripts/Inventory.gd
+res://Scripts/world.gd
+res://Enemies/zombie.tscn
+res://Scripts/zombie.gd

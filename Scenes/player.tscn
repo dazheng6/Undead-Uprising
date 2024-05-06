@@ -102,7 +102,7 @@ size = Vector2(8, 14)
 size = Vector2(13, 17)
 
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 131
 floor_constant_speed = true
 floor_snap_length = 2.0
 safe_margin = 0.1
@@ -154,9 +154,9 @@ process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="HazardDetector" type="Area2D" parent="."]
+[node name="HazardDetector" type="Area2D" parent="." groups=["Player"]]
 visible = false
-collision_layer = 0
+collision_layer = 128
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetector"]
@@ -178,9 +178,11 @@ wait_time = 3.0
 
 [node name="GunAudio" type="AudioStreamPlayer2D" parent="GunSound"]
 stream = ExtResource("5_r6rul")
+panning_strength = 0.0
 
 [node name="ReloadSound" type="AudioStreamPlayer2D" parent="GunSound"]
 stream = ExtResource("6_vk4i4")
+panning_strength = 0.0
 
 [node name="ItemDetector" type="Area2D" parent="."]
 visible = false
@@ -193,6 +195,7 @@ shape = SubResource("RectangleShape2D_dhqgq")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PickupSound"]
 stream = ExtResource("7_masr0")
+panning_strength = 0.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false

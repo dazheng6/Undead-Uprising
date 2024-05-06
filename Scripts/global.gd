@@ -1,6 +1,7 @@
 extends Node
 
 @export var ammo_count = 30
+@export var kill_all_zombies = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

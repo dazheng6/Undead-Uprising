@@ -58,6 +58,9 @@ func _ready():
 	update_lives_count()
 
 func _process(delta):
+	if Input.is_action_just_pressed("Cheat"):
+		Global.kill_all_zombies = true
+	
 	$Node2D.look_at(get_global_mouse_position())
 	
 	if get_local_mouse_position().x < 0:

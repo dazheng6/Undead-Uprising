@@ -4,6 +4,8 @@ extends Node2D
 @onready var level_completed = $CanvasLayer/LevelCompleted
 @onready var intermission_music = $CanvasLayer/LevelCompleted/intermission
 @onready var allZombiesDead = true
+@onready var levelCompleted = false
+
 func _process(delta):
 	var zombie = get_tree().get_nodes_in_group("Zombie")
 	var gold = get_tree().get_nodes_in_group("Gold")
@@ -14,7 +16,7 @@ func _process(delta):
 	
 	if gold.size() == 0 and !allZombiesDead:
 		print("All Gold Collected")
-		Events.level_completed.emit()
+		levelCompleted = true
 
 func _ready():
 	Events.level_completed.connect(show_level_completed)
@@ -29,4 +31,7 @@ func show_level_completed():
 	get_tree().change_scene_to_packed(next_level)
 	LevelTransition.fade_from_black()
 
-
+func _on_door_detector_area_entered(area):
+	print("door_entered")
+	if levelCompleted:
+		Events.level_completed.emit()

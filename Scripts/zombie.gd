@@ -17,6 +17,8 @@ func coin_spawn():
 	print("Coin Spawn")
 
 func _process(delta):
+	if Global.kill_all_zombies:
+		queue_free()
 	if zombieHealth == 0:
 		icon.visible = false
 		coin_spawn()
