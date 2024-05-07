@@ -1,0 +1,146 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw55t63o5qsdb"]
+
+[ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_eby7n"]
+[ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_blmpq"]
+[ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_dnrki"]
+[ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://sprites/healthOutline.png" id="4_y5vks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twmc8"]
+bg_color = Color(0.513726, 0.0352941, 0, 1)
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 1
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="Animation" id="Animation_pmg34"]
+resource_name = "text_fade"
+length = 5.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1.6, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(1, 0, 0, 1), Color(1, 0, 0, 0)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("You Died Sound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_blmpq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Background:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Background:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.6, 1.1, 4.4, 4.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.521569), Color(1, 1, 1, 0.541176), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpjc5"]
+_data = {
+"text_fade": SubResource("Animation_pmg34")
+}
+
+[node name="PlayerHUD" type="CanvasLayer"]
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 29.0
+offset_top = 9.0
+offset_right = 101.0
+offset_bottom = 13.0
+scale = Vector2(0.955194, 1.25434)
+theme_override_styles/fill = SubResource("StyleBoxFlat_twmc8")
+value = 100.0
+show_percentage = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(55, 14)
+scale = Vector2(1.525, 1.525)
+texture = ExtResource("4_y5vks")
+
+[node name="GoldLabel" type="RichTextLabel" parent="."]
+offset_left = 270.0
+offset_top = 161.0
+offset_right = 397.0
+offset_bottom = 180.0
+scale = Vector2(0.7, 0.7)
+theme_override_colors/default_color = Color(0.760784, 0.764706, 0, 1)
+text = "gold"
+
+[node name="AmmoLabel" type="RichTextLabel" parent="."]
+offset_left = 58.0
+offset_top = 160.0
+offset_right = 185.0
+offset_bottom = 179.0
+scale = Vector2(0.7, 0.7)
+text = "ammo"
+
+[node name="LivesCount" type="RichTextLabel" parent="."]
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 41.0
+offset_bottom = 30.0
+scale = Vector2(0.599289, 0.539055)
+theme_override_colors/default_color = Color(0.615686, 0.615686, 0.615686, 1)
+theme_override_font_sizes/normal_font_size = 15
+text = "00"
+fit_content = true
+tab_size = 2
+
+[node name="DeathTransistion" parent="." instance=ExtResource("2_eby7n")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cpjc5")
+}
+
+[node name="You Died Sound" type="AudioStreamPlayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(156, 86)
+scale = Vector2(2.20896, 0.151242)
+texture = ExtResource("4_dnrki")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -320.0
+offset_bottom = 178.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_font_sizes/font_size = 24
+text = "YOU DIED"
+horizontal_alignment = 1
+vertical_alignment = 1
