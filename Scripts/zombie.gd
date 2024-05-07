@@ -9,6 +9,7 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var icon = $Icon
 @onready var hazard = $HazardDetector
 @onready var zombiePosition = get_node("Marker2D").global_position
+@onready var Player = player.new()
 
 func coin_spawn():
 	var coin_instance = goldPath.instantiate()
@@ -38,12 +39,13 @@ func shoot():
 	bullet_instance.set_velocity(-direction)
 
 func _on_hazard_detector_area_entered(area):
+	Player.take_damage()
 	print("Zombie Shoot")
-	shoot()
+
 
 func _on_area_entered(area):
 	if area.is_in_group("Bullet"):
 		healthbar.visible = true
 		update_healthbar()
-		print("Zombie -25 HP")
-		zombieHealth -= 25
+		print("Zombie -50 HP")
+		zombieHealth -= 50

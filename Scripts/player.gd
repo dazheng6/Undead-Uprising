@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+class_name player
+
 #Player Variables
 @export var movement_data : PlayerMovementData
-@onready var playerHealth = 200.0
+@onready var playerHealth = 100.0
 @export var lives = 3
 @onready var starting_position = global_position
 var is_dead = false
@@ -140,7 +142,7 @@ func reload():
 func respawn():
 	is_dead = false
 	global_position = starting_position
-	playerHealth += 200
+	playerHealth += 100
 	update_healthbar()
 	update_lives_count()
 	fade_from_black()
@@ -242,8 +244,12 @@ func update_animations(input_axis):
 	if not is_on_floor():
 		animated_sprite_2d.play("jump")
 
-func _on_hazard_detector_area_entered(area):
+func take_damage():
+	playerHealth -= 50
 	print("Player Hit")
+
+func _on_hazard_detector_area_entered(area):
+
 	playerHealth -= 50
 	update_healthbar()
 	if Input.is_action_pressed("move_right"):
