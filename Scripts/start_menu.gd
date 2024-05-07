@@ -4,7 +4,7 @@ extends CenterContainer
 @onready var audio = $HBoxContainer/SelectSound
 @onready var buttonsContainer = $HBoxContainer
 @onready var controlButtonPressed = false
-@onready var controlsContainer = $CenterContainer
+@onready var controlsContainer = $Node2D
 
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)

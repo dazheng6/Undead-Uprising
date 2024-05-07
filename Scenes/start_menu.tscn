@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://6afht3mywrm3"]
+[gd_scene load_steps=9 format=3 uid="uid://6afht3mywrm3"]
 
 [ext_resource type="Theme" uid="uid://2xhy6qfxixfe" path="res://Themes/default_theme.tres" id="1_552y8"]
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_yfdsn"]
+[ext_resource type="Texture2D" uid="uid://cp87tkfnr2a1i" path="res://black and red.jpeg" id="3_02sgi"]
 [ext_resource type="AudioStream" uid="uid://batruphninevj" path="res://sprites/decide00.mp3" id="3_8kbmj"]
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="3_x6eac"]
 [ext_resource type="AudioStream" uid="uid://brxli7t6ejsg" path="res://music/intermission.wav" id="4_qarri"]
@@ -18,7 +19,13 @@ grow_vertical = 2
 theme = ExtResource("1_552y8")
 script = ExtResource("1_yfdsn")
 
+[node name="BlackAndRed" type="Sprite2D" parent="."]
+position = Vector2(161.025, 90)
+scale = Vector2(0.500704, 0.494444)
+texture = ExtResource("3_02sgi")
+
 [node name="WindowsBackground" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(161, 88)
 scale = Vector2(0.0822917, 0.0695313)
 texture = ExtResource("3_x6eac")
@@ -65,29 +72,35 @@ offset_bottom = 112.0
 theme_override_font_sizes/font_size = 24
 text = "UNDEAD UPRISING"
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-visible = false
-layout_mode = 2
-theme = SubResource("Theme_but8f")
-
-[node name="ControlsButton" type="Button" parent="CenterContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 10
-text = "WASD to move
-RMB to fire
-Aim with mouse
-Number for weapon switching
-R to reload
-"
-flat = true
-alignment = 0
-
 [node name="UndeadUprisingLogo" type="Sprite2D" parent="."]
 position = Vector2(160, 49)
 scale = Vector2(0.26, 0.26)
 texture = ExtResource("6_g81i2")
 
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="Node2D"]
+unique_name_in_owner = true
+offset_left = 92.0
+offset_top = 66.0
+offset_right = 227.0
+offset_bottom = 137.0
+theme = SubResource("Theme_but8f")
+
+[node name="ControlsButton" type="Button" parent="Node2D/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 10
+text = "WASD to move
+RMB to fire
+Aim with mouse
+R to reload
+1 for pistol
+"
+flat = true
+
 [connection signal="pressed" from="HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Controls" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="CenterContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
+[connection signal="pressed" from="Node2D/CenterContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
