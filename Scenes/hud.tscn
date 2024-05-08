@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cx875k0hb43t4"]
+[gd_scene load_steps=11 format=3 uid="uid://cx875k0hb43t4"]
 
-[ext_resource type="Texture2D" uid="uid://dl5cc0kt05ern" path="res://sprites/heart.png" id="1_a2ypv"]
+[ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://sprites/healthOutline.png" id="1_2gg2n"]
 [ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_gjquo"]
+[ext_resource type="Texture2D" uid="uid://bsx6yke1iwpow" path="res://sprites/goldbackground.png" id="2_xwat8"]
 [ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_ig8hb"]
 [ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_16f4r"]
+[ext_resource type="Texture2D" uid="uid://i51d7208qe8a" path="res://sprites/you died.png" id="5_ht4cu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twmc8"]
-bg_color = Color(0.701961, 0.0627451, 0, 1)
-shadow_size = 1
-shadow_offset = Vector2(1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab410"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28vvt"]
+bg_color = Color(0.498039, 0, 0.0470588, 1)
 
 [sub_resource type="Animation" id="Animation_pmg34"]
 resource_name = "text_fade"
@@ -64,6 +67,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.521569), Color(1, 1, 1, 0.541176), Color(1, 1, 1, 0)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Background/Sprite2D:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 4.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.34811, 4.84469), Vector2(0.619732, 9.63587)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cpjc5"]
 _data = {
@@ -72,44 +87,50 @@ _data = {
 
 [node name="PlayerHUD" type="CanvasLayer"]
 
+[node name="GoldBG" type="Sprite2D" parent="."]
+position = Vector2(33, 170)
+scale = Vector2(2, 2)
+texture = ExtResource("2_xwat8")
+
 [node name="GoldLabel" type="RichTextLabel" parent="."]
-offset_left = 7.0
-offset_top = 167.0
-offset_right = 41.0
-offset_bottom = 186.0
+offset_left = 10.0
+offset_top = 164.0
+offset_right = 44.0
+offset_bottom = 183.0
 scale = Vector2(0.7, 0.7)
 theme_override_colors/default_color = Color(0.760784, 0.764706, 0, 1)
-text = "gold"
+text = "0"
 
 [node name="AmmoLabel" type="RichTextLabel" parent="."]
-offset_left = 6.0
-offset_top = 151.0
-offset_right = 107.0
-offset_bottom = 174.0
+offset_left = 10.0
+offset_top = 148.0
+offset_right = 111.0
+offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 text = "ammo"
 
 [node name="HealthBar" type="ProgressBar" parent="."]
-offset_left = 28.0
+offset_left = 37.0
 offset_top = 9.0
-offset_right = 100.0
-offset_bottom = 13.0
-theme_override_styles/fill = SubResource("StyleBoxFlat_twmc8")
+offset_right = 127.0
+offset_bottom = 15.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ab410")
+theme_override_styles/fill = SubResource("StyleBoxFlat_28vvt")
 value = 100.0
 show_percentage = false
 
-[node name="Heart" type="Sprite2D" parent="."]
-position = Vector2(15, 15)
-scale = Vector2(3, 3)
-texture = ExtResource("1_a2ypv")
+[node name="HealthOutline" type="Sprite2D" parent="."]
+position = Vector2(71, 15)
+scale = Vector2(2, 2)
+texture = ExtResource("1_2gg2n")
 
 [node name="LivesCount" type="RichTextLabel" parent="."]
-offset_left = 11.0
-offset_top = 10.0
-offset_right = 39.0
-offset_bottom = 30.0
+offset_left = 18.0
+offset_top = 11.0
+offset_right = 46.0
+offset_bottom = 31.0
 scale = Vector2(0.5, 0.5)
-theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/default_color = Color(0.745098, 0.745098, 0.745098, 1)
 text = "00"
 fit_content = true
 tab_size = 2
@@ -126,8 +147,13 @@ libraries = {
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(156, 86)
-scale = Vector2(2.20896, 0.151242)
+scale = Vector2(2.20896, 0.150276)
 texture = ExtResource("4_16f4r")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(0, 6.61191)
+scale = Vector2(0.619732, 9.63587)
+texture = ExtResource("5_ht4cu")
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -137,7 +163,7 @@ anchor_right = 1.0
 offset_left = -320.0
 offset_bottom = 178.0
 grow_horizontal = 0
-theme_override_colors/font_color = Color(0, 0, 0, 0)
+theme_override_colors/font_color = Color(1, 0, 0, 0)
 theme_override_font_sizes/font_size = 24
 text = "YOU DIED"
 horizontal_alignment = 1
