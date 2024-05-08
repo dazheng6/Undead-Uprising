@@ -11,6 +11,7 @@ func _ready():
 	start_game_button.grab_focus()
 
 func _on_start_game_button_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	$HBoxContainer.hide()
 	$CanvasGroup.hide()
 	audio.play()
