@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coxf60vhcmr1l"
-path="res://.godot/imported/black background.png-ebc232c932884a90079ba1119af9d25c.ctex"
+uid="uid://clm8gtg0k0xnv"
+path="res://.godot/imported/lightpath1.png-f8acba4f7b2f120695f3725bdd625472.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/black background.png"
-dest_files=["res://.godot/imported/black background.png-ebc232c932884a90079ba1119af9d25c.ctex"]
+source_file="res://Scenes/sprites/lightpath1.png"
+dest_files=["res://.godot/imported/lightpath1.png-f8acba4f7b2f120695f3725bdd625472.ctex"]
 
 [params]
 

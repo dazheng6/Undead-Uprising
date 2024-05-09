@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://frfnc8qmcb2c"
-path="res://.godot/imported/tileset.png-ea01ff149dac1b9c6b0d2d1c84c9f0ea.ctex"
+uid="uid://2p2046ae2ntn"
+path="res://.godot/imported/healthOutline.png-5b81abed4fa111c0eddd3151c3ff41e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tileset.png"
-dest_files=["res://.godot/imported/tileset.png-ea01ff149dac1b9c6b0d2d1c84c9f0ea.ctex"]
+source_file="res://Scenes/sprites/healthOutline.png"
+dest_files=["res://.godot/imported/healthOutline.png-5b81abed4fa111c0eddd3151c3ff41e1.ctex"]
 
 [params]
 

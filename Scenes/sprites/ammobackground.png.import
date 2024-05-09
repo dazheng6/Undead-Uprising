@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f3fqksks83f0"
-path="res://.godot/imported/spikes.png-0f90dad5be8f6da8c849641b5840fcea.ctex"
+uid="uid://bfbh7q1aqyypk"
+path="res://.godot/imported/ammobackground.png-d2f9ca46cd8af0845b3cde47fd11f422.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/spikes.png"
-dest_files=["res://.godot/imported/spikes.png-0f90dad5be8f6da8c849641b5840fcea.ctex"]
+source_file="res://Scenes/sprites/ammobackground.png"
+dest_files=["res://.godot/imported/ammobackground.png-d2f9ca46cd8af0845b3cde47fd11f422.ctex"]
 
 [params]
 

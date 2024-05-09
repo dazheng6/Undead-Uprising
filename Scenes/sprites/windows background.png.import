@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chwqgn5ysb277"
-path="res://.godot/imported/slopes_flipped.png-b6af10828ad3e9fd4987cf81d8e064d1.ctex"
+uid="uid://cv1tsyvc8faut"
+path="res://.godot/imported/windows background.png-50c84896669f22b0605f996ebb30096e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/slopes_flipped.png"
-dest_files=["res://.godot/imported/slopes_flipped.png-b6af10828ad3e9fd4987cf81d8e064d1.ctex"]
+source_file="res://Scenes/sprites/windows background.png"
+dest_files=["res://.godot/imported/windows background.png-50c84896669f22b0605f996ebb30096e.ctex"]
 
 [params]
 

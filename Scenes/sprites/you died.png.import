@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l2nd80kfo817"
-path="res://.godot/imported/white_9slice.png-4ccde9b389abe25fcc58af5f87afb391.ctex"
+uid="uid://i51d7208qe8a"
+path="res://.godot/imported/you died.png-fb71b2f2810654bdbd6cb14a46d85201.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/white_9slice.png"
-dest_files=["res://.godot/imported/white_9slice.png-4ccde9b389abe25fcc58af5f87afb391.ctex"]
+source_file="res://Scenes/sprites/you died.png"
+dest_files=["res://.godot/imported/you died.png-fb71b2f2810654bdbd6cb14a46d85201.ctex"]
 
 [params]
 

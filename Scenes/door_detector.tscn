@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://fa7ht0hwtcgq"]
+
+[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://Scenes/sprites/black background.png" id="1_hgdr1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g58ve"]
+size = Vector2(31, 11)
+
+[node name="DoorDetector" type="Area2D" groups=["Door"]]
+collision_layer = 129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(956, -2.5)
+shape = SubResource("RectangleShape2D_g58ve")
+
+[node name="Door" type="Sprite2D" parent="."]
+position = Vector2(956, -18)
+scale = Vector2(0.0495207, 0.1)
+texture = ExtResource("1_hgdr1")

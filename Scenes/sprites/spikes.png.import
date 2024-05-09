@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i51d7208qe8a"
-path="res://.godot/imported/you died.png-d04c1c1b69a82e7b004275073593ff84.ctex"
+uid="uid://f3fqksks83f0"
+path="res://.godot/imported/spikes.png-9cd651eb50dcd173955290bb5c965350.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/you died.png"
-dest_files=["res://.godot/imported/you died.png-d04c1c1b69a82e7b004275073593ff84.ctex"]
+source_file="res://Scenes/sprites/spikes.png"
+dest_files=["res://.godot/imported/spikes.png-9cd651eb50dcd173955290bb5c965350.ctex"]
 
 [params]
 

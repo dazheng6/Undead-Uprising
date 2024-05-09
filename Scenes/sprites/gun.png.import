@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7hp5rpqsl6bu"
-path="res://.godot/imported/slopes.png-861bf49b4b7fab91018e2b61de8b61cf.ctex"
+uid="uid://b18f5fh0tckgl"
+path="res://.godot/imported/gun.png-3179d8af5951d233514d5ab7ab27e320.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/slopes.png"
-dest_files=["res://.godot/imported/slopes.png-861bf49b4b7fab91018e2b61de8b61cf.ctex"]
+source_file="res://Scenes/sprites/gun.png"
+dest_files=["res://.godot/imported/gun.png-3179d8af5951d233514d5ab7ab27e320.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhastabn6b6oc"
-path="res://.godot/imported/Undead Uprising Dom Walking-export1.png-70c02233f385bf610966db775a0de46d.ctex"
+uid="uid://frfnc8qmcb2c"
+path="res://.godot/imported/tileset.png-65a16ca303e1bff531ab8b52476c8d1f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Undead Uprising Dom Walking-export1.png"
-dest_files=["res://.godot/imported/Undead Uprising Dom Walking-export1.png-70c02233f385bf610966db775a0de46d.ctex"]
+source_file="res://Scenes/sprites/tileset.png"
+dest_files=["res://.godot/imported/tileset.png-65a16ca303e1bff531ab8b52476c8d1f.ctex"]
 
 [params]
 

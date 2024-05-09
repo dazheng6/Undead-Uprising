@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byi23o427h8l3"
-path="res://.godot/imported/player.png-f534b8a02ffb80eefc72936296201445.ctex"
+uid="uid://rf7cgo1t7prq"
+path="res://.godot/imported/torch_anim.png-2cd352eaf4413bc3dcb6e18551016732.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player.png"
-dest_files=["res://.godot/imported/player.png-f534b8a02ffb80eefc72936296201445.ctex"]
+source_file="res://Scenes/sprites/torch_anim.png"
+dest_files=["res://.godot/imported/torch_anim.png-2cd352eaf4413bc3dcb6e18551016732.ctex"]
 
 [params]
 

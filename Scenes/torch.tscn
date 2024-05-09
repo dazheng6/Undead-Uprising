@@ -1,18 +1,63 @@
-[gd_scene load_steps=3 format=3 uid="uid://cc35rksac8ffv"]
+[gd_scene load_steps=9 format=3 uid="uid://cc35rksac8ffv"]
 
-[ext_resource type="Texture2D" uid="uid://cs3rckb7khk8s" path="res://sprites/torch.png" id="2_gi2qr"]
-[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="3_8cotj"]
+[ext_resource type="Texture2D" uid="uid://rf7cgo1t7prq" path="res://Scenes/sprites/torch_anim.png" id="2_hni03"]
+[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://Scenes/sprites/lightmask.png" id="3_8cotj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2ab5"]
+atlas = ExtResource("2_hni03")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksvr1"]
+atlas = ExtResource("2_hni03")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq5cn"]
+atlas = ExtResource("2_hni03")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsmwt"]
+atlas = ExtResource("2_hni03")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv4av"]
+atlas = ExtResource("2_hni03")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64h2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2ab5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksvr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq5cn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsmwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv4av")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
 
 [node name="Torch" type="Node2D"]
 scale = Vector2(0.5, 0.5)
 
-[node name="Torch" type="Sprite2D" parent="."]
-position = Vector2(2, -12)
-scale = Vector2(0.07, 0.07)
-texture = ExtResource("2_gi2qr")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_64h2d")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-1, -15)
+scale = Vector2(1.5, 1.5)
 color = Color(1, 0.537255, 0.431373, 1)
 texture = ExtResource("3_8cotj")
 texture_scale = 0.6

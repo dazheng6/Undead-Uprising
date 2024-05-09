@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://cx875k0hb43t4"]
 
-[ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://sprites/healthOutline.png" id="1_2gg2n"]
+[ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://Scenes/sprites/healthOutline.png" id="1_2gg2n"]
 [ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_gjquo"]
-[ext_resource type="Texture2D" uid="uid://bsx6yke1iwpow" path="res://sprites/goldbackground.png" id="2_xwat8"]
+[ext_resource type="Texture2D" uid="uid://bsx6yke1iwpow" path="res://Scenes/sprites/goldbackground.png" id="2_xwat8"]
 [ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_ig8hb"]
 [ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_16f4r"]
-[ext_resource type="Texture2D" uid="uid://i51d7208qe8a" path="res://sprites/you died.png" id="5_ht4cu"]
+[ext_resource type="Texture2D" uid="uid://i51d7208qe8a" path="res://Scenes/sprites/you died.png" id="5_ht4cu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab410"]
 bg_color = Color(0, 0, 0, 1)

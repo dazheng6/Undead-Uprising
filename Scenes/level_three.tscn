@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbijgynslnek5"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_702vv"]
+[ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_qevwg"]
+[ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="3_hggul"]
+[ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="4_k5ot2"]
+
+[node name="World" type="Node2D"]
+position = Vector2(17, 3)
+script = ExtResource("1_702vv")
+
+[node name="Player" parent="." instance=ExtResource("2_qevwg")]
+position = Vector2(40, 88)
+floor_snap_length = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("3_hggul")]
+visible = false
+
+[node name="levelTileMap" parent="." instance=ExtResource("4_k5ot2")]
+
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+
+[editable path="CanvasLayer/LevelCompleted"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d86kifqyjn6v"
-path="res://.godot/imported/lightmask.png-03aee2260907f45831753097d3490102.ctex"
+uid="uid://dy7vu8nwmed05"
+path="res://.godot/imported/Dungeon Tile Set.png-b13600b47e395261c42070e389118181.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/lightmask.png"
-dest_files=["res://.godot/imported/lightmask.png-03aee2260907f45831753097d3490102.ctex"]
+source_file="res://Scenes/sprites/Dungeon Tile Set.png"
+dest_files=["res://.godot/imported/Dungeon Tile Set.png-b13600b47e395261c42070e389118181.ctex"]
 
 [params]
 

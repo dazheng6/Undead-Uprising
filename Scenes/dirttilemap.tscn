@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://c2j8hd7s5jtnh"]
 
-[ext_resource type="Texture2D" uid="uid://frfnc8qmcb2c" path="res://sprites/tileset.png" id="1_vpynd"]
-[ext_resource type="Texture2D" uid="uid://7hp5rpqsl6bu" path="res://sprites/slopes.png" id="2_vvd18"]
-[ext_resource type="Texture2D" uid="uid://chwqgn5ysb277" path="res://sprites/slopes_flipped.png" id="3_m76rb"]
+[ext_resource type="Texture2D" uid="uid://frfnc8qmcb2c" path="res://Scenes/sprites/tileset.png" id="1_vpynd"]
+[ext_resource type="Texture2D" uid="uid://7hp5rpqsl6bu" path="res://Scenes/sprites/slopes.png" id="2_vvd18"]
+[ext_resource type="Texture2D" uid="uid://chwqgn5ysb277" path="res://Scenes/sprites/slopes_flipped.png" id="3_m76rb"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xrg0e"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsx6yke1iwpow"
-path="res://.godot/imported/goldbackground.png-3e291d2c74bdf612aee0ff7b73613f7a.ctex"
+uid="uid://dtfv20i2mckbs"
+path="res://.godot/imported/lightone.png-311b3ea8249f48b0f8520db7b70423cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/goldbackground.png"
-dest_files=["res://.godot/imported/goldbackground.png-3e291d2c74bdf612aee0ff7b73613f7a.ctex"]
+source_file="res://Scenes/sprites/lightone.png"
+dest_files=["res://.godot/imported/lightone.png-311b3ea8249f48b0f8520db7b70423cc.ctex"]
 
 [params]
 

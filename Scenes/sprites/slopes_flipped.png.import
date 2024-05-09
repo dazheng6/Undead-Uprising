@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2p2046ae2ntn"
-path="res://.godot/imported/healthOutline.png-016264e4a01921b3231dd7ca0dc356c1.ctex"
+uid="uid://chwqgn5ysb277"
+path="res://.godot/imported/slopes_flipped.png-346b30d60a04d5ccdb09871d852e4f4c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/healthOutline.png"
-dest_files=["res://.godot/imported/healthOutline.png-016264e4a01921b3231dd7ca0dc356c1.ctex"]
+source_file="res://Scenes/sprites/slopes_flipped.png"
+dest_files=["res://.godot/imported/slopes_flipped.png-346b30d60a04d5ccdb09871d852e4f4c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs3rckb7khk8s"
-path="res://.godot/imported/torch.png-bcde5397c882f47cb780fc1710d81184.ctex"
+uid="uid://bhastabn6b6oc"
+path="res://.godot/imported/Undead Uprising Dom Walking-export1.png-ff7bd7eceb7665427df27ded7062edee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/torch.png"
-dest_files=["res://.godot/imported/torch.png-bcde5397c882f47cb780fc1710d81184.ctex"]
+source_file="res://Scenes/sprites/Undead Uprising Dom Walking-export1.png"
+dest_files=["res://.godot/imported/Undead Uprising Dom Walking-export1.png-ff7bd7eceb7665427df27ded7062edee.ctex"]
 
 [params]
 

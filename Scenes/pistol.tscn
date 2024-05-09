@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://yo38xfqrqdc4"]
 
 [ext_resource type="Script" path="res://Scripts/pistol.gd" id="1_nqyue"]
-[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="2_c2q0y"]
+[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://Scenes/sprites/black background.png" id="2_c2q0y"]
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="2_mflfv"]
 [ext_resource type="Texture2D" uid="uid://b3frnna77css6" path="res://muzzel_flash-removebg-preview.png" id="3_5dwhm"]
-[ext_resource type="Texture2D" uid="uid://b18f5fh0tckgl" path="res://sprites/gun.png" id="3_jq5fs"]
-[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="4_i0diq"]
+[ext_resource type="Texture2D" uid="uid://b18f5fh0tckgl" path="res://Scenes/sprites/gun.png" id="3_jq5fs"]
+[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://Scenes/sprites/lightmask.png" id="4_i0diq"]
 
 [node name="Pistol" type="Sprite2D"]
 scale = Vector2(0.26, 0.26)
