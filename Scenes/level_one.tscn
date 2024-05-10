@@ -149,10 +149,7 @@ stream = SubResource("AudioStreamMP3_8ci2e")
 autoplay = true
 panning_strength = 0.0
 
-[node name="Zombie" parent="." index="8" instance=ExtResource("5_iu0yq")]
-position = Vector2(80, 92)
-
-[node name="Torches" type="Node" parent="." index="9"]
+[node name="Torches" type="Node" parent="." index="8"]
 
 [node name="Torch" parent="Torches" index="0" instance=ExtResource("8_ox3rm")]
 position = Vector2(73, 84)
@@ -208,8 +205,8 @@ position = Vector2(797, 0)
 [node name="Torch17" parent="Torches" index="16" instance=ExtResource("8_ox3rm")]
 position = Vector2(834, -82)
 
-[node name="ZombieSpawner" parent="." index="10" instance=ExtResource("9_y4rd1")]
-position = Vector2(80, 85)
+[node name="ZombieSpawner" parent="." index="9" instance=ExtResource("9_y4rd1")]
+position = Vector2(76, 95)
 
 [connection signal="area_entered" from="Node2D/DoorDetector" to="." method="_on_door_detector_area_entered"]
 

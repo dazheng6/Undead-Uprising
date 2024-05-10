@@ -16,6 +16,7 @@ shape = SubResource("RectangleShape2D_kd2qf")
 [node name="ZombieSpawnTimer" type="Timer" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -3)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="ZombieSpawnTimer" to="." method="_on_zombie_spawn_timer_timeout"]
