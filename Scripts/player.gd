@@ -60,6 +60,9 @@ func _ready():
 	update_lives_count()
 
 func _process(delta):
+	if Input.is_action_just_pressed("Esc"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
 	if Input.is_action_just_pressed("Cheat"):
 		Global.kill_all_zombies = true
 	
