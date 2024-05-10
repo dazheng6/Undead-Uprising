@@ -10,11 +10,18 @@ func _process(delta):
 	var zombie = get_tree().get_nodes_in_group("Zombie")
 	var gold = get_tree().get_nodes_in_group("Gold")
 	
+	if !Global.kill_all_zombies:
+		$ZombieKillTimer.start()
+	
 	if zombie.size() == 0:
 		allZombiesDead = false
 	
 	if gold.size() == 0 and !allZombiesDead:
 		levelCompleted = true
+		Global.level_completed = true
+		
+	if Input.is_action_just_pressed("EndLevel"):
+		Events.level_completed.emit()
 
 func _ready():
 	Events.level_completed.connect(show_level_completed)
@@ -33,3 +40,8 @@ func _on_door_detector_area_entered(area):
 	print("door_entered")
 	if levelCompleted:
 		Events.level_completed.emit()
+
+func _on_zombie_kill_timer_timeout():
+	Global.kill_all_zombies = false
+	$ZombieKillTimer.stop()
+	print(Global.kill_all_zombies)

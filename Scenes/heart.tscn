@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cj7416lf7ns5q"]
 
-[ext_resource type="Texture2D" uid="uid://dl5cc0kt05ern" path="res://Scenes/sprites/heart.png" id="1_inx04"]
+[ext_resource type="Texture2D" uid="uid://dl5cc0kt05ern" path="res://sprites/heart.png" id="1_inx04"]
 [ext_resource type="Script" path="res://Scripts/heart.gd" id="1_mpfew"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dtsad"]

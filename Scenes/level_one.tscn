@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dcsu54avxadfs"]
+[gd_scene load_steps=13 format=3 uid="uid://dcsu54avxadfs"]
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_n17bh"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_7q1vi"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="3_io4oc"]
 [ext_resource type="PackedScene" uid="uid://c2j8hd7s5jtnh" path="res://Scenes/dirttilemap.tscn" id="4_hdn75"]
 [ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Enemies/zombie.tscn" id="5_iu0yq"]
-[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://Scenes/sprites/black background.png" id="6_mrhm1"]
+[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="6_mrhm1"]
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="8_ox3rm"]
+[ext_resource type="PackedScene" uid="uid://dmgfkn7lat0ml" path="res://Enemies/zombie_spawner.tscn" id="9_y4rd1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w5yd7"]
 polygon = PackedVector2Array(58, 77, 153, 80, 152, 86, 58, 85)
@@ -159,53 +160,56 @@ position = Vector2(73, 84)
 [node name="Torch2" parent="Torches" index="1" instance=ExtResource("8_ox3rm")]
 position = Vector2(217, 171)
 
-[node name="Torch" parent="." index="10" instance=ExtResource("8_ox3rm")]
-position = Vector2(219, 96)
+[node name="Torch3" parent="Torches" index="2" instance=ExtResource("8_ox3rm")]
+position = Vector2(236, 99)
 
-[node name="Torch2" parent="." index="11" instance=ExtResource("8_ox3rm")]
-position = Vector2(289, 137)
+[node name="Torch4" parent="Torches" index="3" instance=ExtResource("8_ox3rm")]
+position = Vector2(306, 140)
 
-[node name="Torch3" parent="." index="12" instance=ExtResource("8_ox3rm")]
-position = Vector2(258, 26)
+[node name="Torch5" parent="Torches" index="4" instance=ExtResource("8_ox3rm")]
+position = Vector2(275, 29)
 rotation = 0.749545
 
-[node name="Torch4" parent="." index="13" instance=ExtResource("8_ox3rm")]
-position = Vector2(368, -20)
+[node name="Torch6" parent="Torches" index="5" instance=ExtResource("8_ox3rm")]
+position = Vector2(385, -17)
 
-[node name="Torch5" parent="." index="14" instance=ExtResource("8_ox3rm")]
-position = Vector2(240, -116)
+[node name="Torch7" parent="Torches" index="6" instance=ExtResource("8_ox3rm")]
+position = Vector2(257, -113)
 
-[node name="Torch6" parent="." index="15" instance=ExtResource("8_ox3rm")]
-position = Vector2(336, -116)
+[node name="Torch8" parent="Torches" index="7" instance=ExtResource("8_ox3rm")]
+position = Vector2(353, -113)
 
-[node name="Torch7" parent="." index="16" instance=ExtResource("8_ox3rm")]
-position = Vector2(482, 182)
+[node name="Torch9" parent="Torches" index="8" instance=ExtResource("8_ox3rm")]
+position = Vector2(499, 185)
 
-[node name="Torch8" parent="." index="17" instance=ExtResource("8_ox3rm")]
-position = Vector2(606, -65)
+[node name="Torch10" parent="Torches" index="9" instance=ExtResource("8_ox3rm")]
+position = Vector2(623, -62)
 rotation = -0.607375
 
-[node name="Torch9" parent="." index="18" instance=ExtResource("8_ox3rm")]
-position = Vector2(670, -146)
+[node name="Torch11" parent="Torches" index="10" instance=ExtResource("8_ox3rm")]
+position = Vector2(687, -143)
 
-[node name="Torch10" parent="." index="19" instance=ExtResource("8_ox3rm")]
-position = Vector2(642, -83)
+[node name="Torch12" parent="Torches" index="11" instance=ExtResource("8_ox3rm")]
+position = Vector2(659, -80)
 
-[node name="Torch11" parent="." index="20" instance=ExtResource("8_ox3rm")]
-position = Vector2(847, 68)
+[node name="Torch13" parent="Torches" index="12" instance=ExtResource("8_ox3rm")]
+position = Vector2(864, 71)
 rotation = -0.74351
 
-[node name="Torch12" parent="." index="21" instance=ExtResource("8_ox3rm")]
-position = Vector2(916, -3)
+[node name="Torch14" parent="Torches" index="13" instance=ExtResource("8_ox3rm")]
+position = Vector2(933, 0)
 
-[node name="Torch13" parent="." index="22" instance=ExtResource("8_ox3rm")]
-position = Vector2(958, -4)
+[node name="Torch15" parent="Torches" index="14" instance=ExtResource("8_ox3rm")]
+position = Vector2(975, -1)
 
-[node name="Torch14" parent="." index="23" instance=ExtResource("8_ox3rm")]
-position = Vector2(780, -3)
+[node name="Torch16" parent="Torches" index="15" instance=ExtResource("8_ox3rm")]
+position = Vector2(797, 0)
 
-[node name="Torch15" parent="." index="24" instance=ExtResource("8_ox3rm")]
-position = Vector2(817, -85)
+[node name="Torch17" parent="Torches" index="16" instance=ExtResource("8_ox3rm")]
+position = Vector2(834, -82)
+
+[node name="ZombieSpawner" parent="." index="10" instance=ExtResource("9_y4rd1")]
+position = Vector2(80, 85)
 
 [connection signal="area_entered" from="Node2D/DoorDetector" to="." method="_on_door_detector_area_entered"]
 

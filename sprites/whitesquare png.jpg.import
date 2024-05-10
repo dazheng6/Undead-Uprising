@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dytcuhh44pm5t"
-path="res://.godot/imported/Light.png-97f91367bd999f2c717a325d7fbdbaf6.ctex"
+uid="uid://0c3ypx1m5an8"
+path="res://.godot/imported/whitesquare png.jpg-1cccc0f9182ae8d4dc7d4164d374d6ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sprites/Light.png"
-dest_files=["res://.godot/imported/Light.png-97f91367bd999f2c717a325d7fbdbaf6.ctex"]
+source_file="res://sprites/whitesquare png.jpg"
+dest_files=["res://.godot/imported/whitesquare png.jpg-1cccc0f9182ae8d4dc7d4164d374d6ab.ctex"]
 
 [params]
 

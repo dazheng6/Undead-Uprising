@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_eby7n"]
 [ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_blmpq"]
 [ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_dnrki"]
-[ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://Scenes/sprites/healthOutline.png" id="4_y5vks"]
+[ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://sprites/healthOutline.png" id="4_y5vks"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twmc8"]
 bg_color = Color(0.513726, 0.0352941, 0, 1)

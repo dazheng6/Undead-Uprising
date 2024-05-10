@@ -16,3 +16,7 @@ res://Scenes/dirttilemap.tscn
 res://Scenes/torch.tscn
 res://Scenes/hud.tscn
 res://Scripts/player.gd
+res://Scripts/world.gd
+res://Enemies/zombie_spawner.tscn
+res://Enemies/zombie_spawner.gd
+res://Scripts/global.gd

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsx6yke1iwpow"
-path="res://.godot/imported/goldbackground.png-463f8dd135d6ee564104d495c14106bc.ctex"
+uid="uid://bfbh7q1aqyypk"
+path="res://.godot/imported/ammobackground.png-65fca2c19a28fc5e27d66684464fc023.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sprites/goldbackground.png"
-dest_files=["res://.godot/imported/goldbackground.png-463f8dd135d6ee564104d495c14106bc.ctex"]
+source_file="res://sprites/ammobackground.png"
+dest_files=["res://.godot/imported/ammobackground.png-65fca2c19a28fc5e27d66684464fc023.ctex"]
 
 [params]
 

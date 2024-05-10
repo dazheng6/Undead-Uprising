@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmgfkn7lat0ml"]
+
+[ext_resource type="Script" path="res://Enemies/zombie_spawner.gd" id="1_svojc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kd2qf"]
+size = Vector2(40, 40)
+
+[node name="ZombieSpawner" type="Node2D"]
+script = ExtResource("1_svojc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kd2qf")
+
+[node name="ZombieSpawnTimer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="ZombieSpawnTimer" to="." method="_on_zombie_spawn_timer_timeout"]

@@ -1,26 +1,26 @@
 [gd_scene load_steps=9 format=3 uid="uid://cc35rksac8ffv"]
 
-[ext_resource type="Texture2D" uid="uid://rf7cgo1t7prq" path="res://Scenes/sprites/torch_anim.png" id="2_hni03"]
-[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://Scenes/sprites/lightmask.png" id="3_8cotj"]
+[ext_resource type="Texture2D" uid="uid://rf7cgo1t7prq" path="res://sprites/torch_anim.png" id="1_s25ne"]
+[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="2_6rmmg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r2ab5"]
-atlas = ExtResource("2_hni03")
+atlas = ExtResource("1_s25ne")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksvr1"]
-atlas = ExtResource("2_hni03")
+atlas = ExtResource("1_s25ne")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gq5cn"]
-atlas = ExtResource("2_hni03")
+atlas = ExtResource("1_s25ne")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsmwt"]
-atlas = ExtResource("2_hni03")
+atlas = ExtResource("1_s25ne")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lv4av"]
-atlas = ExtResource("2_hni03")
+atlas = ExtResource("1_s25ne")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_64h2d"]
@@ -59,5 +59,5 @@ frame_progress = 1.0
 position = Vector2(-1, -15)
 scale = Vector2(1.5, 1.5)
 color = Color(1, 0.537255, 0.431373, 1)
-texture = ExtResource("3_8cotj")
+texture = ExtResource("2_6rmmg")
 texture_scale = 0.6
