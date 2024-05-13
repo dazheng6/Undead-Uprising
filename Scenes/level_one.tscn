@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcsu54avxadfs"]
+[gd_scene load_steps=12 format=3 uid="uid://dcsu54avxadfs"]
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_n17bh"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_7q1vi"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Enemies/zombie.tscn" id="5_iu0yq"]
 [ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="6_mrhm1"]
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="8_ox3rm"]
-[ext_resource type="PackedScene" uid="uid://dmgfkn7lat0ml" path="res://Enemies/zombie_spawner.tscn" id="9_y4rd1"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w5yd7"]
 polygon = PackedVector2Array(58, 77, 153, 80, 152, 86, 58, 85)
@@ -204,9 +203,6 @@ position = Vector2(797, 0)
 
 [node name="Torch17" parent="Torches" index="16" instance=ExtResource("8_ox3rm")]
 position = Vector2(834, -82)
-
-[node name="ZombieSpawner" parent="." index="9" instance=ExtResource("9_y4rd1")]
-position = Vector2(76, 95)
 
 [connection signal="area_entered" from="Node2D/DoorDetector" to="." method="_on_door_detector_area_entered"]
 

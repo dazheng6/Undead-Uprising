@@ -1,7 +1,7 @@
 [gd_scene load_steps=69 format=3 uid="uid://d3ofcbr2mdxuj"]
 
 [ext_resource type="Texture2D" uid="uid://ul6p75dpo8mb" path="res://Scenes/platformertiles.png" id="1_v6iyx"]
-[ext_resource type="Texture2D" uid="uid://dy7vu8nwmed05" path="res://Scenes/sprites/Dungeon Tile Set.png" id="2_jqa4s"]
+[ext_resource type="Texture2D" uid="uid://dy7vu8nwmed05" path="res://sprites/Dungeon Tile Set.png" id="2_jqa4s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uc8cr"]
 

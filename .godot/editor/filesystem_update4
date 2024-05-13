@@ -7,6 +7,7 @@ res://Scenes/level_two.tscn
 res://Scenes/global.tscn
 res://Scenes/pistol.tscn
 res://Scenes/player.tscn
+res://Enemies/zombie_spawner.tscn
 res://Enemies/zombie.tscn
 res://Scenes/bullet.tscn
 res://Scenes/shotgun.tscn
@@ -15,8 +16,5 @@ res://Scenes/level_tile_map.tscn
 res://Scenes/dirttilemap.tscn
 res://Scenes/torch.tscn
 res://Scenes/hud.tscn
-res://Scripts/player.gd
-res://Scripts/world.gd
-res://Enemies/zombie_spawner.tscn
 res://Enemies/zombie_spawner.gd
-res://Scripts/global.gd
+res://Scenes/level_three.tscn

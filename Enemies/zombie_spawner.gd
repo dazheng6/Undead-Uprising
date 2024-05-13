@@ -9,7 +9,7 @@ func _process(delta):
 	return
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("player") and !level_completed:
+	if body.is_in_group("player") and level_completed:
 		zombieTimer.start()
 		print("zombie spawner")
 
