@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="2_xchkr"]
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="3_pjaq2"]
 [ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Enemies/zombie.tscn" id="3_rd8pa"]
+[ext_resource type="AudioStream" uid="uid://d24vg2yadjanw" path="res://music/d2m31.wav" id="4_g42gu"]
 [ext_resource type="Texture2D" uid="uid://0c3ypx1m5an8" path="res://sprites/whitesquare png.jpg" id="8_tioi2"]
-[ext_resource type="AudioStream" uid="uid://ct013xg5exqr2" path="res://sounds/dark dungeon.mp3" id="9_bglhq"]
 [ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="9_rvcxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ff17"]
@@ -192,7 +192,7 @@ position = Vector2(288, -159)
 position = Vector2(-176, -46)
 
 [node name="LevelMusic" parent="." index="7"]
-stream = ExtResource("9_bglhq")
+stream = ExtResource("4_g42gu")
 autoplay = true
 
 [node name="Zombie" type="Node2D" parent="." index="8"]

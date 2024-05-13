@@ -4,6 +4,7 @@ res://Scripts/start_menu.gd
 res://Scenes/start_menu.tscn
 res://Scenes/level_one.tscn
 res://Scenes/level_two.tscn
+res://Scenes/level_three.tscn
 res://Scenes/global.tscn
 res://Scenes/pistol.tscn
 res://Scenes/player.tscn
@@ -16,5 +17,3 @@ res://Scenes/level_tile_map.tscn
 res://Scenes/dirttilemap.tscn
 res://Scenes/torch.tscn
 res://Scenes/hud.tscn
-res://Enemies/zombie_spawner.gd
-res://Scenes/level_three.tscn
