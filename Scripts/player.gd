@@ -43,6 +43,8 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var audio = $GunSound/GunAudio
 @onready var reload_sound = $GunSound/ReloadSound
 @onready var pickupSound = $PickupSound/AudioStreamPlayer2D
+@onready var hurtSound = $PlayerSound/HurtSound
+@onready var deathSound = $PlayerSound/DeathSound
 var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
 var equiped_weapon = true
@@ -91,8 +93,9 @@ func _process(delta):
 		pistol_gun.hide()
 	
 	if lives == 0:
-		game_over_screen.play("text_fade")
+		deathSound.play
 		game_over_sound.play
+		game_over_screen.play("text_fade")
 		sprite.visible = false
 	
 	if is_dead == false:
@@ -252,7 +255,8 @@ func take_damage():
 	print("Player Hit")
 
 func _on_hazard_detector_area_entered(area):
-
+	if lives > 1:
+		hurtSound.play
 	playerHealth -= 50
 	update_healthbar()
 	if Input.is_action_pressed("move_right"):

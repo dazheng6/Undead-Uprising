@@ -1,7 +1,7 @@
 [gd_scene load_steps=69 format=3 uid="uid://d3ofcbr2mdxuj"]
 
 [ext_resource type="Texture2D" uid="uid://ul6p75dpo8mb" path="res://Scenes/platformertiles.png" id="1_v6iyx"]
-[ext_resource type="Texture2D" uid="uid://dy7vu8nwmed05" path="res://Scenes/sprites/Dungeon Tile Set.png" id="2_jqa4s"]
+[ext_resource type="Texture2D" uid="uid://dy7vu8nwmed05" path="res://sprites/Dungeon Tile Set.png" id="2_jqa4s"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uc8cr"]
 
@@ -782,11 +782,11 @@ texture = ExtResource("2_jqa4s")
 5:1/0 = 0
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5, 2.125, -2.75, -2.875, 1.5, -3.125, 2.125, -8, 8, -8, 8, 8, -8, 8, -8, 2.125)
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -1.25, 4.625, -8, 8, -8, 8, 8, -8, 8, -8, 4.5)
 6:1/0 = 0
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.25, -8, -2.125, -2.875, 2.875, -3, 3.25, 2, 8, 2.125, 8, 8, -8, 8, -8, -8)
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, -4.25, -8)
 8:1/0 = 0
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:1/0/physics_layer_0/angular_velocity = 0.0
