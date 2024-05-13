@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccfebdwmudstn"]
 
-[ext_resource type="Texture2D" uid="uid://f3fqksks83f0" path="res://Scenes/sprites/spikes.png" id="1_04yqt"]
+[ext_resource type="Texture2D" uid="uid://f3fqksks83f0" path="res://sprites/spikes.png" id="1_04yqt"]
 [ext_resource type="PackedScene" uid="uid://b6hg8pktlufrp" path="res://Scenes/hazard_area.tscn" id="2_vomgh"]
 
 

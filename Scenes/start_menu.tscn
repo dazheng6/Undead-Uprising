@@ -3,8 +3,8 @@
 [ext_resource type="Theme" uid="uid://2xhy6qfxixfe" path="res://Themes/default_theme.tres" id="1_552y8"]
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_yfdsn"]
 [ext_resource type="Texture2D" uid="uid://cp87tkfnr2a1i" path="res://black and red.jpeg" id="3_02sgi"]
-[ext_resource type="AudioStream" uid="uid://batruphninevj" path="res://Scenes/sprites/decide00.mp3" id="3_8kbmj"]
-[ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://Scenes/sprites/windows background.png" id="3_x6eac"]
+[ext_resource type="AudioStream" uid="uid://batruphninevj" path="res://sprites/decide00.mp3" id="3_8kbmj"]
+[ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="3_x6eac"]
 [ext_resource type="AudioStream" uid="uid://brxli7t6ejsg" path="res://music/intermission.wav" id="4_qarri"]
 [ext_resource type="Texture2D" uid="uid://paekyrjnpn1f" path="res://Undead Uprising Logo.png" id="6_g81i2"]
 

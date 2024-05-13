@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rf7cgo1t7prq"
-path="res://.godot/imported/torch_anim.png-2cd352eaf4413bc3dcb6e18551016732.ctex"
+uid="uid://d86kifqyjn6v"
+path="res://.godot/imported/lightmask.png-03aee2260907f45831753097d3490102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sprites/torch_anim.png"
-dest_files=["res://.godot/imported/torch_anim.png-2cd352eaf4413bc3dcb6e18551016732.ctex"]
+source_file="res://sprites/lightmask.png"
+dest_files=["res://.godot/imported/lightmask.png-03aee2260907f45831753097d3490102.ctex"]
 
 [params]
 

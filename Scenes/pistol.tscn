@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://yo38xfqrqdc4"]
 
 [ext_resource type="Script" path="res://Scripts/pistol.gd" id="1_nqyue"]
-[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://Scenes/sprites/black background.png" id="2_c2q0y"]
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="2_mflfv"]
 [ext_resource type="Texture2D" uid="uid://b3frnna77css6" path="res://muzzel_flash-removebg-preview.png" id="3_5dwhm"]
-[ext_resource type="Texture2D" uid="uid://b18f5fh0tckgl" path="res://Scenes/sprites/gun.png" id="3_jq5fs"]
-[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://Scenes/sprites/lightmask.png" id="4_i0diq"]
+[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="3_ankqu"]
+[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="5_vmp2i"]
+[ext_resource type="Texture2D" uid="uid://b18f5fh0tckgl" path="res://sprites/gun.png" id="6_qgop8"]
 
 [node name="Pistol" type="Sprite2D"]
 scale = Vector2(0.26, 0.26)
@@ -23,7 +23,7 @@ wait_time = 0.05
 [node name="BlackBackground" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(26.9231, -34.6154)
-texture = ExtResource("2_c2q0y")
+texture = ExtResource("3_ankqu")
 
 [node name="MuzzelFlash-removebg-preview" type="Sprite2D" parent="."]
 visible = false
@@ -35,12 +35,12 @@ texture = ExtResource("3_5dwhm")
 position = Vector2(-49.3097, -1.52832e-05)
 scale = Vector2(10, 13)
 energy = 0.7
-texture = ExtResource("4_i0diq")
+texture = ExtResource("5_vmp2i")
 
 [node name="Gun" type="Sprite2D" parent="."]
 position = Vector2(23.0769, -23.0769)
 scale = Vector2(-2.4, 2.4)
-texture = ExtResource("3_jq5fs")
+texture = ExtResource("6_qgop8")
 
 [node name="ReloadTimer" type="Timer" parent="."]
 

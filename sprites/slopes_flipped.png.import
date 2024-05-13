@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clm8gtg0k0xnv"
-path="res://.godot/imported/lightpath1.png-f8acba4f7b2f120695f3725bdd625472.ctex"
+uid="uid://chwqgn5ysb277"
+path="res://.godot/imported/slopes_flipped.png-b6af10828ad3e9fd4987cf81d8e064d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sprites/lightpath1.png"
-dest_files=["res://.godot/imported/lightpath1.png-f8acba4f7b2f120695f3725bdd625472.ctex"]
+source_file="res://sprites/slopes_flipped.png"
+dest_files=["res://.godot/imported/slopes_flipped.png-b6af10828ad3e9fd4987cf81d8e064d1.ctex"]
 
 [params]
 

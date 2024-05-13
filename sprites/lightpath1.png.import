@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2p2046ae2ntn"
-path="res://.godot/imported/healthOutline.png-5b81abed4fa111c0eddd3151c3ff41e1.ctex"
+uid="uid://clm8gtg0k0xnv"
+path="res://.godot/imported/lightpath1.png-d7412a160155fa9408f4754c325603d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sprites/healthOutline.png"
-dest_files=["res://.godot/imported/healthOutline.png-5b81abed4fa111c0eddd3151c3ff41e1.ctex"]
+source_file="res://sprites/lightpath1.png"
+dest_files=["res://.godot/imported/lightpath1.png-d7412a160155fa9408f4754c325603d7.ctex"]
 
 [params]
 

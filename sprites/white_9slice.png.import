@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfbh7q1aqyypk"
-path="res://.godot/imported/ammobackground.png-d2f9ca46cd8af0845b3cde47fd11f422.ctex"
+uid="uid://l2nd80kfo817"
+path="res://.godot/imported/white_9slice.png-4ccde9b389abe25fcc58af5f87afb391.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sprites/ammobackground.png"
-dest_files=["res://.godot/imported/ammobackground.png-d2f9ca46cd8af0845b3cde47fd11f422.ctex"]
+source_file="res://sprites/white_9slice.png"
+dest_files=["res://.godot/imported/white_9slice.png-4ccde9b389abe25fcc58af5f87afb391.ctex"]
 
 [params]
 

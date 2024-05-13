@@ -22,4 +22,8 @@ visible = false
 
 [node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
 
+[node name="ZombieKillTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ZombieKillTimer" to="." method="_on_zombie_kill_timer_timeout"]
+
 [editable path="CanvasLayer/LevelCompleted"]

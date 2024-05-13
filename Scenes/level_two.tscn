@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="3_pjaq2"]
 [ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Enemies/zombie.tscn" id="3_rd8pa"]
 [ext_resource type="AudioStream" uid="uid://d24vg2yadjanw" path="res://music/d2m31.wav" id="4_g42gu"]
-[ext_resource type="Texture2D" uid="uid://0c3ypx1m5an8" path="res://Scenes/sprites/whitesquare png.jpg" id="8_tioi2"]
-[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://Scenes/sprites/lightmask.png" id="9_rvcxv"]
+[ext_resource type="Texture2D" uid="uid://0c3ypx1m5an8" path="res://sprites/whitesquare png.jpg" id="8_tioi2"]
+[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="9_rvcxv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ff17"]
 size = Vector2(45, 73.85)

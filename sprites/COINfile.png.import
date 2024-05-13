@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7hp5rpqsl6bu"
-path="res://.godot/imported/slopes.png-fc075edd0924e90bd0b7c0a67c86e6e0.ctex"
+uid="uid://b7qxeu7alvhab"
+path="res://.godot/imported/COINfile.png-7a1467718b9c44453af6fc4e66475a69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/sprites/slopes.png"
-dest_files=["res://.godot/imported/slopes.png-fc075edd0924e90bd0b7c0a67c86e6e0.ctex"]
+source_file="res://sprites/COINfile.png"
+dest_files=["res://.godot/imported/COINfile.png-7a1467718b9c44453af6fc4e66475a69.ctex"]
 
 [params]
 
