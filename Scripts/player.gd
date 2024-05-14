@@ -16,6 +16,7 @@ var was_wall_normal = Vector2.ZERO
 @onready var marker_position = Vector2(15,0)
 @onready var marker_position_x = 15
 @onready var marker_position_y = 0
+@onready var camera = $Camera2D
 
 #timers
 @onready var reloadTimer = $ReloadTimer
@@ -40,11 +41,6 @@ var max_ammo = 30
 var is_reloading = false
 @export var bullet : PackedScene
 var bulletPath = preload("res://Scenes/bullet.tscn")
-@onready var audio = $GunSound/GunAudio
-@onready var reload_sound = $GunSound/ReloadSound
-@onready var pickupSound = $PickupSound/AudioStreamPlayer2D
-@onready var hurtSound = $PlayerSound/HurtSound
-@onready var deathSound = $PlayerSound/DeathSound
 var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
 var equiped_weapon = true
@@ -54,6 +50,13 @@ var equiped_weapon = true
 @onready var light = $CircleLight
 @onready var gun_recoiling = false
 
+#Sound Variables
+@onready var audio = $GunSound/GunAudio
+@onready var reload_sound = $GunSound/ReloadSound
+@onready var pickupSound = $PickupSound/AudioStreamPlayer2D
+@onready var hurtSound = $PlayerSound/HurtSound
+@onready var deathSound = $PlayerSound/DeathSound
+
 
 func _ready():
 	pistol_gun.hide()
@@ -62,6 +65,13 @@ func _ready():
 	update_lives_count()
 
 func _process(delta):
+	if Input.is_action_pressed("Tab"):
+		camera.zoom.x = .5
+		camera.zoom.y = .5
+	else:
+		camera.zoom.x = 1.2
+		camera.zoom.y = 1.2
+	
 	if Input.is_action_just_pressed("Esc"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
