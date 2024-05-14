@@ -18,3 +18,5 @@ res://Scenes/dirttilemap.tscn
 res://Scenes/torch.tscn
 res://Scenes/hud.tscn
 res://Scripts/Camera2D.gd
+res://Scenes/tutorial.tscn
+res://Scenes/level_completed.tscn

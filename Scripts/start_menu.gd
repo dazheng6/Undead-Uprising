@@ -16,7 +16,7 @@ func _on_start_game_button_pressed():
 	$CanvasGroup.hide()
 	audio.play()
 	await LevelTransition.fade_to_black()
-	get_tree().change_scene_to_file("res://Scenes/level_one.tscn")
+	get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
 	LevelTransition.fade_from_black()
 	
 func _on_quit_button_pressed():
