@@ -103,7 +103,7 @@ func _process(delta):
 		pistol_gun.hide()
 	
 	if lives == 0:
-		deathSound.play()
+		$PlayerSound/DeathSound.play()
 		game_over_sound.play()
 		game_over_screen.play("text_fade")
 		sprite.visible = false
@@ -262,10 +262,11 @@ func update_animations(input_axis):
 
 func take_damage():
 	playerHealth -= 50
+	hurtSound.play()
 	print("Player Hit")
 
 func _on_hazard_detector_area_entered(area):
-	hurtSound.play()
+	$PlayerSound/HurtSound.play()
 	playerHealth -= 50
 	update_healthbar()
 	if Input.is_action_pressed("move_right"):

@@ -20,3 +20,4 @@ res://Scenes/hud.tscn
 res://Scripts/Camera2D.gd
 res://Scenes/tutorial.tscn
 res://Scenes/level_completed.tscn
+res://Scripts/player.gd
