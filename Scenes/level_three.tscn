@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_qevwg"]
 [ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="3_hggul"]
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="4_k5ot2"]
-[ext_resource type="PackedScene" uid="uid://ta8py42v7q8q" path="res://Enemies/zombie.tscn" id="5_af0u2"]
+[ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://zombie.tscn" id="5_xbe05"]
 
 [node name="World" type="Node2D"]
 position = Vector2(17, 3)
@@ -24,7 +24,7 @@ layer_0/tile_data = PackedInt32Array(458753, 524289, 1, 458754, 589825, 1, 45875
 
 [node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
 
-[node name="Zombie" parent="." instance=ExtResource("5_af0u2")]
+[node name="Zombie" parent="." instance=ExtResource("5_xbe05")]
 position = Vector2(126, 91)
 
 [node name="ZombieKillTimer" type="Timer" parent="."]

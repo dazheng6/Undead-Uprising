@@ -9,10 +9,8 @@ size = Vector2(31, 11)
 collision_layer = 129
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(956, -2.5)
 shape = SubResource("RectangleShape2D_g58ve")
 
 [node name="Door" type="Sprite2D" parent="."]
-position = Vector2(956, -18)
 scale = Vector2(0.0495207, 0.1)
 texture = ExtResource("1_hgdr1")

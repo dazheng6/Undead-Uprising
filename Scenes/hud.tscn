@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cx875k0hb43t4"]
+[gd_scene load_steps=12 format=3 uid="uid://cx875k0hb43t4"]
 
 [ext_resource type="Texture2D" uid="uid://bsx6yke1iwpow" path="res://sprites/goldbackground.png" id="1_taqie"]
 [ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://sprites/healthOutline.png" id="2_c0u0k"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_ig8hb"]
 [ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_16f4r"]
 [ext_resource type="Texture2D" uid="uid://i51d7208qe8a" path="res://sprites/you died.png" id="6_kt2yy"]
+[ext_resource type="FontFile" uid="uid://dtwxmyfvhasmc" path="res://Michroma-Regular.ttf" id="7_vua87"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab410"]
 bg_color = Color(0, 0, 0, 1)
@@ -168,3 +169,12 @@ theme_override_font_sizes/font_size = 24
 text = "YOU DIED"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EnemyCount" type="RichTextLabel" parent="."]
+offset_left = 202.0
+offset_top = 160.0
+offset_right = 391.0
+offset_bottom = 200.0
+theme_override_fonts/normal_font = ExtResource("7_vua87")
+theme_override_font_sizes/normal_font_size = 7
+text = "Enemies Remaining"

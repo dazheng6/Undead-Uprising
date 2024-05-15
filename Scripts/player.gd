@@ -33,6 +33,7 @@ var was_wall_normal = Vector2.ZERO
 @onready var game_over_sound = $PlayerHUD/"You Died Sound"
 @onready var game_over_screen = $PlayerHUD/AnimationPlayer
 @onready var gold_text = $PlayerHUD/GoldLabel
+@onready var enemy_text = $PlayerHUD/EnemyCount
 @export var gold = 0
 
 #Gun Variables
@@ -63,6 +64,7 @@ func _ready():
 	shotgun_gun.hide()
 	update_ammo_text()
 	update_lives_count()
+	update_enemy_text()
 
 func _process(delta):
 	if Input.is_action_pressed("Tab"):
@@ -172,6 +174,11 @@ func update_lives_count():
 		lives_text.text = "0" + str(lives - 1)
 	else:
 		lives_text.text = str(lives)
+
+func update_enemy_text():
+	var enemies = get_tree().get_nodes_in_group("Zombies")
+	var enemiesRemaining = enemies.size()
+	enemy_text = "Enemies Remaining: " + str(enemiesRemaining)
 
 func add_gold():
 	gold += 10

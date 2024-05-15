@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://b3vkmfxunohh8"]
+[gd_scene load_steps=24 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
@@ -10,9 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://c71ledapmrta6" path="res://gunreload.mp3" id="6_vk4i4"]
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="7_4luyp"]
 [ext_resource type="PackedScene" uid="uid://cx875k0hb43t4" path="res://Scenes/hud.tscn" id="7_d5j18"]
-[ext_resource type="AudioStream" path="res://sounds/damage-1.wav" id="11_5xkyv"]
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="11_p7dpv"]
-[ext_resource type="AudioStream" path="res://sounds/deathsound.wav" id="12_47ahq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
 atlas = ExtResource("6_jq2ga")
@@ -219,10 +217,8 @@ wait_time = 0.3
 [node name="PlayerSound" type="Node2D" parent="."]
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
-stream = ExtResource("11_5xkyv")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
-stream = ExtResource("12_47ahq")
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="area_entered" from="HazardDetector" to="Camera2D" method="_on_hazard_detector_area_entered"]
