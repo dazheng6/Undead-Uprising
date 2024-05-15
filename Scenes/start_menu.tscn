@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6afht3mywrm3"]
+[gd_scene load_steps=14 format=3 uid="uid://6afht3mywrm3"]
 
 [ext_resource type="Theme" uid="uid://2xhy6qfxixfe" path="res://Themes/default_theme.tres" id="1_552y8"]
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_yfdsn"]
@@ -6,9 +6,93 @@
 [ext_resource type="AudioStream" uid="uid://batruphninevj" path="res://sprites/decide00.mp3" id="3_8kbmj"]
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="3_x6eac"]
 [ext_resource type="AudioStream" uid="uid://brxli7t6ejsg" path="res://music/intermission.wav" id="4_qarri"]
-[ext_resource type="Texture2D" uid="uid://paekyrjnpn1f" path="res://Undead Uprising Logo.png" id="6_g81i2"]
+[ext_resource type="Texture2D" uid="uid://dm3y0roeuuct5" path="res://sprites/image_1.png" id="8_8aoh6"]
+[ext_resource type="VideoStream" path="res://Main-Menu-Screen_.ogv" id="8_a4qnm"]
+[ext_resource type="FontFile" uid="uid://voolo53erqim" path="res://sprites/Michroma-Regular.ttf" id="8_degyo"]
+[ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="10_qvukm"]
 
 [sub_resource type="Theme" id="Theme_but8f"]
+
+[sub_resource type="Animation" id="Animation_2vsg2"]
+resource_name = "title_intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasGroup/Label2:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1, 2.1, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.992157, 0.992157, 0.992157, 1), Color(0.992157, 0.992157, 0.992157, 1), Color(0.992157, 0.992157, 0.992157, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.3, 5.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HBoxContainer:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.8, 7.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HBoxContainer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Video:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Video/CenterContainer/VideoStreamPlayer:paused")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r4a02"]
+_data = {
+"title_intro": SubResource("Animation_2vsg2")
+}
 
 [node name="StartMenu" type="CenterContainer"]
 anchors_preset = 15
@@ -19,7 +103,21 @@ grow_vertical = 2
 theme = ExtResource("1_552y8")
 script = ExtResource("1_yfdsn")
 
+[node name="Video" type="Node2D" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="Video"]
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.167, 0.167)
+size_flags_horizontal = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Video/CenterContainer"]
+layout_mode = 2
+stream = ExtResource("8_a4qnm")
+autoplay = true
+
 [node name="BlackAndRed" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(161.025, 90)
 scale = Vector2(0.500704, 0.494444)
 texture = ExtResource("3_02sgi")
@@ -31,6 +129,8 @@ scale = Vector2(0.0822917, 0.0695313)
 texture = ExtResource("3_x6eac")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="SelectSound" type="AudioStreamPlayer2D" parent="HBoxContainer"]
@@ -56,27 +156,14 @@ text = "Quit"
 [node name="TitleMusic (placeholder)" type="AudioStreamPlayer2D" parent="HBoxContainer"]
 stream = ExtResource("4_qarri")
 volume_db = 8.667
-autoplay = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="CanvasGroup" type="CanvasGroup" parent="."]
-position = Vector2(0, -47)
-
-[node name="Label" type="Label" parent="CanvasGroup"]
-visible = false
-offset_left = 50.0
-offset_top = 87.0
-offset_right = 294.0
-offset_bottom = 112.0
-theme_override_font_sizes/font_size = 24
-text = "UNDEAD UPRISING"
-
 [node name="UndeadUprisingLogo" type="Sprite2D" parent="."]
 position = Vector2(160, 49)
 scale = Vector2(0.26, 0.26)
-texture = ExtResource("6_g81i2")
+texture = ExtResource("8_8aoh6")
 
 [node name="Node2D" type="Node2D" parent="."]
 visible = false
@@ -101,6 +188,39 @@ R to reload
 Tab to zoom out
 "
 flat = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(183, 21)
+scale = Vector2(1.90575, 1.03957)
+texture = ExtResource("10_qvukm")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+position = Vector2(0, -47)
+
+[node name="Label" type="Label" parent="CanvasGroup"]
+visible = false
+offset_left = 50.0
+offset_top = 87.0
+offset_right = 294.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 24
+text = "UNDEAD UPRISING"
+
+[node name="Label2" type="Label" parent="CanvasGroup"]
+offset_left = 97.0
+offset_top = 136.0
+offset_right = 238.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.992157, 0.992157, 0.992157, 0)
+theme_override_fonts/font = ExtResource("8_degyo")
+text = "A GRAVEYARD GAMES Production"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r4a02")
+}
+autoplay = "title_intro"
 
 [connection signal="pressed" from="HBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Controls" to="." method="_on_button_pressed"]
