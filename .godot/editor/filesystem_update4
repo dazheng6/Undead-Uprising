@@ -19,4 +19,3 @@ res://Scenes/torch.tscn
 res://Scenes/hud.tscn
 res://Scenes/level_completed.tscn
 res://sprites/torchanim.tres
-res://Scripts/player.gd
