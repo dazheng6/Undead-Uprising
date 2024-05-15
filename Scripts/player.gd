@@ -17,6 +17,8 @@ var was_wall_normal = Vector2.ZERO
 @onready var marker_position_x = 15
 @onready var marker_position_y = 0
 @onready var camera = $Camera2D
+@onready var footstepsTimer = $FootstepsTimer
+@onready var player_is_walking = true
 
 #timers
 @onready var reloadTimer = $ReloadTimer
@@ -64,7 +66,17 @@ func _ready():
 	update_ammo_text()
 	update_lives_count()
 
+func player_walk_sound():
+	if !$Footsteps.playing:
+		$Footsteps.play()
+	
 func _process(delta):
+	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right"):
+		player_walk_sound()
+		footstepsTimer.start()
+	else:
+		return
+
 	if Input.is_action_pressed("Tab"):
 		camera.zoom.x = .5
 		camera.zoom.y = .5
@@ -313,3 +325,6 @@ func _on_item_detector_area_entered(area):
 
 func _on_gun_timer_timeout():
 	gun_recoiling = false
+
+func _on_footsteps_timer_timeout():
+	player_is_walking = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://b3vkmfxunohh8"]
+[gd_scene load_steps=28 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://gsvl7ajpy2vf" path="res://sounds/coin.mp3" id="11_xw6o8"]
 [ext_resource type="AudioStream" uid="uid://bbbk3k420jbc5" path="res://sounds/damage-1.mp3" id="13_kfy0q"]
 [ext_resource type="AudioStream" uid="uid://cdk3pabx8u6om" path="res://sounds/deathsound.mp3" id="14_3oeqp"]
+[ext_resource type="AudioStream" uid="uid://dglv36i26ixi0" path="res://sounds/walk1.mp3" id="15_knwvt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
 atlas = ExtResource("6_jq2ga")
@@ -227,9 +228,18 @@ stream = ExtResource("13_kfy0q")
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
 stream = ExtResource("14_3oeqp")
 
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_knwvt")
+volume_db = 24.0
+pitch_scale = 0.86
+
+[node name="FootstepsTimer" type="Timer" parent="."]
+wait_time = 0.3
+
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="area_entered" from="HazardDetector" to="Camera2D" method="_on_hazard_detector_area_entered"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="area_entered" from="ItemDetector" to="." method="_on_item_detector_area_entered"]
 [connection signal="timeout" from="Gun Timer" to="." method="_on_gun_timer_timeout"]
+[connection signal="timeout" from="FootstepsTimer" to="." method="_on_footsteps_timer_timeout"]
