@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://6afht3mywrm3"]
+[gd_scene load_steps=10 format=3 uid="uid://6afht3mywrm3"]
 
 [ext_resource type="Theme" uid="uid://2xhy6qfxixfe" path="res://Themes/default_theme.tres" id="1_552y8"]
 [ext_resource type="Script" path="res://Scripts/start_menu.gd" id="1_yfdsn"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="3_x6eac"]
 [ext_resource type="AudioStream" uid="uid://brxli7t6ejsg" path="res://music/intermission.wav" id="4_qarri"]
 [ext_resource type="Texture2D" uid="uid://paekyrjnpn1f" path="res://Undead Uprising Logo.png" id="6_g81i2"]
+[ext_resource type="VideoStream" path="res://Main-Menu-Screen_.ogv" id="8_a4qnm"]
 
 [sub_resource type="Theme" id="Theme_but8f"]
 
@@ -19,7 +20,21 @@ grow_vertical = 2
 theme = ExtResource("1_552y8")
 script = ExtResource("1_yfdsn")
 
+[node name="Video" type="Node2D" parent="."]
+
+[node name="CenterContainer" type="CenterContainer" parent="Video"]
+offset_right = 1920.0
+offset_bottom = 1088.0
+scale = Vector2(0.167, 0.167)
+size_flags_horizontal = 4
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Video/CenterContainer"]
+layout_mode = 2
+stream = ExtResource("8_a4qnm")
+autoplay = true
+
 [node name="BlackAndRed" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(161.025, 90)
 scale = Vector2(0.500704, 0.494444)
 texture = ExtResource("3_02sgi")

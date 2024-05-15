@@ -137,7 +137,8 @@ texture = ExtResource("5_wd1ck")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10)
 sprite_frames = SubResource("SpriteFrames_dg80j")
-animation = &"run"
+animation = &"idle"
+speed_scale = 1.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
