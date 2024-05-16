@@ -6,6 +6,11 @@ extends CenterContainer
 @onready var controlButtonPressed = false
 @onready var controlsContainer = $Node2D
 
+func _process(delta):
+	if Input.is_action_pressed("Esc"):
+		controlsContainer.hide()
+		buttonsContainer.show()
+
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	start_game_button.grab_focus()
