@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_qevwg"]
 [ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="3_hggul"]
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="4_k5ot2"]
-[ext_resource type="PackedScene" path="res://zombie.tscn" id="5_xbe05"]
+[ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://zombie.tscn" id="5_xbe05"]
 
 [node name="World" type="Node2D"]
 position = Vector2(17, 3)

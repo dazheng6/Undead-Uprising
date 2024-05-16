@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_gccb8"]
 [ext_resource type="PackedScene" uid="uid://dcsu54avxadfs" path="res://Scenes/level_one.tscn" id="2_jalxj"]
 [ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="5_lfr1y"]
-[ext_resource type="PackedScene" path="res://zombie.tscn" id="6_g3j8k"]
+[ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://zombie.tscn" id="6_g3j8k"]
 [ext_resource type="PackedScene" uid="uid://fa7ht0hwtcgq" path="res://Scenes/door_detector.tscn" id="7_ubilh"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_5wdxk"]
@@ -38,34 +38,53 @@ autoplay = true
 panning_strength = 0.0
 
 [node name="EquipGun" type="RichTextLabel" parent="."]
-offset_left = -55.0
-offset_top = -36.0
-offset_right = 71.0
-offset_bottom = 4.0
+offset_left = -72.0
+offset_top = -35.0
+offset_right = 54.0
+offset_bottom = 5.0
 scale = Vector2(0.5, 0.5)
 text = "Press One To Equip Weapon"
 
 [node name="Shoot" type="RichTextLabel" parent="."]
-offset_left = 4.0
-offset_top = -36.0
-offset_right = 142.0
-offset_bottom = 4.0
+offset_left = 30.0
+offset_top = -42.0
+offset_right = 164.0
+offset_bottom = 16.0
 scale = Vector2(0.5, 0.5)
-text = "Left Click to shoot"
+text = "Left Click to shoot
+R to reload
+Move mouse to aim"
+
+[node name="Press Tab" type="RichTextLabel" parent="."]
+offset_left = 197.0
+offset_top = -32.0
+offset_right = 335.0
+offset_bottom = 8.0
+scale = Vector2(0.5, 0.5)
+text = "Press tab to zoom out"
 
 [node name="Kill zombies" type="RichTextLabel" parent="."]
-offset_left = 142.0
-offset_top = -40.0
-offset_right = 280.0
+offset_left = 118.0
+offset_top = -33.0
+offset_right = 256.0
+offset_bottom = 7.0
 scale = Vector2(0.5, 0.5)
 text = "Kill The zombies and get the coins
 "
 
+[node name="Move2" type="RichTextLabel" parent="."]
+offset_left = 289.0
+offset_top = -38.0
+offset_right = 449.0
+offset_bottom = 2.0
+scale = Vector2(0.5, 0.5)
+text = "Press space on wall to walljump"
+
 [node name="Move" type="RichTextLabel" parent="."]
-offset_left = -140.0
-offset_top = -36.0
-offset_right = 20.0
-offset_bottom = 4.0
+offset_left = -291.0
+offset_top = -20.0
+offset_right = -131.0
+offset_bottom = 20.0
 scale = Vector2(0.5, 0.5)
 text = "Use WASD or 
 Arrow Keys To Move"
@@ -82,7 +101,7 @@ text = "You have been trapped here, you must leave"
 position = Vector2(247, -98)
 
 [node name="Zombie2" parent="." instance=ExtResource("6_g3j8k")]
-position = Vector2(264, 12)
+position = Vector2(146, 12)
 
 [node name="Zombie3" parent="." instance=ExtResource("6_g3j8k")]
 position = Vector2(306, -99)

@@ -1,7 +1,6 @@
 res://Scenes/start_menu.tscn
 res://Particles/particle.tres
 res://Scenes/global.tscn
-res://Enemies/zombie_spawner.tscn
 res://Scenes/shotgun.tscn
 res://Scenes/bullet_destroy_particle.tscn
 res://Scenes/level_tile_map.tscn
@@ -9,3 +8,9 @@ res://Scenes/dirttilemap.tscn
 res://Scenes/torch.tscn
 res://Scenes/hud.tscn
 res://Scenes/level_completed.tscn
+res://Scenes/player.tscn
+res://Scenes/tutorial.tscn
+res://Scenes/level_one.tscn
+res://Scenes/level_two.tscn
+res://Scenes/level_three.tscn
+res://Scenes/world.tscn
