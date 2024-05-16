@@ -8,3 +8,4 @@ res://Scenes/level_one.tscn
 res://Scenes/level_two.tscn
 res://Scenes/level_three.tscn
 res://Scenes/world.tscn
+res://Scripts/zombie.gd

@@ -13,7 +13,7 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 
 func coin_spawn():
 	var coin_instance = goldPath.instantiate()
-	coin_instance.position = zombiePosition
+	coin_instance.position = zombiePosition + Vector2(17, 0)
 	get_parent().add_child(coin_instance)
 	print("Coin Spawn")
 
