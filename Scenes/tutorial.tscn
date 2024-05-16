@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_gccb8"]
 [ext_resource type="PackedScene" uid="uid://dcsu54avxadfs" path="res://Scenes/level_one.tscn" id="2_jalxj"]
 [ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="5_lfr1y"]
-[ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://zombie.tscn" id="6_g3j8k"]
+[ext_resource type="PackedScene" path="res://zombie.tscn" id="6_g3j8k"]
 [ext_resource type="PackedScene" uid="uid://fa7ht0hwtcgq" path="res://Scenes/door_detector.tscn" id="7_ubilh"]
 
 [sub_resource type="AudioStreamMP3" id="AudioStreamMP3_5wdxk"]

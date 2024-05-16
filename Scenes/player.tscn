@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b3vkmfxunohh8"]
+[gd_scene load_steps=26 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="7_4luyp"]
 [ext_resource type="PackedScene" uid="uid://cx875k0hb43t4" path="res://Scenes/hud.tscn" id="7_d5j18"]
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="11_p7dpv"]
+[ext_resource type="AudioStream" uid="uid://bbbk3k420jbc5" path="res://sounds/damage-1.mp3" id="12_156r5"]
+[ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="13_lqy7q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
 atlas = ExtResource("6_jq2ga")
@@ -92,8 +94,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ognu"]
-size = Vector2(12, 17)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8tg0y"]
+radius = 4.5
+height = 18.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fq1oj"]
 size = Vector2(8, 14)
@@ -137,9 +140,8 @@ sprite_frames = SubResource("SpriteFrames_dg80j")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -7.5)
-shape = SubResource("RectangleShape2D_0ognu")
+position = Vector2(-0.5, -8)
+shape = SubResource("CapsuleShape2D_8tg0y")
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.1
@@ -217,8 +219,10 @@ wait_time = 0.3
 [node name="PlayerSound" type="Node2D" parent="."]
 
 [node name="HurtSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
+stream = ExtResource("12_156r5")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
+stream = ExtResource("13_lqy7q")
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="area_entered" from="HazardDetector" to="Camera2D" method="_on_hazard_detector_area_entered"]
