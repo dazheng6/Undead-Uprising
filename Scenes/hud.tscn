@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_ig8hb"]
 [ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_16f4r"]
 [ext_resource type="Texture2D" uid="uid://i51d7208qe8a" path="res://sprites/you died.png" id="6_kt2yy"]
-[ext_resource type="FontFile" uid="uid://dtwxmyfvhasmc" path="res://Michroma-Regular.ttf" id="7_vua87"]
+[ext_resource type="FontFile" path="res://Michroma-Regular.ttf" id="7_vua87"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab410"]
 bg_color = Color(0, 0, 0, 1)

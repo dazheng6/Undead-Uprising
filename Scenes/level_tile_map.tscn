@@ -779,14 +779,10 @@ texture = ExtResource("2_jqa4s")
 3:1/0/terrains_peering_bit/bottom_side = 2
 3:1/0/terrains_peering_bit/bottom_left_corner = 2
 3:1/0/terrains_peering_bit/left_side = 2
-5:1/0 = 0
-5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-5:1/0/physics_layer_0/angular_velocity = 0.0
-5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.5, 2.125, -2.75, -2.875, 1.5, -3.125, 2.125, -8, 8, -8, 8, 8, -8, 8, -8, 2.125)
 6:1/0 = 0
 6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 6:1/0/physics_layer_0/angular_velocity = 0.0
-6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2.25, -8, -2.125, -2.875, 2.875, -3, 3.25, 2, 8, 2.125, 8, 8, -8, 8, -8, -8)
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, -8, -8)
 8:1/0 = 0
 8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:1/0/physics_layer_0/angular_velocity = 0.0
@@ -1294,6 +1290,10 @@ texture = ExtResource("2_jqa4s")
 12:15/0 = 0
 12:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 12:15/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -8, 8, 8, -8)
 
 [sub_resource type="TileSet" id="TileSet_sagwk"]
 occlusion_layer_0/light_mask = 1

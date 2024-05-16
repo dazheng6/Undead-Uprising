@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://4l1giypmwwj8" path="res://Scenes/level_two.tscn" id="2_kndf2"]
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="3_io4oc"]
 [ext_resource type="PackedScene" uid="uid://c2j8hd7s5jtnh" path="res://Scenes/dirttilemap.tscn" id="4_hdn75"]
-[ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://zombie.tscn" id="5_iu0yq"]
+[ext_resource type="PackedScene" path="res://zombie.tscn" id="5_iu0yq"]
 [ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="6_mrhm1"]
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="8_ox3rm"]
 
@@ -103,7 +103,7 @@ occluder = SubResource("OccluderPolygon2D_w5yd7")
 [node name="CanvasModulate" type="CanvasModulate" parent="levelTileMap" index="3"]
 color = Color(0.227451, 0.227451, 0.227451, 1)
 
-[node name="Spikes" parent="." index="5" instance=ExtResource("2_7q1vi")]
+[node name="Spikes" parent="." index="5" groups=["Hazard"] instance=ExtResource("2_7q1vi")]
 position = Vector2(97, 192)
 
 [node name="Spikes2" parent="Spikes" index="4" instance=ExtResource("2_7q1vi")]

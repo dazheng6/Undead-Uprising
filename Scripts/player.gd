@@ -64,7 +64,7 @@ func _ready():
 	shotgun_gun.hide()
 	update_ammo_text()
 	update_lives_count()
-	update_enemy_text()
+	
 
 func _process(delta):
 	if Input.is_action_pressed("Tab"):
@@ -123,6 +123,7 @@ func _process(delta):
 		if lives != 0:
 			fade_to_black()
 		respawn_timer.start()
+	update_enemy_text()
 
 func move():
 	if Input.is_action_just_pressed("shoot") and current_ammo > 0 and !is_reloading and !equiped_weapon:
@@ -176,9 +177,9 @@ func update_lives_count():
 		lives_text.text = str(lives)
 
 func update_enemy_text():
-	var enemies = get_tree().get_nodes_in_group("Zombies")
+	var enemies = get_tree().get_nodes_in_group("Zombie")
 	var enemiesRemaining = enemies.size()
-	enemy_text = "Enemies Remaining: " + str(enemiesRemaining)
+	enemy_text.text = "Enemies Remaining: " + str(enemiesRemaining)
 
 func add_gold():
 	gold += 10
