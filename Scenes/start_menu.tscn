@@ -104,6 +104,7 @@ theme = ExtResource("1_552y8")
 script = ExtResource("1_yfdsn")
 
 [node name="Video" type="Node2D" parent="."]
+visible = false
 
 [node name="CenterContainer" type="CenterContainer" parent="Video"]
 offset_right = 1920.0
@@ -115,6 +116,8 @@ size_flags_horizontal = 4
 layout_mode = 2
 stream = ExtResource("8_a4qnm")
 autoplay = true
+paused = true
+loop = true
 
 [node name="BlackAndRed" type="Sprite2D" parent="."]
 visible = false
@@ -212,7 +215,7 @@ offset_left = 97.0
 offset_top = 136.0
 offset_right = 238.0
 offset_bottom = 145.0
-theme_override_colors/font_color = Color(0.992157, 0.992157, 0.992157, 0)
+theme_override_colors/font_color = Color(1, 1, 1, 0)
 theme_override_fonts/font = ExtResource("8_degyo")
 text = "A GRAVEYARD GAMES Production"
 
