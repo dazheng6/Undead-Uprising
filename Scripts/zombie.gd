@@ -15,8 +15,8 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 
 func coin_spawn():
 	var coin_instance = goldPath.instantiate()
-	coin_instance.position = $Marker2D.global_position
 	get_parent().add_child(coin_instance)
+	coin_instance.position = $Marker2D.global_position + Vector2(-10, -5)
 	print("Coin Spawn")
 
 func _process(delta):
