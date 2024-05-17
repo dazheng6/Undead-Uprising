@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://7j0w30ix6cmy"]
+
+[ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="1_su3pv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3fi"]
+
+[node name="Spikes2" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4t3fi")
+
+[node name="TileMap" parent="." instance=ExtResource("1_su3pv")]
+position = Vector2(106.494, -52.6275)
