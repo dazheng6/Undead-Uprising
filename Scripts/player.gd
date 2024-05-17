@@ -119,6 +119,8 @@ func _process(delta):
 		is_dead = true
 		animated_sprite_2d.play("idle")
 		lives -= 1
+		fade_to_black()
+		global_position = starting_position
 		$Node2D.hide()
 		if lives != 0:
 			fade_to_black()

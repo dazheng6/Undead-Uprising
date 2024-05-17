@@ -113,6 +113,12 @@ position = Vector2(28, 2)
 [node name="ZombieCollider2" parent="." instance=ExtResource("8_5yqp0")]
 position = Vector2(182, 0)
 
+[node name="ZombieCollider3" parent="." instance=ExtResource("8_5yqp0")]
+position = Vector2(324, -109)
+
+[node name="ZombieCollider4" parent="." instance=ExtResource("8_5yqp0")]
+position = Vector2(223, -103)
+
 [connection signal="area_entered" from="DoorDetector" to="." method="_on_door_detector_area_entered"]
 
 [editable path="CanvasLayer/LevelCompleted"]
