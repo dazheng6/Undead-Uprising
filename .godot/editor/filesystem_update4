@@ -12,3 +12,5 @@ res://Scenes/player.tscn
 res://Scenes/world.tscn
 res://Enemies/zombie_collider.tscn
 res://Scripts/player.gd
+res://Scripts/world.gd
+res://Scenes/gold.tscn
