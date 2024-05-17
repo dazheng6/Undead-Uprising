@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6vkxtqdlatfu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p7wsq"]
+size = Vector2(14, 37)
+
+[node name="ZombieCollider" type="Area2D" groups=["zombiecollider"]]
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p7wsq")

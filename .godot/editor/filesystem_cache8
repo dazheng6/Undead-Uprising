@@ -1,11 +1,11 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715891129
+::res://::1715977356
 black and red gradiant.svg::CompressedTexture2D::2672927470648362095::1715109913::1715109937::1::::<><>::
 black and red.jpeg::CompressedTexture2D::5895775895265344196::1715109991::1715109998::1::::<><>::
 black_9slice.png::CompressedTexture2D::2562135206499260773::1714165283::1714165283::1::::<><>::
 black_9slice.tres::StyleBoxTexture::851194554714113694::1714165283::0::1::::<><>::uid://bcrd80l7csbwf::::res://black_9slice.png
-DefaultMovementData.tres::Resource/PlayerMovementData::226902847541373664::1714165283::0::1::::<><>::res://Scripts/PlayerMovementData.gd
-FasterMovementData.tres::Resource/PlayerMovementData::1098123721225991734::1714165283::0::1::::<><>::res://Scripts/PlayerMovementData.gd
+DefaultMovementData.tres::Resource/Resource::226902847541373664::1714165283::0::1::::<><>::res://Scripts/PlayerMovementData.gd
+FasterMovementData.tres::Resource/Resource::1098123721225991734::1714165283::0::1::::<><>::res://Scripts/PlayerMovementData.gd
 gitignore.txt::TextFile::-1::1714165286::0::1::::<><>::
 gunreload.mp3::AudioStreamMP3::7073233373773151251::1714165286::1714165295::1::::<><>::
 hud.tscn::PackedScene::8767205055760209743::1715373409::0::1::::<><>::uid://b42xkw66pkthw::::res://Scenes/level_transition.tscn<>uid://doheie45mf58w::::res://sounds/you died.mp3<>uid://b2rpo86lhxg8i::::res://sounds/Solid_black.png<>uid://2p2046ae2ntn::::res://sprites/healthOutline.png
@@ -18,7 +18,7 @@ player.png::CompressedTexture2D::2614369219151506091::1714165283::1714165283::1:
 playergun.tres::Resource::5264750855070839262::1714165287::0::1::::<><>::
 README.md::TextFile::-1::1714165283::0::1::::<><>::
 RIKY2vamp.ttf::FontFile::5284767135531552212::1306380314::1715026623::1::::<><>::
-SlowerMovementData.tres::Resource/PlayerMovementData::4571306517077851811::1714165283::0::1::::<><>::res://Scripts/PlayerMovementData.gd
+SlowerMovementData.tres::Resource/Resource::4571306517077851811::1714165283::0::1::::<><>::res://Scripts/PlayerMovementData.gd
 Undead Uprising Logo.png::CompressedTexture2D::1053094667729575765::1714768087::1714768106::1::::<><>::
 white_9slice.tres::StyleBoxTexture::6936081953518920120::1715373409::0::1::::<><>::uid://l2nd80kfo817::::res://sprites/white_9slice.png
 zombie.tscn::PackedScene::182822818388853559::1715891111::0::1::::<><>::res://Scripts/zombie.gd<>uid://c5xveei6bam1h::::res://icon.svg<>uid://c1qh8vwfuuvcv::::res://sprites/Zombie.png
@@ -34,9 +34,9 @@ levelcomplete.wav::AudioStreamWAV::2066572296824515290::1714165287::1714165296::
 streets64.wav::AudioStreamWAV::405393733310906610::1714165287::1714165296::1::::<><>::
 WatchYourStep.wav::AudioStreamWAV::1783070639862248507::1714165286::1714165296::1::::<><>::
 ::res://NPC's/::1715630628
-::res://Particles/::1715712346
-particle.tres::ParticleProcessMaterial::8755544010303547557::1715712346::0::1::::<><>::
-::res://Scenes/::1715891111
+::res://Particles/::1715906253
+particle.tres::ParticleProcessMaterial::8755544010303547557::1715977384::0::1::::<><>::
+::res://Scenes/::1715909047
 bullet.tscn::PackedScene::6127228540421807253::1715891111::0::1::::<><>::res://Scripts/bullet.gd<>res://sprites/bullet.png
 bullet_destroy_particle.gd::GDScript::-1::1714501970::0::1::::<>GPUParticles2D<>::
 bullet_destroy_particle.tscn::PackedScene::7169890101743833779::1715715547::0::1::::<><>::uid://dw0isbou8fbon::::res://Particles/particle.tres<>res://Scenes/bullet_destroy_particle.gd
@@ -45,28 +45,28 @@ coin.tscn::PackedScene::8235467709341576719::1714165286::0::1::::<><>::uid://c5x
 controls.tscn::PackedScene::4082780145421602447::1714502876::0::1::::<><>::
 dirttilemap.tscn::PackedScene::6688535914580337653::1715715547::0::1::::<><>::uid://frfnc8qmcb2c::::res://sprites/tileset.png<>uid://7hp5rpqsl6bu::::res://sprites/slopes.png<>uid://chwqgn5ysb277::::res://sprites/slopes_flipped.png
 door_detector.tscn::PackedScene::352900699427982844::1715891111::0::1::::<><>::uid://coxf60vhcmr1l::::res://sprites/black background.png
-global.tscn::PackedScene::641868339686275121::1715715546::0::1::::<><>::res://Scripts/global.gd
+global.tscn::PackedScene::641868339686275121::1715908998::0::1::::<><>::res://Scripts/global.gd
 gold.tscn::PackedScene::5271667193497884339::1715632441::0::1::::<><>::uid://b7qxeu7alvhab::::res://sprites/COINfile.png<>uid://gsvl7ajpy2vf::::res://sounds/coin.mp3
 hazard_area.tscn::PackedScene::4577149518083045269::1714165283::0::1::::<><>::
 heart.tscn::PackedScene::5472409917177336860::1715373409::0::1::::<><>::uid://dl5cc0kt05ern::::res://sprites/heart.png<>res://Scripts/heart.gd
 hud.tscn::PackedScene::6457306318704762283::1715891111::0::1::::<><>::uid://bsx6yke1iwpow::::res://sprites/goldbackground.png<>uid://2p2046ae2ntn::::res://sprites/healthOutline.png<>uid://b42xkw66pkthw::::res://Scenes/level_transition.tscn<>uid://doheie45mf58w::::res://sounds/you died.mp3<>uid://b2rpo86lhxg8i::::res://sounds/Solid_black.png<>uid://i51d7208qe8a::::res://sprites/you died.png<>uid://dtwxmyfvhasmc::::res://Michroma-Regular.ttf
 level_completed.gd::GDScript::-1::1714165286::0::1::::<>ColorRect<>::
 level_completed.tscn::PackedScene::6521816947896800533::1715715547::0::1::::<><>::res://Scenes/level_completed.gd<>uid://b42xkw66pkthw::::res://Scenes/level_transition.tscn<>uid://4pce5h4nj8gs::::res://music/levelcomplete.wav
-level_one.tscn::PackedScene::7338067975762957528::1715891111::0::1::::<><>::uid://la8btl4g5ppc::::res://Scenes/world.tscn<>uid://ccfebdwmudstn::::res://Scenes/spikes.tscn<>uid://4l1giypmwwj8::::res://Scenes/level_two.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>uid://c2j8hd7s5jtnh::::res://Scenes/dirttilemap.tscn<>uid://cutchjak4xel::::res://zombie.tscn<>uid://coxf60vhcmr1l::::res://sprites/black background.png<>uid://cc35rksac8ffv::::res://Scenes/torch.tscn
-level_three.tscn::PackedScene::7246524365924055450::1715891111::0::1::::<><>::res://Scripts/world.gd<>uid://b3vkmfxunohh8::::res://Scenes/player.tscn<>uid://cy6hmwmgqka5j::::res://Scenes/level_completed.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>uid://cutchjak4xel::::res://zombie.tscn
+level_one.tscn::PackedScene::7338067975762957528::1715977384::0::1::::<><>::uid://la8btl4g5ppc::::res://Scenes/world.tscn<>uid://ccfebdwmudstn::::res://Scenes/spikes.tscn<>uid://4l1giypmwwj8::::res://Scenes/level_two.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>uid://c2j8hd7s5jtnh::::res://Scenes/dirttilemap.tscn<>uid://cutchjak4xel::::res://zombie.tscn<>uid://coxf60vhcmr1l::::res://sprites/black background.png<>uid://cc35rksac8ffv::::res://Scenes/torch.tscn
+level_three.tscn::PackedScene::7246524365924055450::1715977384::0::1::::<><>::res://Scripts/world.gd<>uid://b3vkmfxunohh8::::res://Scenes/player.tscn<>uid://cy6hmwmgqka5j::::res://Scenes/level_completed.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>uid://cutchjak4xel::::res://zombie.tscn
 level_tile_map.tscn::PackedScene::9153758198080651781::1715891111::0::1::::<><>::uid://ul6p75dpo8mb::::res://Scenes/platformertiles.png<>uid://dy7vu8nwmed05::::res://sprites/Dungeon Tile Set.png
 level_transition.tscn::PackedScene::4479050902159930288::1714423257::0::1::::<><>::res://Scripts/level_transition.gd
-level_two.tscn::PackedScene::2059774435333519099::1715891111::0::1::::<><>::uid://la8btl4g5ppc::::res://Scenes/world.tscn<>uid://c2j8hd7s5jtnh::::res://Scenes/dirttilemap.tscn<>uid://dbijgynslnek5::::res://Scenes/level_three.tscn<>uid://ccfebdwmudstn::::res://Scenes/spikes.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>uid://cc35rksac8ffv::::res://Scenes/torch.tscn<>uid://d24vg2yadjanw::::res://music/d2m31.wav<>uid://0c3ypx1m5an8::::res://sprites/whitesquare png.jpg<>uid://d86kifqyjn6v::::res://sprites/lightmask.png<>uid://cutchjak4xel::::res://zombie.tscn
+level_two.tscn::PackedScene::2059774435333519099::1715977384::0::1::::<><>::uid://la8btl4g5ppc::::res://Scenes/world.tscn<>uid://c2j8hd7s5jtnh::::res://Scenes/dirttilemap.tscn<>uid://dbijgynslnek5::::res://Scenes/level_three.tscn<>uid://ccfebdwmudstn::::res://Scenes/spikes.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>uid://cc35rksac8ffv::::res://Scenes/torch.tscn<>uid://d24vg2yadjanw::::res://music/d2m31.wav<>uid://0c3ypx1m5an8::::res://sprites/whitesquare png.jpg<>uid://d86kifqyjn6v::::res://sprites/lightmask.png<>uid://cutchjak4xel::::res://zombie.tscn
 pistol.tscn::PackedScene::1715193759377328957::1715715546::0::1::::<><>::res://Scripts/pistol.gd<>uid://c5xveei6bam1h::::res://icon.svg<>uid://b3frnna77css6::::res://muzzel_flash-removebg-preview.png<>uid://coxf60vhcmr1l::::res://sprites/black background.png<>uid://d86kifqyjn6v::::res://sprites/lightmask.png<>uid://b18f5fh0tckgl::::res://sprites/gun.png
 platformertiles.png::CompressedTexture2D::1428395768987916253::1714165286::1714165295::1::::<><>::
-player.tscn::PackedScene::4395689136921678251::1715891111::0::1::::<><>::res://Scripts/player.gd<>uid://pv664px4lo6y::::res://FasterMovementData.tres<>uid://yo38xfqrqdc4::::res://Scenes/pistol.tscn<>uid://c2n1u4m0krjb7::::res://Scenes/shotgun.tscn<>uid://ccdu5pevdjdmx::::res://pistol.mp3<>uid://d86kifqyjn6v::::res://sprites/lightmask.png<>uid://bhastabn6b6oc::::res://sprites/Undead Uprising Dom Walking-export1.png<>uid://c71ledapmrta6::::res://gunreload.mp3<>res://Scripts/Camera2D.gd<>uid://cx875k0hb43t4::::res://Scenes/hud.tscn<>uid://cv1tsyvc8faut::::res://sprites/windows background.png<>uid://bbbk3k420jbc5::::res://sounds/damage-1.mp3<>uid://doheie45mf58w::::res://sounds/you died.mp3
+player.tscn::PackedScene::4395689136921678251::1715908998::0::1::::<><>::res://Scripts/player.gd<>uid://pv664px4lo6y::::res://FasterMovementData.tres<>uid://yo38xfqrqdc4::::res://Scenes/pistol.tscn<>uid://c2n1u4m0krjb7::::res://Scenes/shotgun.tscn<>uid://ccdu5pevdjdmx::::res://pistol.mp3<>uid://d86kifqyjn6v::::res://sprites/lightmask.png<>uid://bhastabn6b6oc::::res://sprites/Undead Uprising Dom Walking-export1.png<>uid://c71ledapmrta6::::res://gunreload.mp3<>res://Scripts/Camera2D.gd<>uid://cx875k0hb43t4::::res://Scenes/hud.tscn<>uid://cv1tsyvc8faut::::res://sprites/windows background.png<>uid://bbbk3k420jbc5::::res://sounds/damage-1.mp3<>uid://doheie45mf58w::::res://sounds/you died.mp3
 shotgun.tscn::PackedScene::6696392956970614318::1715715547::0::1::::<><>::res://Scripts/shotgun.gd<>uid://c5xveei6bam1h::::res://icon.svg
 spikes.tscn::PackedScene::4923785789325375283::1715891111::0::1::::<><>::uid://f3fqksks83f0::::res://sprites/spikes.png<>uid://b6hg8pktlufrp::::res://Scenes/hazard_area.tscn
-start_menu.tscn::PackedScene::2176171280076528808::1715891111::0::1::::<><>::uid://2xhy6qfxixfe::::res://Themes/default_theme.tres<>res://Scripts/start_menu.gd<>uid://cp87tkfnr2a1i::::res://black and red.jpeg<>uid://batruphninevj::::res://sprites/decide00.mp3<>uid://cv1tsyvc8faut::::res://sprites/windows background.png<>uid://brxli7t6ejsg::::res://music/intermission.wav<>uid://dm3y0roeuuct5::::res://sprites/image_1.png<>res://Main-Menu-Screen_.ogv<>uid://voolo53erqim::::res://sprites/Michroma-Regular.ttf<>uid://coxf60vhcmr1l::::res://sprites/black background.png
+start_menu.tscn::PackedScene::2176171280076528808::1715908998::0::1::::<><>::uid://2xhy6qfxixfe::::res://Themes/default_theme.tres<>res://Scripts/start_menu.gd<>uid://cp87tkfnr2a1i::::res://black and red.jpeg<>uid://batruphninevj::::res://sprites/decide00.mp3<>uid://cv1tsyvc8faut::::res://sprites/windows background.png<>uid://brxli7t6ejsg::::res://music/intermission.wav<>uid://dm3y0roeuuct5::::res://sprites/image_1.png<>res://Main-Menu-Screen_.ogv<>uid://voolo53erqim::::res://sprites/Michroma-Regular.ttf<>uid://coxf60vhcmr1l::::res://sprites/black background.png
 torch.tscn::PackedScene::4972874053099274363::1715715547::0::1::::<><>::uid://rf7cgo1t7prq::::res://sprites/torch_anim.png<>uid://d86kifqyjn6v::::res://sprites/lightmask.png
-tutorial.tscn::PackedScene::2977373738945332369::1715891111::0::1::::<><>::uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>res://Scripts/world.gd<>uid://b3vkmfxunohh8::::res://Scenes/player.tscn<>uid://dcsu54avxadfs::::res://Scenes/level_one.tscn<>uid://cy6hmwmgqka5j::::res://Scenes/level_completed.tscn<>uid://cutchjak4xel::::res://zombie.tscn<>uid://fa7ht0hwtcgq::::res://Scenes/door_detector.tscn
-world.tscn::PackedScene::774083742836898028::1715715546::0::1::::<><>::res://Scripts/world.gd<>uid://b3vkmfxunohh8::::res://Scenes/player.tscn<>uid://cy6hmwmgqka5j::::res://Scenes/level_completed.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn
-::res://Scripts/::1715891111
+tutorial.tscn::PackedScene::2977373738945332369::1715977384::0::1::::<><>::uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn<>res://Scripts/world.gd<>uid://b3vkmfxunohh8::::res://Scenes/player.tscn<>uid://dcsu54avxadfs::::res://Scenes/level_one.tscn<>uid://cy6hmwmgqka5j::::res://Scenes/level_completed.tscn<>uid://cutchjak4xel::::res://zombie.tscn<>uid://fa7ht0hwtcgq::::res://Scenes/door_detector.tscn
+world.tscn::PackedScene::774083742836898028::1715908998::0::1::::<><>::res://Scripts/world.gd<>uid://b3vkmfxunohh8::::res://Scenes/player.tscn<>uid://cy6hmwmgqka5j::::res://Scenes/level_completed.tscn<>uid://d3ofcbr2mdxuj::::res://Scenes/level_tile_map.tscn
+::res://Scripts/::1715909046
 bullet.gd::GDScript::-1::1714501970::0::1::::<>Area2D<>::
 Camera2D.gd::GDScript::-1::1715713075::0::1::::<>Camera2D<>::
 Events.gd::GDScript::-1::1714165283::0::1::::<>Node<>::
@@ -79,9 +79,9 @@ playergun.gd::GDScript::-1::1714165286::0::1::::PlayerGun<>Resource<>::
 playerhud.gd::GDScript::-1::1715891111::0::1::::<>CanvasLayer<>::
 PlayerMovementData.gd::GDScript::-1::1714165283::0::1::::PlayerMovementData<>Resource<>::
 shotgun.gd::GDScript::-1::1714501970::0::1::::<>Sprite2D<>::
-start_menu.gd::GDScript::-1::1715714106::0::1::::<>CenterContainer<>::
-world.gd::GDScript::-1::1715632740::0::1::::<>Node2D<>::
-zombie.gd::GDScript::-1::1715108830::0::1::::<>Area2D<>::
+start_menu.gd::GDScript::-1::1715977384::0::1::::<>CenterContainer<>::
+world.gd::GDScript::-1::1715909046::0::1::::<>Node2D<>::
+zombie.gd::GDScript::-1::1715894793::0::1::::<>Area2D<>::
 ::res://sounds/::1715713448
 coin.mp3::AudioStreamMP3::459588243159463563::1715632441::1715632444::1::::<><>::
 damage-1.mp3::AudioStreamMP3::2459331648535544286::1715713445::1715713448::1::::<><>::
@@ -89,7 +89,7 @@ dark dungeon.mp3::AudioStreamMP3::6159668703076787925::1715372497::1715372502::1
 deathsound.mp3::AudioStreamMP3::5005778541181672116::1715713445::1715713448::1::::<><>::
 Solid_black.png::CompressedTexture2D::4317551421414704842::1714768018::1714768025::1::::<><>::
 you died.mp3::AudioStreamMP3::8156613916884539736::1714768018::1714768025::1::::<><>::
-::res://sprites/::1715891111
+::res://sprites/::1715891130
 ammobackground.png::CompressedTexture2D::2739912324552514728::1715372858::1715373410::1::::<><>::
 black background.png::CompressedTexture2D::5803326157082773603::1715372858::1715373410::1::::<><>::
 bullet.png::CompressedTexture2D::635379619442886846::1715891111::1715891130::1::::<><>::

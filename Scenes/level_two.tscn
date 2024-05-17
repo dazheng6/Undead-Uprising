@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://d24vg2yadjanw" path="res://music/d2m31.wav" id="4_g42gu"]
 [ext_resource type="Texture2D" uid="uid://0c3ypx1m5an8" path="res://sprites/whitesquare png.jpg" id="8_tioi2"]
 [ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="9_rvcxv"]
-[ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://zombie.tscn" id="10_4t6wp"]
+[ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://Enemies/zombie.tscn" id="10_dway6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ff17"]
 size = Vector2(45, 73.85)
@@ -197,32 +197,32 @@ autoplay = true
 
 [node name="Zombie" type="Node2D" parent="." index="8"]
 
-[node name="Zombie" parent="Zombie" index="0" instance=ExtResource("10_4t6wp")]
+[node name="Zombie" parent="Zombie" index="0" instance=ExtResource("10_dway6")]
 position = Vector2(109, 91)
 
-[node name="Zombie2" parent="Zombie" index="1" instance=ExtResource("10_4t6wp")]
+[node name="Zombie2" parent="Zombie" index="1" instance=ExtResource("10_dway6")]
 position = Vector2(241, 39)
 
-[node name="Zombie3" parent="Zombie" index="2" instance=ExtResource("10_4t6wp")]
+[node name="Zombie3" parent="Zombie" index="2" instance=ExtResource("10_dway6")]
 position = Vector2(266, -42)
 
-[node name="Zombie4" parent="Zombie" index="3" instance=ExtResource("10_4t6wp")]
+[node name="Zombie4" parent="Zombie" index="3" instance=ExtResource("10_dway6")]
 position = Vector2(198, 156)
 
-[node name="Zombie5" parent="Zombie" index="4" instance=ExtResource("10_4t6wp")]
+[node name="Zombie5" parent="Zombie" index="4" instance=ExtResource("10_dway6")]
 position = Vector2(403, 157)
 
-[node name="Zombie6" parent="Zombie" index="5" instance=ExtResource("10_4t6wp")]
+[node name="Zombie6" parent="Zombie" index="5" instance=ExtResource("10_dway6")]
 position = Vector2(509, 157)
 
-[node name="Zombie7" parent="Zombie" index="6" instance=ExtResource("10_4t6wp")]
+[node name="Zombie7" parent="Zombie" index="6" instance=ExtResource("10_dway6")]
 position = Vector2(792, 30)
 
-[node name="Zombie8" parent="Zombie" index="7" instance=ExtResource("10_4t6wp")]
+[node name="Zombie8" parent="Zombie" index="7" instance=ExtResource("10_dway6")]
 position = Vector2(517, 8)
 scale = Vector2(-1, 1)
 
-[node name="Zombie9" parent="Zombie" index="8" instance=ExtResource("10_4t6wp")]
+[node name="Zombie9" parent="Zombie" index="8" instance=ExtResource("10_dway6")]
 position = Vector2(559, -98)
 
 [node name="Torch2" parent="." index="9" instance=ExtResource("3_pjaq2")]
