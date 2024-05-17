@@ -1,18 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://cx875k0hb43t4"]
+[gd_scene load_steps=11 format=3 uid="uid://cx875k0hb43t4"]
 
 [ext_resource type="Texture2D" uid="uid://bsx6yke1iwpow" path="res://sprites/goldbackground.png" id="1_taqie"]
 [ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://sprites/healthOutline.png" id="2_c0u0k"]
 [ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_gjquo"]
+[ext_resource type="StyleBox" uid="uid://bqc7gk5o0rikh" path="res://blackandred.tres" id="2_wit58"]
 [ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_ig8hb"]
 [ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_16f4r"]
 [ext_resource type="Texture2D" uid="uid://i51d7208qe8a" path="res://sprites/you died.png" id="6_kt2yy"]
 [ext_resource type="FontFile" uid="uid://dtwxmyfvhasmc" path="res://Michroma-Regular.ttf" id="7_vua87"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ab410"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28vvt"]
-bg_color = Color(0.498039, 0, 0.0470588, 1)
 
 [sub_resource type="Animation" id="Animation_pmg34"]
 resource_name = "text_fade"
@@ -110,13 +105,23 @@ offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 text = "ammo"
 
-[node name="HealthBar" type="ProgressBar" parent="."]
+[node name="HealthBar2" type="ProgressBar" parent="."]
+modulate = Color(1, 1, 0, 1)
 offset_left = 37.0
 offset_top = 9.0
 offset_right = 127.0
 offset_bottom = 15.0
-theme_override_styles/background = SubResource("StyleBoxFlat_ab410")
-theme_override_styles/fill = SubResource("StyleBoxFlat_28vvt")
+value = 100.0
+show_percentage = false
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+modulate = Color(0.415686, 0, 0, 1)
+texture_filter = 1
+offset_left = 37.0
+offset_top = 9.0
+offset_right = 127.0
+offset_bottom = 15.0
+theme_override_styles/fill = ExtResource("2_wit58")
 value = 100.0
 show_percentage = false
 
