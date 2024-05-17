@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7o5o8w6c7a6r"
+path="res://.godot/imported/zombie scream.mp3-e0eca83d476faa3146be9df2c4713366.mp3str"
+
+[deps]
+
+source_file="res://Enemies/zombie scream.mp3"
+dest_files=["res://.godot/imported/zombie scream.mp3-e0eca83d476faa3146be9df2c4713366.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

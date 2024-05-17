@@ -53,6 +53,7 @@ func _on_area_entered(area):
 		update_healthbar()
 		print("Zombie -50 HP")
 		zombieHealth -= 50
+		$ZombieScream.play()
 
 
 func _on_area_2d_area_entered(area):
