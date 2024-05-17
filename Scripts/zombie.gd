@@ -11,13 +11,17 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var zombiePosition = get_node("Marker2D").global_position
 @onready var Player = player.new()
 
+@onready var speed = 50
+
 func coin_spawn():
 	var coin_instance = goldPath.instantiate()
-	coin_instance.position = zombiePosition + Vector2(17, 0)
+	coin_instance.position = $Marker2D.global_position
 	get_parent().add_child(coin_instance)
 	print("Coin Spawn")
 
 func _process(delta):
+	position.x += speed * delta
+	
 	if Global.kill_all_zombies:
 		queue_free()
 	if zombieHealth == 0:
@@ -49,3 +53,9 @@ func _on_area_entered(area):
 		update_healthbar()
 		print("Zombie -50 HP")
 		zombieHealth -= 50
+
+
+func _on_area_2d_area_entered(area):
+	if area.is_in_group("zombiecollider"):
+		speed *= -1
+		scale.x *= -1
