@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cx875k0hb43t4" path="res://Scenes/hud.tscn" id="7_d5j18"]
 [ext_resource type="Texture2D" uid="uid://cv1tsyvc8faut" path="res://sprites/windows background.png" id="11_p7dpv"]
 [ext_resource type="AudioStream" uid="uid://bbbk3k420jbc5" path="res://sounds/damage-1.mp3" id="12_156r5"]
-[ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="13_lqy7q"]
+[ext_resource type="AudioStream" uid="uid://cdk3pabx8u6om" path="res://sounds/deathsound.mp3" id="13_1q8pe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
 atlas = ExtResource("6_jq2ga")
@@ -222,11 +222,16 @@ wait_time = 0.3
 stream = ExtResource("12_156r5")
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
-stream = ExtResource("13_lqy7q")
+stream = ExtResource("13_1q8pe")
+volume_db = 2.0
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="area_entered" from="HazardDetector" to="Camera2D" method="_on_hazard_detector_area_entered"]
+[connection signal="timeout" from="PlayerHUD/DamageBarTimer" to="." method="_on_damage_bar_timer_timeout"]
+[connection signal="timeout" from="PlayerHUD/DeathTimer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="ReloadTimer" to="." method="_on_reload_timer_timeout"]
 [connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
 [connection signal="area_entered" from="ItemDetector" to="." method="_on_item_detector_area_entered"]
 [connection signal="timeout" from="Gun Timer" to="." method="_on_gun_timer_timeout"]
+
+[editable path="PlayerHUD"]

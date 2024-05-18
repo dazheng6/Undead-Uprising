@@ -1,4 +1,3 @@
-[gd_resource type="StyleBoxFlat" format=3 uid="uid://bqc7gk5o0rikh"]
+[gd_resource type="CanvasItemMaterial" format=3 uid="uid://cgts2c6hmqgg5"]
 
 [resource]
-bg_color = Color(1, 1, 1, 1)

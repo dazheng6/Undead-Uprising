@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://cx875k0hb43t4"]
+[gd_scene load_steps=12 format=3 uid="uid://cx875k0hb43t4"]
 
 [ext_resource type="Texture2D" uid="uid://bsx6yke1iwpow" path="res://sprites/goldbackground.png" id="1_taqie"]
 [ext_resource type="Texture2D" uid="uid://2p2046ae2ntn" path="res://sprites/healthOutline.png" id="2_c0u0k"]
 [ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_gjquo"]
-[ext_resource type="StyleBox" uid="uid://bqc7gk5o0rikh" path="res://blackandred.tres" id="2_wit58"]
+[ext_resource type="Texture2D" uid="uid://b7djk6bhpqfek" path="res://blackandyellow.png" id="2_sqcib"]
 [ext_resource type="AudioStream" uid="uid://doheie45mf58w" path="res://sounds/you died.mp3" id="3_ig8hb"]
+[ext_resource type="Texture2D" uid="uid://cp87tkfnr2a1i" path="res://black and red.jpeg" id="3_tpc05"]
 [ext_resource type="Texture2D" uid="uid://b2rpo86lhxg8i" path="res://sounds/Solid_black.png" id="4_16f4r"]
 [ext_resource type="Texture2D" uid="uid://i51d7208qe8a" path="res://sprites/you died.png" id="6_kt2yy"]
 [ext_resource type="FontFile" uid="uid://dtwxmyfvhasmc" path="res://Michroma-Regular.ttf" id="7_vua87"]
@@ -105,25 +106,32 @@ offset_bottom = 171.0
 scale = Vector2(0.7, 0.7)
 text = "ammo"
 
-[node name="HealthBar2" type="ProgressBar" parent="."]
-modulate = Color(1, 1, 0, 1)
+[node name="HealthBarBG" type="ProgressBar" parent="."]
+modulate = Color(0, 0, 0, 1)
 offset_left = 37.0
 offset_top = 9.0
-offset_right = 127.0
+offset_right = 126.0
 offset_bottom = 15.0
 value = 100.0
 show_percentage = false
 
-[node name="HealthBar" type="ProgressBar" parent="."]
-modulate = Color(0.415686, 0, 0, 1)
-texture_filter = 1
-offset_left = 37.0
-offset_top = 9.0
-offset_right = 127.0
-offset_bottom = 15.0
-theme_override_styles/fill = ExtResource("2_wit58")
+[node name="HealthBar2" type="TextureProgressBar" parent="."]
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 675.0
+offset_bottom = 368.0
+scale = Vector2(0.143, 0.025)
 value = 100.0
-show_percentage = false
+texture_progress = ExtResource("2_sqcib")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = 36.0
+offset_top = 8.0
+offset_right = 675.0
+offset_bottom = 368.0
+scale = Vector2(0.143, 0.025)
+value = 100.0
+texture_progress = ExtResource("3_tpc05")
 
 [node name="HealthOutline" type="Sprite2D" parent="."]
 position = Vector2(71, 15)
@@ -183,3 +191,5 @@ offset_bottom = 200.0
 theme_override_fonts/normal_font = ExtResource("7_vua87")
 theme_override_font_sizes/normal_font_size = 7
 text = "Enemies Remaining"
+
+[node name="DamageBarTimer" type="Timer" parent="."]

@@ -5,7 +5,7 @@ class_name player
 #Player Variables
 @export var movement_data : PlayerMovementData
 @onready var playerHealth = 100.0
-@export var lives = 3
+@export var lives = 5
 @onready var starting_position = global_position
 var is_dead = false
 var air_jump = false
@@ -35,6 +35,8 @@ var was_wall_normal = Vector2.ZERO
 @onready var gold_text = $PlayerHUD/GoldLabel
 @onready var enemy_text = $PlayerHUD/EnemyCount
 @export var gold = 0
+@onready var damagebartimer = $PlayerHUD/DamageBarTimer
+@onready var damagebar = $PlayerHUD/HealthBar2
 
 #Gun Variables
 @export var current_ammo = 30
@@ -98,17 +100,14 @@ func _process(delta):
 		equiped_weapon = false
 		pistol_gun.show()
 		shotgun_gun.hide()
+		max_ammo = 30
 		
 	if Input.is_action_pressed("weapon2"):
 		equiped_weapon = false
 		shotgun_gun.show()
 		pistol_gun.hide()
 	
-	if lives == 0:
-		$PlayerSound/DeathSound.play()
-		game_over_sound.play()
-		game_over_screen.play("text_fade")
-		sprite.visible = false
+	
 	
 	if is_dead == false:
 		move()
@@ -116,15 +115,9 @@ func _process(delta):
 		return
 	
 	if playerHealth <= 0:
-		is_dead = true
-		animated_sprite_2d.play("idle")
-		lives -= 1
-		fade_to_black()
-		global_position = starting_position
-		$Node2D.hide()
-		if lives != 0:
-			fade_to_black()
-		respawn_timer.start()
+		die()
+		
+		
 	update_enemy_text()
 
 func move():
@@ -160,6 +153,19 @@ func reload():
 	print("reloading")
 	ammo_text.text = ("Reloading...")
 
+func die():
+	lives -= 1
+	if lives == 0:
+		respawn_timer.wait_time = 5
+		$PlayerSound/DeathSound.play()
+		game_over_sound.play()
+		game_over_screen.play("text_fade")
+		sprite.visible = false
+	respawn_timer.start()
+	is_dead = true
+	animated_sprite_2d.play("idle")
+	$Node2D.hide()
+
 func respawn():
 	is_dead = false
 	global_position = starting_position
@@ -167,7 +173,6 @@ func respawn():
 	update_healthbar()
 	update_lives_count()
 	fade_from_black()
-
 
 func update_ammo_text():
 	ammo_text.text = str(current_ammo) + "/" + str(max_ammo)
@@ -270,25 +275,24 @@ func update_animations(input_axis):
 	if not is_on_floor():
 		animated_sprite_2d.play("jump")
 
-func take_damage():
-	playerHealth -= 50
-	hurtSound.play()
-	print("Player Hit")
-
 func _on_hazard_detector_area_entered(area):
-	$PlayerSound/HurtSound.play()
-	playerHealth -= 50
-	update_healthbar()
-	if Input.is_action_pressed("move_right"):
-		velocity += Vector2.LEFT * 350
-		velocity += Vector2.UP * 100
-	if Input.is_action_pressed("move_left"):
-		velocity += Vector2.UP * 100
-		velocity += Vector2.RIGHT * 350
+	if !is_dead:
+		$PlayerSound/HurtSound.play()
+		playerHealth -= 25
+		update_healthbar()
+		if Input.is_action_pressed("move_right"):
+			velocity += Vector2.LEFT * 350
+			velocity += Vector2.UP * 100
+		if Input.is_action_pressed("move_left"):
+			velocity += Vector2.UP * 100
+			velocity += Vector2.RIGHT * 350
+		camera.apply_shake()
 
 func update_healthbar():
-	var tween = get_tree().create_tween()
-	tween.tween_property(healthbar, "value", playerHealth, 0.2)
+	healthbar.value = playerHealth
+	
+	damagebartimer.start()
+	
 func _on_reload_timer_timeout():
 	current_ammo = max_ammo
 	update_ammo_text()
@@ -323,3 +327,8 @@ func _on_item_detector_area_entered(area):
 
 func _on_gun_timer_timeout():
 	gun_recoiling = false
+
+
+func _on_damage_bar_timer_timeout():
+	var tween = get_tree().create_tween()
+	tween.tween_property(damagebar, "value", playerHealth, 0.5)
