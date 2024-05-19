@@ -115,6 +115,7 @@ func _process(delta):
 		return
 	
 	if playerHealth <= 0:
+		fade_to_black()
 		die()
 		
 		
@@ -160,6 +161,7 @@ func die():
 		$PlayerSound/DeathSound.play()
 		game_over_sound.play()
 		game_over_screen.play("text_fade")
+		LevelTransition.fade_to_black()
 		sprite.visible = false
 	respawn_timer.start()
 	is_dead = true
