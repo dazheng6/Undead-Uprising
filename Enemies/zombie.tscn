@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cutchjak4xel"]
+[gd_scene load_steps=14 format=3 uid="uid://cutchjak4xel"]
 
 [ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_lrwp2"]
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="2_pbsu5"]
 [ext_resource type="Texture2D" uid="uid://c1qh8vwfuuvcv" path="res://sprites/Zombie.png" id="3_pryq5"]
 [ext_resource type="AudioStream" uid="uid://b7o5o8w6c7a6r" path="res://Enemies/zombie scream.mp3" id="4_moml8"]
+[ext_resource type="Texture2D" uid="uid://1m46bdobakp8" path="res://Enemies/Zombie.png" id="5_aex34"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_305da"]
 radius = 6.0
@@ -17,6 +18,35 @@ bg_color = Color(0.615686, 0.054902, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0c3q"]
 size = Vector2(12, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av450"]
+atlas = ExtResource("5_aex34")
+region = Rect2(10, 3, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ilyj"]
+atlas = ExtResource("5_aex34")
+region = Rect2(45, 3, 20, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwf3f"]
+atlas = ExtResource("5_aex34")
+region = Rect2(80, 3, 20, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cv2i6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av450")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ilyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwf3f")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}]
 
 [node name="Zombie" type="Area2D" groups=["Zombie"]]
 scale = Vector2(-1, 1)
@@ -58,6 +88,7 @@ value = 100.0
 show_percentage = false
 
 [node name="Zombie" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-5, -5)
 texture = ExtResource("3_pryq5")
 
@@ -71,6 +102,11 @@ shape = SubResource("RectangleShape2D_g0c3q")
 
 [node name="ZombieScream" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_moml8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -7)
+sprite_frames = SubResource("SpriteFrames_cv2i6")
+animation = &"walk"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

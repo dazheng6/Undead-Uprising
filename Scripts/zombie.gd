@@ -10,6 +10,8 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var hazard = $HazardDetector
 @onready var zombiePosition = get_node("Marker2D").global_position
 @onready var Player = player.new()
+@onready var animated_sprite_2d = $AnimatedSprite2D
+
 
 @onready var speed = 50
 
@@ -21,6 +23,7 @@ func coin_spawn():
 
 func _process(delta):
 	position.x += speed * delta
+	animated_sprite_2d.play("walk")
 	
 	if Global.kill_all_zombies:
 		queue_free()
