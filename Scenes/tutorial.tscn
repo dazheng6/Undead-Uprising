@@ -101,9 +101,9 @@ scale = Vector2(0.5, 0.5)
 text = "Press space on wall to walljump"
 
 [node name="Move" type="RichTextLabel" parent="."]
-offset_left = -210.0
+offset_left = -291.0
 offset_top = -20.0
-offset_right = -50.0
+offset_right = -131.0
 offset_bottom = 20.0
 scale = Vector2(0.5, 0.5)
 text = "Use WASD or 

@@ -12,4 +12,3 @@ res://Enemies/zombie_collider.tscn
 res://Scenes/gold.tscn
 res://Scenes/door_detector.tscn
 res://Scripts/player.gd
-res://Scripts/zombie.gd
