@@ -4,3 +4,4 @@ extends Node
 @export var kill_all_zombies = false
 @onready var Player = player.new()
 @export var level_completed = false
+@export var coins = 0

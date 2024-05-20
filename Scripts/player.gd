@@ -66,9 +66,11 @@ func _ready():
 	shotgun_gun.hide()
 	update_ammo_text()
 	update_lives_count()
+	gold = Global.coins
 	
 
 func _process(delta):
+	gold_text.text = str(Global.coins)
 	if Input.is_action_pressed("Tab"):
 		camera.zoom.x = .5
 		camera.zoom.y = .5
@@ -191,8 +193,9 @@ func update_enemy_text():
 	enemy_text.text = "Enemies Remaining: " + str(enemiesRemaining)
 
 func add_gold():
+	Global.coins += 10
 	gold += 10
-	gold_text.text = str(gold)
+	gold_text.text = str(Global.coins)
 
 func _physics_process(delta):
 	velocity = velocity.move_toward(Vector2.ZERO, 200 * delta)
