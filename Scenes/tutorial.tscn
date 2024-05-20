@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bioi57rsd3058"]
+[gd_scene load_steps=14 format=3 uid="uid://bioi57rsd3058"]
 
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="1_h7l20"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_s1awy"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b6vkxtqdlatfu" path="res://Enemies/zombie_collider.tscn" id="8_5yqp0"]
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="9_mlrlo"]
 [ext_resource type="PackedScene" uid="uid://dcn0nu05q7wlw" path="res://Shop/shop.tscn" id="10_75xyh"]
+[ext_resource type="AudioStream" uid="uid://dodtwno3yq5ix" path="res://sounds/miracle-healing.wav.mp3" id="11_0x152"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aculp"]
 polygon = PackedVector2Array(58, 77, 153, 80, 152, 86, 58, 85)
@@ -59,36 +60,36 @@ autoplay = true
 panning_strength = 0.0
 
 [node name="EquipGun" type="RichTextLabel" parent="."]
-offset_left = -72.0
-offset_top = -35.0
-offset_right = 54.0
-offset_bottom = 5.0
+offset_left = -192.0
+offset_top = -21.0
+offset_right = -66.0
+offset_bottom = 19.0
 scale = Vector2(0.5, 0.5)
 text = "Press One To Equip Weapon"
 
 [node name="Shoot" type="RichTextLabel" parent="."]
-offset_left = 30.0
-offset_top = -42.0
-offset_right = 164.0
-offset_bottom = 16.0
+offset_left = -86.0
+offset_top = -27.0
+offset_right = 48.0
+offset_bottom = 31.0
 scale = Vector2(0.5, 0.5)
 text = "Left Click to shoot
 R to reload
 Move mouse to aim"
 
 [node name="Press Tab" type="RichTextLabel" parent="."]
-offset_left = 197.0
-offset_top = -32.0
-offset_right = 335.0
-offset_bottom = 8.0
+offset_left = 127.0
+offset_top = -33.0
+offset_right = 265.0
+offset_bottom = 7.0
 scale = Vector2(0.5, 0.5)
 text = "Press tab to zoom out"
 
 [node name="Kill zombies" type="RichTextLabel" parent="."]
-offset_left = 118.0
-offset_top = -45.0
-offset_right = 256.0
-offset_bottom = 33.0
+offset_left = 39.0
+offset_top = -36.0
+offset_right = 177.0
+offset_bottom = 42.0
 scale = Vector2(0.5, 0.5)
 text = "Kill The zombies and get the coins, and leave through the door
 "
@@ -143,7 +144,7 @@ position = Vector2(-296, -15)
 position = Vector2(-153, -10)
 
 [node name="Torch3" parent="." instance=ExtResource("9_mlrlo")]
-position = Vector2(-38, -11)
+position = Vector2(-53, -9)
 
 [node name="Torch4" parent="." instance=ExtResource("9_mlrlo")]
 position = Vector2(70, -6)
@@ -161,7 +162,33 @@ position = Vector2(359, -56)
 position = Vector2(278, -99)
 
 [node name="Shop" parent="." instance=ExtResource("10_75xyh")]
-position = Vector2(-180, 16)
+position = Vector2(218, 17)
+
+[node name="Icon" parent="Shop" index="0"]
+position = Vector2(0, -28)
+
+[node name="Label" parent="Shop/shopmenu" index="0"]
+offset_left = -56.6667
+offset_top = -10.0
+offset_right = 42.3333
+offset_bottom = 25.0
+
+[node name="shop" type="RichTextLabel" parent="Shop/shopmenu" index="5"]
+offset_left = 43.3334
+offset_top = 203.333
+offset_right = 181.333
+offset_bottom = 281.333
+scale = Vector2(1.59, 1.59)
+text = "Whenever you get hurt you can go to a shop station for heals"
+
+[node name="HealSFX" type="AudioStreamPlayer2D" parent="Shop/shopmenu" index="7"]
+stream = ExtResource("11_0x152")
+
+[node name="Torch9" parent="." instance=ExtResource("9_mlrlo")]
+position = Vector2(260, 51)
+
+[node name="AnimatedSprite2D" parent="Torch9" index="0"]
+visible = false
 
 [connection signal="area_entered" from="DoorDetector" to="." method="_on_door_detector_area_entered"]
 [connection signal="pressed" from="Shop/shopmenu/Button" to="Player" method="_on_buy_button_pressed"]
@@ -169,3 +196,4 @@ position = Vector2(-180, 16)
 [editable path="CanvasLayer/LevelCompleted"]
 [editable path="Shop"]
 [editable path="Shop/shopmenu"]
+[editable path="Torch9"]

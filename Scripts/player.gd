@@ -72,6 +72,9 @@ func _ready():
 	gold_text.text = str(Global.coins)
 
 func _process(delta):
+	if Global.playerHealth > 100.0:
+		Global.playerHealth = 100.0
+	
 	if Input.is_action_pressed("Tab"):
 		camera.zoom.x = .5
 		camera.zoom.y = .5
@@ -319,7 +322,9 @@ func _on_respawn_timer_timeout():
 	if lives > 0:
 		respawn()
 	elif lives == 0:
+		fade_to_black()
 		get_tree().change_scene_to_file("res://Scenes/start_menu.tscn")
+		Global.playerHealth = 100.0
 	respawn_timer.stop()
 	
 

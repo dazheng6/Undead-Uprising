@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dcn0nu05q7wlw"]
+[gd_scene load_steps=7 format=3 uid="uid://dcn0nu05q7wlw"]
 
 [ext_resource type="Script" path="res://Scenes/shop.gd" id="1_1m6kk"]
-[ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="2_ij6eu"]
+[ext_resource type="Texture2D" uid="uid://cput45h3ubfa2" path="res://sprites/vending-machine.png" id="2_cgnq0"]
 [ext_resource type="PackedScene" uid="uid://dva3gr2lna00n" path="res://Shop/shopmenu.tscn" id="3_3oqha"]
+[ext_resource type="AudioStream" uid="uid://dy6qty4wnfj1y" path="res://Shop/cha_ching.mp3" id="4_7yrwr"]
+[ext_resource type="AudioStream" uid="uid://cbfwi1c6in20h" path="res://sounds/buttonNO.wav" id="5_2xfx8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2xd"]
-size = Vector2(60, 55)
+size = Vector2(26, 50.5)
 
 [node name="Shop" type="StaticBody2D"]
 collision_layer = 0
@@ -13,20 +15,37 @@ collision_mask = 0
 script = ExtResource("1_1m6kk")
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(-3.8147e-06, -19)
-scale = Vector2(0.145313, 0.301563)
-texture = ExtResource("2_ij6eu")
+position = Vector2(0, -29)
+scale = Vector2(2, 2)
+texture = ExtResource("2_cgnq0")
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(0, -26)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -2)
+position = Vector2(0, 0.25)
 shape = SubResource("RectangleShape2D_ob2xd")
 
 [node name="shopmenu" parent="." instance=ExtResource("3_3oqha")]
 position = Vector2(-3, -60)
 scale = Vector2(0.3, 0.3)
 
+[node name="Button" parent="shopmenu" index="1"]
+offset_right = 86.0
+
+[node name="Icon" parent="shopmenu" index="2"]
+position = Vector2(140, 56.6667)
+
+[node name="ChaChing" type="AudioStreamPlayer2D" parent="shopmenu"]
+position = Vector2(10, 200)
+scale = Vector2(3.33333, 3.33333)
+stream = ExtResource("4_7yrwr")
+volume_db = 6.0
+
+[node name="DeclineSound" type="AudioStreamPlayer2D" parent="shopmenu"]
+stream = ExtResource("5_2xfx8")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+
+[editable path="shopmenu"]

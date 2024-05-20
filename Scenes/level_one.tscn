@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcsu54avxadfs"]
+[gd_scene load_steps=15 format=3 uid="uid://dcsu54avxadfs"]
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_n17bh"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_7q1vi"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="8_ox3rm"]
 [ext_resource type="PackedScene" uid="uid://b6vkxtqdlatfu" path="res://Enemies/zombie_collider.tscn" id="9_fni4d"]
 [ext_resource type="AudioStream" uid="uid://bbbudrj7eo7ll" path="res://sounds/cave_ambience.mp3" id="9_kkumi"]
+[ext_resource type="PackedScene" uid="uid://clskm2c8q5gtn" path="res://Scenes/falldetector.tscn" id="11_rnek3"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w5yd7"]
 polygon = PackedVector2Array(58, 77, 153, 80, 152, 86, 58, 85)
@@ -282,6 +283,9 @@ position = Vector2(788, -83)
 
 [node name="ZombieCollider24" parent="." index="34" instance=ExtResource("9_fni4d")]
 position = Vector2(880, -83)
+
+[node name="FallDetector" parent="." index="35" instance=ExtResource("11_rnek3")]
+position = Vector2(470, 196)
 
 [connection signal="area_entered" from="Node2D/DoorDetector" to="." method="_on_door_detector_area_entered"]
 

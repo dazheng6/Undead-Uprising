@@ -1,24 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://dva3gr2lna00n"]
+[gd_scene load_steps=5 format=3 uid="uid://dva3gr2lna00n"]
 
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="1_7cjml"]
 [ext_resource type="Script" path="res://Shop/shopmenu.gd" id="1_tx7sj"]
+[ext_resource type="FontFile" uid="uid://voolo53erqim" path="res://sprites/Michroma-Regular.ttf" id="2_06orp"]
 [ext_resource type="Texture2D" uid="uid://b7qxeu7alvhab" path="res://sprites/COINfile.png" id="2_artpq"]
 
 [node name="shopmenu" type="StaticBody2D"]
 script = ExtResource("1_tx7sj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -87.0
-offset_top = -41.0
-offset_right = -25.0
-offset_bottom = -1.0
-color = Color(0.458824, 0.458824, 0.458824, 1)
+[node name="Label" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -34.0
+offset_right = 86.0
+offset_bottom = 1.0
+theme_override_fonts/font = ExtResource("2_06orp")
+theme_override_font_sizes/font_size = 24
+text = "SHOP"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 57.0
 offset_top = 95.0
-offset_right = 98.0
-offset_bottom = 112.0
+offset_right = 89.0
+offset_bottom = 109.0
 scale = Vector2(5, 5)
 text = "Buy"
 
@@ -27,17 +30,20 @@ position = Vector2(128, 54)
 scale = Vector2(1.21875, 0.6875)
 texture = ExtResource("1_7cjml")
 
-[node name="CoiNfile" type="Sprite2D" parent="."]
-position = Vector2(289, 64)
-scale = Vector2(4, 4)
-texture = ExtResource("2_artpq")
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-138, 119)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="RichTextLabel" type="RichTextLabel" parent="Node2D"]
 offset_left = 225.0
 offset_top = 46.0
 offset_right = 250.0
 offset_bottom = 70.0
 scale = Vector2(2, 2)
 text = "50"
+
+[node name="CoiNfile" type="Sprite2D" parent="Node2D"]
+position = Vector2(289, 64)
+scale = Vector2(3, 3)
+texture = ExtResource("2_artpq")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
