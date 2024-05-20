@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcn0nu05q7wlw"]
+
+[ext_resource type="Script" path="res://Scenes/shop.gd" id="1_1m6kk"]
+[ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="2_ij6eu"]
+[ext_resource type="PackedScene" uid="uid://dva3gr2lna00n" path="res://Shop/shopmenu.tscn" id="3_3oqha"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ob2xd"]
+size = Vector2(60, 55)
+
+[node name="Shop" type="StaticBody2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_1m6kk")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(-3.8147e-06, -19)
+scale = Vector2(0.145313, 0.301563)
+texture = ExtResource("2_ij6eu")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -26)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_ob2xd")
+
+[node name="shopmenu" parent="." instance=ExtResource("3_3oqha")]
+position = Vector2(-3, -60)
+scale = Vector2(0.3, 0.3)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

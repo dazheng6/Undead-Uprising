@@ -178,7 +178,7 @@ position = Vector2(589, -18)
 position = Vector2(689, -19)
 
 [node name="Zombie11" parent="Zombies" index="9" instance=ExtResource("5_iu0yq")]
-position = Vector2(852, -3)
+position = Vector2(831, -3)
 
 [node name="Zombie13" parent="Zombies" index="10" instance=ExtResource("5_iu0yq")]
 position = Vector2(829, 93)
@@ -266,7 +266,7 @@ position = Vector2(851, 93)
 position = Vector2(776, 93)
 
 [node name="ZombieCollider21" parent="." index="30" instance=ExtResource("9_fni4d")]
-position = Vector2(892, 0)
+position = Vector2(853, -1)
 
 [node name="ZombieCollider22" parent="." index="31" instance=ExtResource("9_fni4d")]
 position = Vector2(796, 0)

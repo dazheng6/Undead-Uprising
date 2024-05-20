@@ -11,4 +11,11 @@ res://Enemies/zombie.tscn
 res://Enemies/zombie_collider.tscn
 res://Scenes/gold.tscn
 res://Scenes/door_detector.tscn
+res://Scripts/global.gd
 res://Scripts/player.gd
+res://Scenes/shop.tscn
+res://Scenes/shop.gd
+res://Shop/shopmenu.tscn
+res://Shop/shop.tscn
+res://Shop/shopmenu.gd
+res://Scripts/world.gd

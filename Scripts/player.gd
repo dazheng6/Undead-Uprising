@@ -4,7 +4,7 @@ class_name player
 
 #Player Variables
 @export var movement_data : PlayerMovementData
-@onready var playerHealth = 100.0
+@onready var playerHealth = Global.playerhealth
 @export var lives = 5
 @onready var starting_position = global_position
 var is_dead = false
@@ -70,6 +70,9 @@ func _ready():
 	
 
 func _process(delta):
+	if Global.playerhealth > 100:
+		Global.playerhealth = 100.0
+	
 	gold_text.text = str(Global.coins)
 	if Input.is_action_pressed("Tab"):
 		camera.zoom.x = .5
@@ -116,7 +119,7 @@ func _process(delta):
 	else:
 		return
 	
-	if playerHealth <= 0:
+	if Global.playerhealth <= 0:
 		fade_to_black()
 		die()
 		
@@ -173,7 +176,7 @@ func die():
 func respawn():
 	is_dead = false
 	global_position = starting_position
-	playerHealth += 100
+	Global.playerhealth += 100
 	update_healthbar()
 	update_lives_count()
 	fade_from_black()
@@ -283,7 +286,8 @@ func update_animations(input_axis):
 func _on_hazard_detector_area_entered(area):
 	if !is_dead:
 		$PlayerSound/HurtSound.play()
-		playerHealth -= 25
+		Global.playerhealth -= 25
+		print(Global.playerhealth)
 		update_healthbar()
 		if Input.is_action_pressed("move_right"):
 			velocity += Vector2.LEFT * 350
@@ -294,7 +298,7 @@ func _on_hazard_detector_area_entered(area):
 		camera.apply_shake()
 
 func update_healthbar():
-	healthbar.value = playerHealth
+	healthbar.value = Global.playerhealth
 	
 	damagebartimer.start()
 	
@@ -336,4 +340,9 @@ func _on_gun_timer_timeout():
 
 func _on_damage_bar_timer_timeout():
 	var tween = get_tree().create_tween()
-	tween.tween_property(damagebar, "value", playerHealth, 0.5)
+	tween.tween_property(damagebar, "value", Global.playerhealth, 0.5)
+
+func player_sell_method():
+	pass
+func player_shop_method():
+	pass
