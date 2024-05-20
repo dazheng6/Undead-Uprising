@@ -47,6 +47,9 @@ position = Vector2(343, -5)
 [node name="Player" parent="." instance=ExtResource("2_gccb8")]
 position = Vector2(-324, -10)
 
+[node name="Marker2D" parent="Player/WeaponHolder" index="2"]
+position = Vector2(17, 8)
+
 [node name="ZombieKillTimer" type="Timer" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -193,6 +196,8 @@ visible = false
 [connection signal="area_entered" from="DoorDetector" to="." method="_on_door_detector_area_entered"]
 [connection signal="pressed" from="Shop/shopmenu/Button" to="Player" method="_on_buy_button_pressed"]
 
+[editable path="Player"]
+[editable path="Player/PlayerHUD"]
 [editable path="CanvasLayer/LevelCompleted"]
 [editable path="Shop"]
 [editable path="Shop/shopmenu"]
