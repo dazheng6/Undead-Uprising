@@ -140,7 +140,7 @@ func shoot():
 		var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
 		# Set the bullet's velocity
 		bullet_instance.velocity = (get_global_mouse_position() - bullet_instance.position).normalized() * 500
-		bullet_instance.position = $WeaponHolder/Marker2D.global_position + Vector2(-17, 8)
+		bullet_instance.position = $WeaponHolder/Marker2D.global_position
 		gun_recoiling = true
 		$"Gun Timer".start()
 
