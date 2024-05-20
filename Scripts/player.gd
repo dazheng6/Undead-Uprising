@@ -350,3 +350,6 @@ func _on_gun_timer_timeout():
 func _on_damage_bar_timer_timeout():
 	var tween = get_tree().create_tween()
 	tween.tween_property(damagebar, "value", playerHealth, 0.5)
+	
+func player_shop_method():
+	pass
