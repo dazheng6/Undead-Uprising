@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcsu54avxadfs"]
+[gd_scene load_steps=13 format=3 uid="uid://dcsu54avxadfs"]
 
 [ext_resource type="PackedScene" uid="uid://la8btl4g5ppc" path="res://Scenes/world.tscn" id="1_n17bh"]
 [ext_resource type="PackedScene" uid="uid://ccfebdwmudstn" path="res://Scenes/spikes.tscn" id="2_7q1vi"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://coxf60vhcmr1l" path="res://sprites/black background.png" id="6_mrhm1"]
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="8_ox3rm"]
 [ext_resource type="PackedScene" uid="uid://b6vkxtqdlatfu" path="res://Enemies/zombie_collider.tscn" id="9_fni4d"]
-[ext_resource type="AudioStream" uid="uid://bbbudrj7eo7ll" path="res://sounds/cave_ambience.mp3" id="9_kkumi"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w5yd7"]
 polygon = PackedVector2Array(58, 77, 153, 80, 152, 86, 58, 85)
@@ -179,7 +178,7 @@ position = Vector2(589, -18)
 position = Vector2(689, -19)
 
 [node name="Zombie11" parent="Zombies" index="9" instance=ExtResource("5_iu0yq")]
-position = Vector2(852, -3)
+position = Vector2(831, -3)
 
 [node name="Zombie13" parent="Zombies" index="10" instance=ExtResource("5_iu0yq")]
 position = Vector2(829, 93)
@@ -206,81 +205,76 @@ stream = SubResource("AudioStreamMP3_8ci2e")
 autoplay = true
 panning_strength = 0.0
 
-[node name="LevelAmbience" type="AudioStreamPlayer2D" parent="." index="9"]
-stream = ExtResource("9_kkumi")
-autoplay = true
-panning_strength = 0.0
-
-[node name="ZombieCollider" parent="." index="11" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider" parent="." index="10" instance=ExtResource("9_fni4d")]
 position = Vector2(162, 105)
 
-[node name="ZombieCollider2" parent="." index="12" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider2" parent="." index="11" instance=ExtResource("9_fni4d")]
 position = Vector2(250, 108)
 
-[node name="ZombieCollider3" parent="." index="13" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider3" parent="." index="12" instance=ExtResource("9_fni4d")]
 position = Vector2(165, 184)
 
-[node name="ZombieCollider4" parent="." index="14" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider4" parent="." index="13" instance=ExtResource("9_fni4d")]
 position = Vector2(251, 187)
 
-[node name="ZombieCollider5" parent="." index="15" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider5" parent="." index="14" instance=ExtResource("9_fni4d")]
 position = Vector2(174, -121)
 
-[node name="ZombieCollider6" parent="." index="16" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider6" parent="." index="15" instance=ExtResource("9_fni4d")]
 position = Vector2(254, -118)
 
-[node name="ZombieCollider7" parent="." index="17" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider7" parent="." index="16" instance=ExtResource("9_fni4d")]
 position = Vector2(344, -115)
 
-[node name="ZombieCollider8" parent="." index="18" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider8" parent="." index="17" instance=ExtResource("9_fni4d")]
 position = Vector2(430, -115)
 
-[node name="ZombieCollider9" parent="." index="19" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider9" parent="." index="18" instance=ExtResource("9_fni4d")]
 position = Vector2(327, -3)
 
-[node name="ZombieCollider10" parent="." index="20" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider10" parent="." index="19" instance=ExtResource("9_fni4d")]
 position = Vector2(437, 0)
 
-[node name="ZombieCollider11" parent="." index="21" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider11" parent="." index="20" instance=ExtResource("9_fni4d")]
 position = Vector2(531, -19)
 
-[node name="ZombieCollider12" parent="." index="22" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider12" parent="." index="21" instance=ExtResource("9_fni4d")]
 position = Vector2(614, -17)
 
-[node name="ZombieCollider13" parent="." index="23" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider13" parent="." index="22" instance=ExtResource("9_fni4d")]
 position = Vector2(660, -18)
 
-[node name="ZombieCollider14" parent="." index="24" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider14" parent="." index="23" instance=ExtResource("9_fni4d")]
 position = Vector2(724, -17)
 
-[node name="ZombieCollider15" parent="." index="25" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider15" parent="." index="24" instance=ExtResource("9_fni4d")]
 position = Vector2(692, -85)
 
-[node name="ZombieCollider16" parent="." index="26" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider16" parent="." index="25" instance=ExtResource("9_fni4d")]
 position = Vector2(626, -84)
 
-[node name="ZombieCollider17" parent="." index="27" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider17" parent="." index="26" instance=ExtResource("9_fni4d")]
 position = Vector2(658, -149)
 
-[node name="ZombieCollider18" parent="." index="28" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider18" parent="." index="27" instance=ExtResource("9_fni4d")]
 position = Vector2(716, -147)
 
-[node name="ZombieCollider19" parent="." index="29" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider19" parent="." index="28" instance=ExtResource("9_fni4d")]
 position = Vector2(851, 93)
 
-[node name="ZombieCollider20" parent="." index="30" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider20" parent="." index="29" instance=ExtResource("9_fni4d")]
 position = Vector2(776, 93)
 
-[node name="ZombieCollider21" parent="." index="31" instance=ExtResource("9_fni4d")]
-position = Vector2(892, 0)
+[node name="ZombieCollider21" parent="." index="30" instance=ExtResource("9_fni4d")]
+position = Vector2(853, -1)
 
-[node name="ZombieCollider22" parent="." index="32" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider22" parent="." index="31" instance=ExtResource("9_fni4d")]
 position = Vector2(796, 0)
 
-[node name="ZombieCollider23" parent="." index="33" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider23" parent="." index="32" instance=ExtResource("9_fni4d")]
 position = Vector2(788, -83)
 
-[node name="ZombieCollider24" parent="." index="34" instance=ExtResource("9_fni4d")]
+[node name="ZombieCollider24" parent="." index="33" instance=ExtResource("9_fni4d")]
 position = Vector2(880, -83)
 
 [connection signal="area_entered" from="Node2D/DoorDetector" to="." method="_on_door_detector_area_entered"]
