@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://clskm2c8q5gtn"]
+
+[ext_resource type="PackedScene" uid="uid://b6hg8pktlufrp" path="res://Scenes/hazard_area.tscn" id="2_thsj1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3fi"]
+size = Vector2(63, 10)
+
+[node name="FallDetector" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(9.5, 6)
+shape = SubResource("RectangleShape2D_4t3fi")
+
+[node name="HazardArea" parent="." groups=["FallDetector"] instance=ExtResource("2_thsj1")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
+position = Vector2(9.5, 6)
+shape = SubResource("RectangleShape2D_4t3fi")

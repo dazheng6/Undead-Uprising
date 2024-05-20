@@ -1,15 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://7j0w30ix6cmy"]
+[gd_scene load_steps=4 format=3 uid="uid://7j0w30ix6cmy"]
 
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="1_su3pv"]
+[ext_resource type="PackedScene" uid="uid://b6hg8pktlufrp" path="res://Scenes/hazard_area.tscn" id="2_4au8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3fi"]
+size = Vector2(63, 10)
 
 [node name="Spikes2" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4t3fi")
-
 [node name="TileMap" parent="." instance=ExtResource("1_su3pv")]
 position = Vector2(106.494, -52.6275)
+layer_0/tile_data = PackedInt32Array(262136, 196609, 14, 262137, 262145, 14, 262138, 327681, 14, 262139, 393217, 14)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(9.5, 6)
+shape = SubResource("RectangleShape2D_4t3fi")
+
+[node name="HazardArea" parent="." groups=["Spikes"] instance=ExtResource("2_4au8s")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
+position = Vector2(9.5, 6)
+shape = SubResource("RectangleShape2D_4t3fi")

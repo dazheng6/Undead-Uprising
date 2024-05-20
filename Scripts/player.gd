@@ -57,7 +57,9 @@ var equiped_weapon = true
 @onready var audio = $GunSound/GunAudio
 @onready var reload_sound = $GunSound/ReloadSound
 @onready var pickupSound = $PickupSound/AudioStreamPlayer2D
-@onready var hurtSound = $PlayerSound/HurtSound
+@onready var hurt_sound1 = $PlayerSound/HurtSound
+@onready var hurt_sound2 = $PlayerSound/HurtSound2
+@onready var hurt_sound3 = $PlayerSound/HurtSound3
 @onready var deathSound = $PlayerSound/DeathSound
 
 
@@ -155,12 +157,13 @@ func reload():
 
 func die():
 	lives -= 1
+	playerHealth = 0
 	if lives == 0:
 		respawn_timer.wait_time = 5
 		$PlayerSound/DeathSound.play()
 		game_over_sound.play()
 		game_over_screen.play("text_fade")
-		sprite.visible = false
+	sprite.visible = false
 	respawn_timer.start()
 	is_dead = true
 	animated_sprite_2d.play("idle")
@@ -168,6 +171,7 @@ func die():
 
 func respawn():
 	is_dead = false
+	sprite.visible = true
 	global_position = starting_position
 	playerHealth += 100
 	update_healthbar()
@@ -277,8 +281,12 @@ func update_animations(input_axis):
 
 func _on_hazard_detector_area_entered(area):
 	if !is_dead:
-		$PlayerSound/HurtSound.play()
-		playerHealth -= 25
+		if area.is_in_group("FallDetector"):
+			die()
+			$PlayerSound/FallDeath.play()
+		elif area.is_in_group("Spikes") or area.is_in_group("ZombArea"):
+			play_random_hurt_sound()
+			playerHealth -= 25
 		update_healthbar()
 		if Input.is_action_pressed("move_right"):
 			velocity += Vector2.LEFT * 350
@@ -287,7 +295,17 @@ func _on_hazard_detector_area_entered(area):
 			velocity += Vector2.UP * 100
 			velocity += Vector2.RIGHT * 350
 		camera.apply_shake()
+		
 
+func play_random_hurt_sound():
+	var random_index = randi() % 3  # Generate a random index between 0 and 2
+	match random_index:
+		0:
+			hurt_sound1.play()
+		1:
+			hurt_sound2.play()
+		2:
+			hurt_sound3.play()
 func update_healthbar():
 	healthbar.value = playerHealth
 	

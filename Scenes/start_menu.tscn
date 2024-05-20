@@ -104,7 +104,6 @@ theme = ExtResource("1_552y8")
 script = ExtResource("1_yfdsn")
 
 [node name="Video" type="Node2D" parent="."]
-visible = false
 
 [node name="CenterContainer" type="CenterContainer" parent="Video"]
 offset_right = 1920.0
@@ -116,7 +115,6 @@ size_flags_horizontal = 4
 layout_mode = 2
 stream = ExtResource("8_a4qnm")
 autoplay = true
-paused = true
 loop = true
 
 [node name="BlackAndRed" type="Sprite2D" parent="."]
@@ -132,8 +130,6 @@ scale = Vector2(0.0822917, 0.0695313)
 texture = ExtResource("3_x6eac")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="SelectSound" type="AudioStreamPlayer2D" parent="HBoxContainer"]
@@ -193,7 +189,7 @@ Tab to zoom out
 flat = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0, 0, 0, 1)
+modulate = Color(1, 1, 1, 0)
 position = Vector2(183, 21)
 scale = Vector2(1.90575, 1.03957)
 texture = ExtResource("10_qvukm")
@@ -215,9 +211,10 @@ offset_left = 97.0
 offset_top = 136.0
 offset_right = 238.0
 offset_bottom = 145.0
-theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_colors/font_color = Color(0.992157, 0.992157, 0.992157, 0)
 theme_override_fonts/font = ExtResource("8_degyo")
-text = "A GRAVEYARD GAMES Production"
+text = "GRAVEYARD GAMES Presents
+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

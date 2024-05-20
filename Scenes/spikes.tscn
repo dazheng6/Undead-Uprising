@@ -13,7 +13,7 @@ texture = ExtResource("1_04yqt")
 position = Vector2(24, -8)
 texture = ExtResource("1_04yqt")
 
-[node name="HazardArea" parent="." instance=ExtResource("2_vomgh")]
+[node name="HazardArea" parent="." groups=["Spikes"] instance=ExtResource("2_vomgh")]
 position = Vector2(8, -3)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="HazardArea"]
