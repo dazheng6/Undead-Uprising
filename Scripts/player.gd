@@ -4,7 +4,7 @@ class_name player
 
 #Player Variables
 @export var movement_data : PlayerMovementData
-@onready var playerHealth = 100.0
+@onready var playerHealth = Global.playerHealth
 @export var lives = 5
 @onready var starting_position = global_position
 var is_dead = false
@@ -39,6 +39,7 @@ var was_wall_normal = Vector2.ZERO
 @onready var damagebar = $PlayerHUD/HealthBar2
 
 #Gun Variables
+@onready var weapon_holder = $WeaponHolder
 @export var current_ammo = 30
 var max_ammo = 30
 var is_reloading = false
@@ -47,8 +48,8 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 var pistol = preload("res://Scenes/pistol.tscn")
 var shotgun = preload("res://Scenes/shotgun.tscn")
 var equiped_weapon = true
-@onready var pistol_gun = $Node2D/Pistol
-@onready var shotgun_gun = $Shotgun
+@onready var pistol_gun = $WeaponHolder/Pistol
+@onready var shotgun_gun = $WeaponHolder/Shotgun
 #Flashlight Variables
 @onready var light = $CircleLight
 @onready var gun_recoiling = false
@@ -68,7 +69,7 @@ func _ready():
 	shotgun_gun.hide()
 	update_ammo_text()
 	update_lives_count()
-	
+	gold_text.text = str(Global.coins)
 
 func _process(delta):
 	if Input.is_action_pressed("Tab"):
@@ -84,18 +85,14 @@ func _process(delta):
 	if Input.is_action_just_pressed("Cheat"):
 		Global.kill_all_zombies = true
 	
-	$Node2D.look_at(get_global_mouse_position())
+	weapon_holder.look_at(get_global_mouse_position())
 	
 	if get_local_mouse_position().x < 0:
-		pistol_gun.position.x = 6
-		pistol_gun.position.y = -4
-		pistol_gun.scale.x = .26
-		pistol_gun.scale.y = -.26
+		weapon_holder.scale.x = 1
+		weapon_holder.scale.y = -1
 	else:
-		pistol_gun.position.x = 6
-		pistol_gun.position.y = 4
-		pistol_gun.scale.x = .26
-		pistol_gun.scale.y = .26
+		weapon_holder.scale.x = 1
+		weapon_holder.scale.y = 1
 
 	
 	if Input.is_action_pressed("weapon1"):
@@ -109,18 +106,17 @@ func _process(delta):
 		shotgun_gun.show()
 		pistol_gun.hide()
 	
-	
-	
 	if is_dead == false:
 		move()
 	else:
 		return
 	
-	if playerHealth <= 0:
+	if Global.playerHealth <= 0:
 		die()
 		
 		
 	update_enemy_text()
+	gold_text.text = str(Global.coins)
 
 func move():
 	if Input.is_action_just_pressed("shoot") and current_ammo > 0 and !is_reloading and !equiped_weapon:
@@ -136,15 +132,15 @@ func shoot():
 		Global.ammo_count -= 1
 		current_ammo -= 1
 		get_parent().add_child(bullet_instance)
-		bullet_instance.position = $Node2D/Marker2D.global_position
+		bullet_instance.position = $WeaponHolder/Marker2D.global_position
 		update_ammo_text()
 		# Get the rotation of the marker in degrees
-		var rotation_degrees = $Node2D/Marker2D.rotation_degrees
+		var rotation_degrees = $WeaponHolder/Marker2D.rotation_degrees
 		# Calculate the direction vector based on the rotation
 		var direction = Vector2.RIGHT.rotated(deg_to_rad(rotation_degrees))
 		# Set the bullet's velocity
 		bullet_instance.velocity = (get_global_mouse_position() - bullet_instance.position).normalized() * 500
-		bullet_instance.position = $Node2D/Marker2D.global_position + Vector2(-17, 8)
+		bullet_instance.position = $WeaponHolder/Marker2D.global_position + Vector2(-17, 8)
 		gun_recoiling = true
 		$"Gun Timer".start()
 
@@ -157,7 +153,7 @@ func reload():
 
 func die():
 	lives -= 1
-	playerHealth = 0
+	Global.playerHealth = 0
 	if lives == 0:
 		respawn_timer.wait_time = 5
 		$PlayerSound/DeathSound.play()
@@ -167,13 +163,13 @@ func die():
 	respawn_timer.start()
 	is_dead = true
 	animated_sprite_2d.play("idle")
-	$Node2D.hide()
+	$WeaponHolder.hide()
 
 func respawn():
 	is_dead = false
 	sprite.visible = true
 	global_position = starting_position
-	playerHealth += 100
+	Global.playerHealth += 100
 	update_healthbar()
 	update_lives_count()
 	fade_from_black()
@@ -193,8 +189,9 @@ func update_enemy_text():
 	enemy_text.text = "Enemies Remaining: " + str(enemiesRemaining)
 
 func add_gold():
+	Global.coins += 10
 	gold += 10
-	gold_text.text = str(gold)
+
 
 func _physics_process(delta):
 	velocity = velocity.move_toward(Vector2.ZERO, 200 * delta)
@@ -286,7 +283,7 @@ func _on_hazard_detector_area_entered(area):
 			$PlayerSound/FallDeath.play()
 		elif area.is_in_group("Spikes") or area.is_in_group("ZombArea"):
 			play_random_hurt_sound()
-			playerHealth -= 25
+			Global.playerHealth -= 25
 		update_healthbar()
 		if Input.is_action_pressed("move_right"):
 			velocity += Vector2.LEFT * 350
@@ -307,7 +304,7 @@ func play_random_hurt_sound():
 		2:
 			hurt_sound3.play()
 func update_healthbar():
-	healthbar.value = playerHealth
+	healthbar.value = Global.playerHealth
 	
 	damagebartimer.start()
 	
@@ -318,7 +315,7 @@ func _on_reload_timer_timeout():
 	is_reloading = false
 
 func _on_respawn_timer_timeout():
-	$Node2D.show()
+	$WeaponHolder.show()
 	if lives > 0:
 		respawn()
 	elif lives == 0:
@@ -349,4 +346,12 @@ func _on_gun_timer_timeout():
 
 func _on_damage_bar_timer_timeout():
 	var tween = get_tree().create_tween()
-	tween.tween_property(damagebar, "value", playerHealth, 0.5)
+	tween.tween_property(damagebar, "value", Global.playerHealth, 0.5)
+	
+func player_shop_method():
+	pass
+
+
+func _on_buy_button_pressed():
+		var tween = get_tree().create_tween()
+		tween.tween_property(healthbar, "value", Global.playerHealth, 0.5)

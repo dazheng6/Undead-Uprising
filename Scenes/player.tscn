@@ -115,20 +115,25 @@ safe_margin = 0.1
 script = ExtResource("1_le4us")
 movement_data = ExtResource("2_w6hny")
 
-[node name="Shotgun" parent="." instance=ExtResource("4_2b5d3")]
-position = Vector2(3, 0)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10)
+sprite_frames = SubResource("SpriteFrames_dg80j")
+animation = &"run"
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="WeaponHolder" type="Node2D" parent="."]
 position = Vector2(2.08165e-12, -8)
 
-[node name="Pistol" parent="Node2D" instance=ExtResource("3_q70lq")]
-position = Vector2(-6, 4)
-scale = Vector2(-0.26, 0.26)
+[node name="Shotgun" parent="WeaponHolder" instance=ExtResource("4_2b5d3")]
+position = Vector2(5, 4)
+scale = Vector2(0.5, 0.5)
 
-[node name="Marker2D" type="Marker2D" parent="Node2D"]
-position = Vector2(12, 2.08165e-12)
+[node name="Pistol" parent="WeaponHolder" instance=ExtResource("3_q70lq")]
+position = Vector2(6, 3)
 
-[node name="CircleLight" type="PointLight2D" parent="Node2D"]
+[node name="Marker2D" type="Marker2D" parent="WeaponHolder"]
+position = Vector2(17, 1)
+
+[node name="CircleLight" type="PointLight2D" parent="WeaponHolder"]
 visible = false
 position = Vector2(1, 3)
 scale = Vector2(0.5, 0.5)
@@ -136,11 +141,6 @@ color = Color(1, 0.670588, 0.513726, 0.772549)
 energy = 1.62
 shadow_enabled = true
 texture = ExtResource("5_wd1ck")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -10)
-sprite_frames = SubResource("SpriteFrames_dg80j")
-animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -8)
@@ -232,11 +232,9 @@ stream = ExtResource("12_156r5")
 
 [node name="HurtSound2" type="AudioStreamPlayer2D" parent="PlayerSound"]
 stream = ExtResource("13_dxk7y")
-pitch_scale = 0.83
 
 [node name="HurtSound3" type="AudioStreamPlayer2D" parent="PlayerSound"]
 stream = ExtResource("14_xu4xf")
-pitch_scale = 0.83
 
 [node name="DeathSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
 stream = ExtResource("13_1q8pe")

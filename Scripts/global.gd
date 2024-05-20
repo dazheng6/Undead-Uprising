@@ -5,4 +5,6 @@ extends Node
 @onready var Player = player.new()
 @export var level_completed = false
 @export var coins = 50
-@export var playerhealth = 100.0
+@export var playerHealth = 100.0
+@export var pistol_reserve_ammo = 36
+@export var pistol_ammo = 8
