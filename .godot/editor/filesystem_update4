@@ -1,6 +1,9 @@
 res://Scenes/start_menu.tscn
 res://Particles/particle.tres
+res://sprites/zombie.tres
 res://Scenes/global.tscn
+res://Shop/shop.tscn
+res://Shop/shopmenu.tscn
 res://Scenes/player.tscn
 res://Scenes/tutorial.tscn
 res://Scenes/level_one.tscn
@@ -11,11 +14,4 @@ res://Enemies/zombie.tscn
 res://Enemies/zombie_collider.tscn
 res://Scenes/gold.tscn
 res://Scenes/door_detector.tscn
-res://Scripts/global.gd
 res://Scripts/player.gd
-res://Scenes/shop.tscn
-res://Scenes/shop.gd
-res://Shop/shopmenu.tscn
-res://Shop/shop.tscn
-res://Shop/shopmenu.gd
-res://Scripts/world.gd
