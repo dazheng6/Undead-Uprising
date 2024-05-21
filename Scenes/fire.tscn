@@ -5,21 +5,47 @@
 [ext_resource type="PackedScene" uid="uid://b6hg8pktlufrp" path="res://Scenes/hazard_area.tscn" id="2_uwv8q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3fi"]
-size = Vector2(12, 0)
+size = Vector2(12, 1)
 
 [sub_resource type="Animation" id="Animation_ag0wi"]
 resource_name = "fire_hitbox"
+length = 3.6
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("HazardArea/CollisionShape2D:scale")
+tracks/0/path = NodePath("HazardArea/CollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.3, 2.1, 2.2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": []
+"values": [Vector2(0, 20), Vector2(0, -18), Vector2(0, -18), Vector2(0, 20), Vector2(0, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HazardArea/CollisionShape2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.1, 2.2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 50), Vector2(1, 50), Vector2(0, 0), Vector2(1e-05, 1e-05)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("HazardArea/CollisionShape2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fd4vn"]
@@ -30,15 +56,19 @@ _data = {
 [node name="Fire" type="Area2D"]
 script = ExtResource("1_0c152")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -21.5)
+scale = Vector2(1, 2.34375)
+sprite_frames = ExtResource("2_q5ae5")
+autoplay = "default"
+frame_progress = 0.108375
+
 [node name="HazardArea" parent="." groups=["Spikes"] instance=ExtResource("2_uwv8q")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
-position = Vector2(0, 11)
+position = Vector2(0, -18)
+scale = Vector2(1, 50)
 shape = SubResource("RectangleShape2D_4t3fi")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("2_q5ae5")
-frame_progress = 0.322962
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
@@ -47,3 +77,4 @@ wait_time = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_fd4vn")
 }
+autoplay = "fire_hitbox"

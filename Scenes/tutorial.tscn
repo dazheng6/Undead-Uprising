@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bioi57rsd3058"]
+[gd_scene load_steps=15 format=3 uid="uid://bioi57rsd3058"]
 
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="1_h7l20"]
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_s1awy"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cc35rksac8ffv" path="res://Scenes/torch.tscn" id="9_mlrlo"]
 [ext_resource type="PackedScene" uid="uid://dcn0nu05q7wlw" path="res://Shop/shop.tscn" id="10_75xyh"]
 [ext_resource type="AudioStream" uid="uid://dodtwno3yq5ix" path="res://sounds/miracle-healing.wav.mp3" id="11_0x152"]
+[ext_resource type="PackedScene" uid="uid://cctsf0jji3a76" path="res://Scenes/fire.tscn" id="12_jxsbq"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aculp"]
 polygon = PackedVector2Array(58, 77, 153, 80, 152, 86, 58, 85)
@@ -192,6 +193,9 @@ position = Vector2(260, 51)
 
 [node name="AnimatedSprite2D" parent="Torch9" index="0"]
 visible = false
+
+[node name="Fire" parent="." instance=ExtResource("12_jxsbq")]
+position = Vector2(-121, 8)
 
 [connection signal="area_entered" from="DoorDetector" to="." method="_on_door_detector_area_entered"]
 [connection signal="pressed" from="Shop/shopmenu/Button" to="Player" method="_on_buy_button_pressed"]
