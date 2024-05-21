@@ -3,14 +3,14 @@ extends Area2D
 var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var goldPath = preload("res://Scenes/gold.tscn")
 @onready var zombieHitTime = $Timer
-@onready var zombieHealth = 100.0
+@export var zombieHealth = 100.0
 @onready var zombie = get_tree().get_nodes_in_group("Zombie")
 @onready var healthbar = $ProgressBar
 @onready var icon = $Icon
 @onready var hazard = $HazardDetector
 @onready var zombiePosition = get_node("Marker2D").global_position
 @onready var Player = player.new()
-@onready var speed = 50
+@export var speed = 50
 
 func coin_spawn():
 	var coin_instance = goldPath.instantiate()

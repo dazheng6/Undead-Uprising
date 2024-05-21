@@ -1,25 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://c0gckid14dww5"]
-
-[ext_resource type="Texture2D" uid="uid://b5bhsqbv4uses" path="res://sprites/Zombie(2).png" id="1_5urx1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g8t1y"]
-atlas = ExtResource("1_5urx1")
-region = Rect2(0, 0, 20, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_81f4y"]
-atlas = ExtResource("1_5urx1")
-region = Rect2(40, 0, 20, 32)
+[gd_resource type="SpriteFrames" format=3 uid="uid://c0gckid14dww5"]
 
 [resource]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g8t1y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_81f4y")
-}],
-"loop": true,
-"name": &"new_animation",
-"speed": 5.0
-}]
+animations = []
