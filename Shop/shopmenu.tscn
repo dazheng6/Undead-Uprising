@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dva3gr2lna00n"]
 
-[ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="1_7cjml"]
 [ext_resource type="Script" path="res://Shop/shopmenu.gd" id="1_tx7sj"]
 [ext_resource type="FontFile" uid="uid://voolo53erqim" path="res://sprites/Michroma-Regular.ttf" id="2_06orp"]
 [ext_resource type="Texture2D" uid="uid://b7qxeu7alvhab" path="res://sprites/COINfile.png" id="2_artpq"]
+[ext_resource type="Texture2D" uid="uid://cwsbjghlfarpb" path="res://sprites/Screenshot 2024-05-20 190042.png" id="4_nu42n"]
 
 [node name="shopmenu" type="StaticBody2D"]
 script = ExtResource("1_tx7sj")
@@ -25,11 +25,6 @@ offset_bottom = 109.0
 scale = Vector2(5, 5)
 text = "Buy"
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(128, 54)
-scale = Vector2(1.21875, 0.6875)
-texture = ExtResource("1_7cjml")
-
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-138, 119)
 
@@ -45,5 +40,10 @@ text = "50"
 position = Vector2(289, 64)
 scale = Vector2(3, 3)
 texture = ExtResource("2_artpq")
+
+[node name="Screenshot2024-05-20190042" type="Sprite2D" parent="."]
+position = Vector2(137.375, 51.25)
+scale = Vector2(0.728049, 0.618243)
+texture = ExtResource("4_nu42n")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

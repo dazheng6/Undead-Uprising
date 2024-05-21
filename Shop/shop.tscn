@@ -34,8 +34,9 @@ scale = Vector2(0.3, 0.3)
 [node name="Button" parent="shopmenu" index="1"]
 offset_right = 86.0
 
-[node name="Icon" parent="shopmenu" index="2"]
-position = Vector2(140, 56.6667)
+[node name="Screenshot2024-05-20190042" parent="shopmenu" index="3"]
+position = Vector2(130, 66.8333)
+scale = Vector2(0.487805, 0.407658)
 
 [node name="ChaChing" type="AudioStreamPlayer2D" parent="shopmenu"]
 position = Vector2(10, 200)
