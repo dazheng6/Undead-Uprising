@@ -11,7 +11,7 @@ var bulletPath = preload("res://Scenes/bullet.tscn")
 @onready var zombiePosition = get_node("Marker2D").global_position
 @onready var Player = player.new()
 @export var speed = 50
-
+@export var damage = 50
 func coin_spawn():
 	var coin_instance = goldPath.instantiate()
 	get_parent().add_child(coin_instance)
@@ -51,7 +51,7 @@ func _on_area_entered(area):
 		healthbar.visible = true
 		update_healthbar()
 		print("Zombie -50 HP")
-		zombieHealth -= 50
+		zombieHealth -= damage
 		$ZombieScream.play()
 
 

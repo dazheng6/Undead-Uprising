@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/zombie.gd" id="1_lrwp2"]
 [ext_resource type="Texture2D" uid="uid://c5xveei6bam1h" path="res://icon.svg" id="2_pbsu5"]
-[ext_resource type="AudioStream" uid="uid://b7o5o8w6c7a6r" path="res://Enemies/zombie scream.mp3" id="4_moml8"]
+[ext_resource type="AudioStream" uid="uid://6kx23nb3vu2r" path="res://Enemies/SNDPAIN1.wav" id="3_sniku"]
 [ext_resource type="SpriteFrames" uid="uid://c0gckid14dww5" path="res://sprites/zombie.tres" id="4_ra8rl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_305da"]
@@ -66,7 +66,7 @@ position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_g0c3q")
 
 [node name="ZombieScream" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_moml8")
+stream = ExtResource("3_sniku")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2, -9)

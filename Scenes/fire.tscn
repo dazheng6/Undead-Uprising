@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cctsf0jji3a76"]
+[gd_scene load_steps=8 format=3 uid="uid://cctsf0jji3a76"]
 
 [ext_resource type="Script" path="res://Scenes/fire.gd" id="1_0c152"]
 [ext_resource type="SpriteFrames" uid="uid://cb87w7gxfkdpn" path="res://sprites/firetrap.tres" id="2_q5ae5"]
 [ext_resource type="PackedScene" uid="uid://b6hg8pktlufrp" path="res://Scenes/hazard_area.tscn" id="2_uwv8q"]
+[ext_resource type="AudioStream" uid="uid://x6yt4ymvqbxd" path="res://Scenes/Fire.mp3" id="4_fkfds"]
 
 [sub_resource type="Animation" id="Animation_ag0wi"]
 resource_name = "fire_hitbox"
@@ -32,6 +33,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 3, 2, 1, 0, 0, 0]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FireSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fd4vn"]
 _data = {
@@ -48,7 +61,6 @@ script = ExtResource("1_0c152")
 position = Vector2(0, -21.5)
 scale = Vector2(1, 2.34375)
 sprite_frames = ExtResource("2_q5ae5")
-frame = 13
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 root_node = NodePath("../..")
@@ -60,9 +72,13 @@ autoplay = "fire_hitbox"
 [node name="HazardArea" parent="." groups=["Spikes"] instance=ExtResource("2_uwv8q")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
-position = Vector2(0, -18)
+position = Vector2(0, 40)
 scale = Vector2(1, 50)
 shape = SubResource("RectangleShape2D_4t3fi")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="FireSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fkfds")
+max_distance = 150.0
