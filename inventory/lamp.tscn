@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://p35mrfnnqx12"]
+
+[ext_resource type="Texture2D" uid="uid://d86kifqyjn6v" path="res://sprites/lightmask.png" id="1_6ykf1"]
+[ext_resource type="Texture2D" uid="uid://dbx2rv0mm0uts" path="res://inventory/lamp.png" id="2_fnj64"]
+
+[node name="Lamp" type="Node2D"]
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1.90735e-06, -33)
+scale = Vector2(0.789063, 0.34375)
+color = Color(0.87451, 0.909804, 0.866667, 1)
+texture = ExtResource("1_6ykf1")
+
+[node name="Lamp" type="Sprite2D" parent="."]
+position = Vector2(0, -21)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_fnj64")
