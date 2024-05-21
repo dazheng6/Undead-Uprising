@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/level_completed.gd" id="1_h71ra"]
 [ext_resource type="PackedScene" uid="uid://b42xkw66pkthw" path="res://Scenes/level_transition.tscn" id="2_mox5i"]
-[ext_resource type="AudioStream" uid="uid://4pce5h4nj8gs" path="res://music/levelcomplete.wav" id="3_fnufj"]
+[ext_resource type="AudioStream" uid="uid://4pce5h4nj8gs" path="res://inventory/music/levelcomplete.wav" id="3_fnufj"]
+
 
 [node name="LevelCompleted" type="ColorRect"]
 anchors_preset = 15
