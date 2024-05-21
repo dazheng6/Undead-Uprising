@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://ckhdq3jhe8ylv"
-path="res://.godot/imported/SNDPAIN2.wav-6edd5a1d4092a1b00260c30748906430.sample"
+uid="uid://6kx23nb3vu2r"
+path="res://.godot/imported/demondamage.wav-9653f525dea2399b446a1249017f09e4.sample"
 
 [deps]
 
-source_file="res://Enemies/SNDPAIN2.wav"
-dest_files=["res://.godot/imported/SNDPAIN2.wav-6edd5a1d4092a1b00260c30748906430.sample"]
+source_file="res://Enemies/demondamage.wav"
+dest_files=["res://.godot/imported/demondamage.wav-9653f525dea2399b446a1249017f09e4.sample"]
 
 [params]
 

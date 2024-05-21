@@ -243,14 +243,15 @@ func handle_jump():
 	if is_on_floor() or coyote_jump_timer.time_left < 0.0:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = movement_data.jump_velocity * .7
+			$PlayerSound/jump.play()
 	if not is_on_floor():
 		if Input.is_action_just_pressed("jump") and velocity.y < movement_data.jump_velocity / 2:
 			velocity.y = movement_data.jump_velocity * .6
-			
+			$PlayerSound/jump.play()
 		if Input.is_action_just_pressed("jump") and air_jump and not just_wall_jumped:
 			velocity.y = movement_data.jump_velocity * .7
 			air_jump = false
-
+			$PlayerSound/jump.play()
 func handle_acceleration(input_axis, delta):
 	if not is_on_floor(): return
 	if input_axis != 0:

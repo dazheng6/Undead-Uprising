@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b3vkmfxunohh8"]
+[gd_scene load_steps=31 format=3 uid="uid://b3vkmfxunohh8"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_le4us"]
 [ext_resource type="Resource" uid="uid://pv664px4lo6y" path="res://FasterMovementData.tres" id="2_w6hny"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://bgdmeoavflauc" path="res://sounds/damage2.mp3" id="13_dxk7y"]
 [ext_resource type="AudioStream" uid="uid://d2kq12gtuj7ki" path="res://sounds/damage3.mp3" id="14_xu4xf"]
 [ext_resource type="AudioStream" uid="uid://chqhvj18wte5x" path="res://sounds/falldeathSound.mp3" id="16_c2uon"]
+[ext_resource type="AudioStream" uid="uid://dbb1ow07gnqvx" path="res://sounds/jump sound.mp3" id="18_af04u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tg5c"]
 atlas = ExtResource("6_jq2ga")
@@ -229,21 +230,28 @@ wait_time = 0.3
 
 [node name="HurtSound" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("12_156r5")
+volume_db = 1.0
 
 [node name="HurtSound2" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("13_dxk7y")
+volume_db = 1.0
 
 [node name="HurtSound3" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("14_xu4xf")
+volume_db = 1.0
 
 [node name="DeathSound" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("13_1q8pe")
-volume_db = 2.0
+volume_db = 1.0
 
 [node name="FallDeath" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("16_c2uon")
-volume_db = 4.0
+volume_db = 3.0
 pitch_scale = 0.9
+
+[node name="jump" type="AudioStreamPlayer" parent="PlayerSound"]
+stream = ExtResource("18_af04u")
+volume_db = 4.0
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 

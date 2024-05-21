@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://0ny6bl0oky7l"
-path="res://.godot/imported/WatchYourStep.wav-499329dd59f63b79ab88df306de34dd3.sample"
+path="res://.godot/imported/WatchYourStep.wav-896abbee9a9a3d55f07cf1415c27691d.sample"
 
 [deps]
 
-source_file="res://inventory/music/WatchYourStep.wav"
-dest_files=["res://.godot/imported/WatchYourStep.wav-499329dd59f63b79ab88df306de34dd3.sample"]
+source_file="res://music/WatchYourStep.wav"
+dest_files=["res://.godot/imported/WatchYourStep.wav-896abbee9a9a3d55f07cf1415c27691d.sample"]
 
 [params]
 

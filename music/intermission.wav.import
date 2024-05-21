@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://brxli7t6ejsg"
-path="res://.godot/imported/intermission.wav-b1f49dcf4aad14fc898db4de7a8e76c3.sample"
+path="res://.godot/imported/intermission.wav-d1e36e99cfc3e038db837cb414d0aa03.sample"
 
 [deps]
 
-source_file="res://inventory/music/intermission.wav"
-dest_files=["res://.godot/imported/intermission.wav-b1f49dcf4aad14fc898db4de7a8e76c3.sample"]
+source_file="res://music/intermission.wav"
+dest_files=["res://.godot/imported/intermission.wav-d1e36e99cfc3e038db837cb414d0aa03.sample"]
 
 [params]
 
