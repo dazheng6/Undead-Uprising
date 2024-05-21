@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cctsf0jji3a76"]
+
+[ext_resource type="Script" path="res://Scenes/fire.gd" id="1_0c152"]
+[ext_resource type="SpriteFrames" uid="uid://cb87w7gxfkdpn" path="res://sprites/firetrap.tres" id="2_q5ae5"]
+[ext_resource type="PackedScene" uid="uid://b6hg8pktlufrp" path="res://Scenes/hazard_area.tscn" id="2_uwv8q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3fi"]
+size = Vector2(12, 0)
+
+[sub_resource type="Animation" id="Animation_ag0wi"]
+resource_name = "fire_hitbox"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HazardArea/CollisionShape2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fd4vn"]
+_data = {
+"fire_hitbox": SubResource("Animation_ag0wi")
+}
+
+[node name="Fire" type="Area2D"]
+script = ExtResource("1_0c152")
+
+[node name="HazardArea" parent="." groups=["Spikes"] instance=ExtResource("2_uwv8q")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardArea"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_4t3fi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_q5ae5")
+frame_progress = 0.322962
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fd4vn")
+}
