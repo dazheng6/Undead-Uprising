@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhi2ehnu5wmky"]
+[gd_scene load_steps=11 format=3 uid="uid://dhi2ehnu5wmky"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_702vv"]
 [ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_qevwg"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://7j0w30ix6cmy" path="res://Scenes/spikes2.tscn" id="6_38dk0"]
 [ext_resource type="PackedScene" uid="uid://clskm2c8q5gtn" path="res://Scenes/falldetector.tscn" id="7_lc623"]
 [ext_resource type="PackedScene" uid="uid://dcn0nu05q7wlw" path="res://Shop/shop.tscn" id="9_28bj7"]
+[ext_resource type="PackedScene" uid="uid://dnq4n3vmky12m" path="res://Enemies/zombie2.tscn" id="10_xrwgt"]
 
 [node name="World" type="Node2D"]
 position = Vector2(17, 3)
@@ -102,6 +103,33 @@ offset_left = -39.9999
 offset_top = -16.6666
 offset_right = 59.0001
 offset_bottom = 18.3334
+
+[node name="AltZombie" parent="." instance=ExtResource("10_xrwgt")]
+position = Vector2(434, 16)
+
+[node name="AltZombie2" parent="." instance=ExtResource("10_xrwgt")]
+position = Vector2(553, -107)
+
+[node name="AltZombie3" parent="." instance=ExtResource("10_xrwgt")]
+position = Vector2(862, -283)
+
+[node name="AltZombie4" parent="." instance=ExtResource("10_xrwgt")]
+position = Vector2(697, -283)
+
+[node name="Zombie3" parent="." instance=ExtResource("5_vfs0o")]
+position = Vector2(490, -407)
+
+[node name="AltZombie5" parent="." instance=ExtResource("10_xrwgt")]
+position = Vector2(820, -530)
+
+[node name="AltZombie6" parent="." instance=ExtResource("10_xrwgt")]
+position = Vector2(1011, -583)
+
+[node name="Zombie4" parent="." instance=ExtResource("5_vfs0o")]
+position = Vector2(1200, -443)
+
+[node name="Zombie6" parent="." instance=ExtResource("5_vfs0o")]
+position = Vector2(1265, -443)
 
 [editable path="CanvasLayer/LevelCompleted"]
 [editable path="Shop"]
