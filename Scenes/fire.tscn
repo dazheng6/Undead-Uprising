@@ -4,12 +4,9 @@
 [ext_resource type="SpriteFrames" uid="uid://cb87w7gxfkdpn" path="res://sprites/firetrap.tres" id="2_q5ae5"]
 [ext_resource type="PackedScene" uid="uid://b6hg8pktlufrp" path="res://Scenes/hazard_area.tscn" id="2_uwv8q"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3fi"]
-size = Vector2(12, 1)
-
 [sub_resource type="Animation" id="Animation_ag0wi"]
 resource_name = "fire_hitbox"
-length = 3.6
+length = 3.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -18,40 +15,31 @@ tracks/0/path = NodePath("HazardArea/CollisionShape2D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.1, 2.2, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 1.9, 2.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, 20), Vector2(0, -18), Vector2(0, -18), Vector2(0, 20), Vector2(0, 20)]
+"values": [Vector2(0, 40), Vector2(0, -18), Vector2(0, -18), Vector2(0, 40)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("HazardArea/CollisionShape2D:scale")
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.1, 2.2, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 50), Vector2(1, 50), Vector2(0, 0), Vector2(1e-05, 1e-05)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("HazardArea/CollisionShape2D:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.3, 2.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.05, 2.1, 2.2, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 3, 2, 1, 0, 0, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fd4vn"]
 _data = {
 "fire_hitbox": SubResource("Animation_ag0wi")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4t3fi"]
+size = Vector2(12, 1)
 
 [node name="Fire" type="Area2D"]
 script = ExtResource("1_0c152")
@@ -60,8 +48,14 @@ script = ExtResource("1_0c152")
 position = Vector2(0, -21.5)
 scale = Vector2(1, 2.34375)
 sprite_frames = ExtResource("2_q5ae5")
-autoplay = "default"
-frame_progress = 0.108375
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_fd4vn")
+}
+autoplay = "fire_hitbox"
 
 [node name="HazardArea" parent="." groups=["Spikes"] instance=ExtResource("2_uwv8q")]
 
@@ -72,9 +66,3 @@ shape = SubResource("RectangleShape2D_4t3fi")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_fd4vn")
-}
-autoplay = "fire_hitbox"

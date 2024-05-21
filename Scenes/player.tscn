@@ -190,13 +190,11 @@ wait_time = 3.0
 
 [node name="GunSound" type="Node" parent="."]
 
-[node name="GunAudio" type="AudioStreamPlayer2D" parent="GunSound"]
+[node name="GunAudio" type="AudioStreamPlayer" parent="GunSound"]
 stream = ExtResource("5_r6rul")
-panning_strength = 0.0
 
-[node name="ReloadSound" type="AudioStreamPlayer2D" parent="GunSound"]
+[node name="ReloadSound" type="AudioStreamPlayer" parent="GunSound"]
 stream = ExtResource("6_vk4i4")
-panning_strength = 0.0
 
 [node name="ItemDetector" type="Area2D" parent="."]
 visible = false
@@ -207,9 +205,8 @@ shape = SubResource("RectangleShape2D_dhqgq")
 
 [node name="PickupSound" type="Node" parent="."]
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="PickupSound"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="PickupSound"]
 stream = ExtResource("11_dh4we")
-panning_strength = 0.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 visible = false
@@ -230,23 +227,25 @@ wait_time = 0.3
 
 [node name="PlayerSound" type="Node2D" parent="."]
 
-[node name="HurtSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
+[node name="HurtSound" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("12_156r5")
 
-[node name="HurtSound2" type="AudioStreamPlayer2D" parent="PlayerSound"]
+[node name="HurtSound2" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("13_dxk7y")
 
-[node name="HurtSound3" type="AudioStreamPlayer2D" parent="PlayerSound"]
+[node name="HurtSound3" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("14_xu4xf")
 
-[node name="DeathSound" type="AudioStreamPlayer2D" parent="PlayerSound"]
+[node name="DeathSound" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("13_1q8pe")
 volume_db = 2.0
 
-[node name="FallDeath" type="AudioStreamPlayer2D" parent="PlayerSound"]
+[node name="FallDeath" type="AudioStreamPlayer" parent="PlayerSound"]
 stream = ExtResource("16_c2uon")
 volume_db = 4.0
 pitch_scale = 0.9
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [connection signal="area_entered" from="HazardDetector" to="." method="_on_hazard_detector_area_entered"]
 [connection signal="area_entered" from="HazardDetector" to="Camera2D" method="_on_hazard_detector_area_entered"]

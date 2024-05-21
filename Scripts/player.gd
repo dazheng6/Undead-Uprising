@@ -343,6 +343,8 @@ func _on_item_detector_area_entered(area):
 		pickupSound.play()
 		print("coin get")
 		area.queue_free()
+	if area.is_in_group("Shop"):
+		starting_position = global_position 
 
 
 func _on_gun_timer_timeout():
