@@ -74,6 +74,7 @@ stream = ExtResource("3_hemja")
 position = Vector2(-1, -7)
 sprite_frames = ExtResource("4_vv766")
 animation = &"new_animation"
+autoplay = "new_animation"
 frame_progress = 0.518006
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
