@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhi2ehnu5wmky"]
+[gd_scene load_steps=19 format=3 uid="uid://dhi2ehnu5wmky"]
 
 [ext_resource type="Script" path="res://Scripts/world.gd" id="1_702vv"]
 [ext_resource type="Texture2D" uid="uid://37n3cu2k2ohr" path="res://sprites/Screenshot 2024-05-20 214259.png" id="2_d1ftd"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="3_hggul"]
 [ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="4_k5ot2"]
 [ext_resource type="PackedScene" uid="uid://cutchjak4xel" path="res://Enemies/zombie.tscn" id="5_vfs0o"]
+[ext_resource type="SpriteFrames" uid="uid://b0aymw2cf67a5" path="res://sprites/city-bg.tres" id="6_1b3el"]
 [ext_resource type="PackedScene" uid="uid://7j0w30ix6cmy" path="res://Scenes/spikes2.tscn" id="6_38dk0"]
 [ext_resource type="PackedScene" uid="uid://clskm2c8q5gtn" path="res://Scenes/falldetector.tscn" id="7_lc623"]
 [ext_resource type="PackedScene" uid="uid://dcn0nu05q7wlw" path="res://Shop/shop.tscn" id="9_28bj7"]
@@ -115,8 +116,16 @@ scale = Vector2(13.2934, 13.7996)
 texture = ExtResource("2_d1ftd")
 
 [node name="Sprite2D" parent="Player/ParallaxBackground/ParallaxLayer" index="0"]
+visible = false
 scale = Vector2(34.0223, 36.3971)
 texture = ExtResource("3_51geq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/ParallaxBackground/ParallaxLayer" index="1"]
+scale = Vector2(34.022, 36.397)
+sprite_frames = ExtResource("6_1b3el")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
