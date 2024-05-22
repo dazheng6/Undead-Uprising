@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhkvqd42bamxr"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_50g1v"]
+[ext_resource type="PackedScene" uid="uid://b3vkmfxunohh8" path="res://Scenes/player.tscn" id="2_fm02d"]
+[ext_resource type="PackedScene" uid="uid://cy6hmwmgqka5j" path="res://Scenes/level_completed.tscn" id="3_3win4"]
+[ext_resource type="PackedScene" uid="uid://d3ofcbr2mdxuj" path="res://Scenes/level_tile_map.tscn" id="4_0d5kb"]
+
+[node name="World2" type="Node2D"]
+position = Vector2(17, 3)
+script = ExtResource("1_50g1v")
+
+[node name="Player" parent="." instance=ExtResource("2_fm02d")]
+position = Vector2(40, 88)
+floor_snap_length = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("3_3win4")]
+visible = false
+
+[node name="levelTileMap" parent="." instance=ExtResource("4_0d5kb")]
+
+[node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
+
+[node name="ZombieKillTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ZombieKillTimer" to="." method="_on_zombie_kill_timer_timeout"]
+
+[editable path="CanvasLayer/LevelCompleted"]
