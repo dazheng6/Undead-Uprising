@@ -1,10 +1,9 @@
-res://Scenes/level_three.tscn
+res://Scenes/start_menu.tscn
 res://Particles/particle.tres
 res://sprites/zombie.tres
+res://sprites/city-bg.tres
 res://sprites/zombie-2.tres
 res://sprites/firetrap.tres
-res://inventory/lamp.tscn
-res://Scenes/start_menu.tscn
 res://Scenes/global.tscn
 res://Shop/shop.tscn
 res://Shop/shopmenu.tscn
@@ -12,7 +11,4 @@ res://Enemies/zombie.tscn
 res://Enemies/zombie_collider.tscn
 res://Scenes/gold.tscn
 res://Scenes/door_detector.tscn
-res://Scenes/level_one.tscn
-res://Scenes/level_two.tscn
-res://Scenes/tutorial.tscn
-res://Scenes/pistol.tscn
+res://inventory/lamp.tscn
